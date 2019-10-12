@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div class="btn_space">
+    <%if user_signed_in?%>
+      <ul>
+        <li id="signout_tag">
+          <%=link_to destroy_user_session_path, method: :delete, class: "sign_btn" do%>
+            ログアウト
+          <%end%>
+        </li>
+        <li id="signout_tag">
+          <%=link_to "#", class: "sign_btn" do%>
+            マイページ
+          <%end%>
+        </li>
+      </ul>
+    <%else%>
+      <ul>
+        <li id="signup_tag">
+        <%=link_to new_user_registration_path, class: "sign_btn" do%>
+            新規登録
+        </li>
+        <%end%>
+        <li id="login_tag">
+        <%=link_to new_user_session_path, class: "sign_btn" do %>
+          ログイン
+        <%end%>
+        </li>
+      </ul>
+    <%end%>
+  </div>
+</div>
