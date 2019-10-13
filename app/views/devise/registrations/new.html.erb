@@ -7,46 +7,70 @@
     <div class="signup_container">
       <main class="signup_contents">
         <section class="signup_content">
-          <div class="field">
-            <p class="hissu">必須</p>
-            <%= f.label :ニックネーム, class: "signup_explanation" %><br />
-            <%= f.text_field :nickname, placeholder: "わくスト太郎", class: "input_signup_form" %>
-            <%=f.label :my_image, class: "input_my_image_label" do%>
-              <%=fa_icon "camera-retro", class: "input_my_image_icon"%>
-              <%=f.file_field :my_image, class: "input_my_image"%>
-              <%end%>
-              <div class="ninni">
-                任意
-              </div>
-              <div class="my_image_explanation">
-                プロフィール画像をアップロード
-              </div>
+          <div class="signup_left_content">
+            <div class="field">
+              <p class="hissu">必須</p>
+              <%= f.label :ニックネーム, class: "signup_explanation" %><br />
+              <%= f.text_field :nickname, placeholder: "わくスト太郎", class: "input_signup_form" %>
+            </div>
+
+            <div class="signup_image_upload_area">
+              
+            </div>
+            <div class="field">
+              <p class="hissu">必須</p>
+              <%= f.label :Eメールアドレス, class: "signup_explanation" %><br />
+              <%= f.email_field :email, placeholder: "wakusto@com", autofocus: true, autocomplete: "email", class: "input_signup_form" %>
+            </div>
+
+            <div class="field">
+              <p class="hissu">必須</p>
+              <%= f.label :パスワード, class: "signup_explanation" %>
+              <br />
+              <%= f.password_field :password, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form" %>
+            </div>
+
+            <div class="field">
+              <p class="hissu">必須</p>
+              <%= f.label :パスワード（再確認）, class: "signup_explanation" %><br />
+              <%= f.password_field :password_confirmation, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form" %>
+            </div>
           </div>
 
-          <div class="signup_image_upload_area">
-            
-          </div>
-          <div class="field">
-            <p class="hissu">必須</p>
-            <%= f.label :Eメールアドレス, class: "signup_explanation" %><br />
-            <%= f.email_field :email, placeholder: "wakusto@com", autofocus: true, autocomplete: "email", class: "input_signup_form" %>
-          </div>
 
-          <div class="field">
-            <p class="hissu">必須</p>
-            <%= f.label :パスワード, class: "signup_explanation" %>
-            <br />
-            <%= f.password_field :password, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form" %>
-          </div>
+          <div class="signup_right_content">
+            <div class="field">
+              <p class="hissu">必須</p>
+              <%= f.label :ニックネーム, class: "signup_explanation" %><br />
+              <%= f.text_field :nickname, placeholder: "わくスト太郎", class: "input_signup_form" %>
+            </div>
 
-          <div class="field">
-            <p class="hissu">必須</p>
-            <%= f.label :パスワード（再確認）, class: "signup_explanation" %><br />
-            <%= f.password_field :password_confirmation, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form" %>
-          </div>
+            <div class="signup_image_upload_area">
+              
+            </div>
+            <div class="field">
+              <p class="hissu">必須</p>
+              <%= f.label :Eメールアドレス, class: "signup_explanation" %><br />
+              <%= f.email_field :email, placeholder: "wakusto@com", autofocus: true, autocomplete: "email", class: "input_signup_form" %>
+            </div>
 
-          <div class="signup_actions">
-            <%= f.submit "登録するしてメイン画面に戻る", class: "signup_actions_btn" %>
+            <div class="field">
+              <p class="hissu">必須</p>
+              <%= f.label :パスワード, class: "signup_explanation" %>
+              <br />
+              <%= f.password_field :password, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form" %>
+            </div>
+
+            <div class="field">
+              <p class="hissu">必須</p>
+              <%= f.label :パスワード（再確認）, class: "signup_explanation" %><br />
+              <%= f.password_field :password_confirmation, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form" %>
+            </div>
+
+            <div class="signup_actions">
+              <%= f.submit "登録するしてメイン画面に戻る", class: "signup_actions_btn" %>
+            </div>
+          </div>
           </div>
         </section>
       </main>
