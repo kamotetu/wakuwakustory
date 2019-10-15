@@ -27,7 +27,8 @@
           margin-top: 32px;
           padding-top: 32px;
           .hissu {
-            float: left;
+            display: inline-block;
+            // float: left;
             padding: 2px 1px;
             border-radius: 3px; 
             background-color: red;
@@ -56,6 +57,8 @@
             }
             .input_my_image {
               display: none;
+              
+              // opacity: 0;
             }
           }
           
@@ -74,9 +77,43 @@
           color: white;
         }
       }
-      // .signup_left_content {
-      //   margin-left: 2px;
-      // }
+      .signup_my_image_explanation {
+        vertical-align: 40%;
+        display: inline;
+      }
+      .signup_my_image_area {
+        height: 150px;
+        width: 138px;
+        margin: auto;
+        text-align: center;
+        background-color: rgb(216, 216, 216);
+        // border-radius: 50%;
+        position: relative;
+        .btn_wrapper {
+          background-color: rgb(121, 169, 240);
+          display: inline-block;
+          // background-color: gray;
+          padding: 2px 1px;
+          border-radius: 3px; 
+          color: rgb(17, 17, 16);
+        }
+        #signup_my_image_icon_preview {
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom :0;
+          margin:  auto;
+        }
+      }
+      #img_prev {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        position: relative;
+      }
     }
     .signup_actions {
       margin: 32px 0 0 32px;
