@@ -1,0 +1,135 @@
+.signup_title {
+  width: 80px;
+  margin: auto;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: bold;
+}
+.signup_container {
+  position: relative;
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+  .signup_contents {
+    background-color: #f5f5f5;
+    @include clearfix;
+    .signup_content {
+      width: 700px;
+      margin: 0 auto;
+      padding-bottom: 32px;
+      .signup_left_content, .signup_right_content {
+        width: 50%;
+        float: left;
+        // margin: 10px;
+        .field {
+          margin-top: 32px;
+          padding-top: 32px;
+          .hissu {
+            display: inline-block;
+            // float: left;
+            padding: 2px 1px;
+            border-radius: 3px; 
+            background-color: red;
+            color: white;
+          }
+          .signup_explanation {
+            padding-left: 5px;
+            line-height: 17px;
+          }
+          .input_signup_form {
+            padding: 10px 16px 8px;
+            width: 80%;
+            margin: 8px 0 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+          .input_my_image_label {
+            line-height: 30px;
+            .input_my_image_icon {
+              font-size: 30px;
+              margin-left: 10px;
+              padding-top: 10px;
+              cursor: pointer;
+            }
+            .input_my_image {
+              display: none;
+              
+              // opacity: 0;
+            }
+          }
+          
+          .my_image_field {
+            display: inline;
+          }
+          .my_image_explanation {
+            display: inline;
+          }
+        }
+        .ninni {
+          display: inline-block;
+          background-color: gray;
+          padding: 2px 1px;
+          border-radius: 3px; 
+          color: white;
+        }
+      }
+      .signup_my_image_explanation {
+        vertical-align: 40%;
+        display: inline;
+      }
+      .signup_my_image_area {
+        height: 150px;
+        width: 138px;
+        margin: auto;
+        text-align: center;
+        background-color: rgb(216, 216, 216);
+        // border-radius: 50%;
+        position: relative;
+        .btn_wrapper {
+          background-color: rgb(121, 169, 240);
+          display: inline-block;
+          // background-color: gray;
+          padding: 2px 1px;
+          border-radius: 3px; 
+          color: rgb(17, 17, 16);
+        }
+        #signup_my_image_icon_preview {
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom :0;
+          margin:  auto;
+        }
+      }
+      #img_prev {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        position: relative;
+      }
+    }
+    .signup_actions {
+      margin: 32px 0 0 32px;
+      .signup_actions_btn {
+        display: block;
+        width: 312px;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        background-color: rgb(121, 169, 240);
+        color: rgb(31, 32, 20);
+        border-radius: 10px;
+      }
+    }
+  }
+}
