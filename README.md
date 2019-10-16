@@ -48,7 +48,7 @@ Things you may want to cover:
 |tag|string||
 
 ### Association
-- has_many storys, through: storys_tags
+- has_many storys, through: story_tags
 
 
 ## story_tagsテーブル
@@ -56,13 +56,13 @@ Things you may want to cover:
 |tag_id|bigint|null :false, foreign_key: true|
 
 ### Association
-- belongs_to user
-- belongs_to story
+- belongs_to :user
+- belongs_to :story
 
 ## commentsテーブル
 |comment|string||
 |user_id|bigint|null :false, foreign_key: true|
 |story_id|bigint|null :false, foreign_key: true|
 ### Association
-- belongs_to story
-- belongs_to user
+- belongs_to :story
+- belongs_to :user
