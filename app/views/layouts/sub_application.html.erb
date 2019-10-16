@@ -10,7 +10,9 @@
 
   <body>
   <%=render "shared/header" %>
-  <%=render "shared/header_btn_space"%>
+  <%=link_to root_path do%>
+  　ホーム画面に戻る
+  <%end%>
     <%= yield %>
   <%=render "shared/footer"%>
   </body>

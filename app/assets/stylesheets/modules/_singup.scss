@@ -36,7 +36,7 @@
           }
           .signup_explanation {
             padding-left: 5px;
-            line-height: 17px;
+            line-height: 23px;
           }
           .input_signup_form {
             padding: 10px 16px 8px;
@@ -47,6 +47,16 @@
             font-size: 16px;
             line-height: 1.5;
           }
+          .input_signup_profile_form {
+            padding: 10px 50px 200px;
+            width: 80%;
+            margin: 8px 0 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+          
           .input_my_image_label {
             line-height: 30px;
             .input_my_image_icon {
@@ -76,6 +86,7 @@
           border-radius: 3px; 
           color: white;
         }
+        
       }
       .signup_my_image_explanation {
         vertical-align: 40%;
@@ -115,21 +126,33 @@
         position: relative;
       }
     }
-    .signup_actions {
-      margin: 32px 0 0 32px;
-      .signup_actions_btn {
-        display: block;
-        width: 312px;
-        line-height: 48px;
-        font-size: 14px;
-        border: 1px solid transparent;
-        transition: all ease-out .3s;
-        cursor: pointer;
-        text-align: center;
-        background-color: rgb(121, 169, 240);
-        color: rgb(31, 32, 20);
-        border-radius: 10px;
+    .signup_action_box {
+      text-align: center;
+      margin: 32px auto;
+      display: inline-block;
+      width: 100%;
+
+      .signup_action {
+        margin: 0 auto;
+        display: inline-block;
+        // text-align: center;
+        
+        .signup_actions_btn {
+          display: block;
+          width: 312px;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+          background-color: rgb(121, 169, 240);
+          color: rgb(31, 32, 20);
+          border-radius: 10px;
+        }
       }
     }
+    
   }
 }
+
