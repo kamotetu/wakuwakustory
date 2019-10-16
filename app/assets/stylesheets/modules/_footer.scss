@@ -1,0 +1,23 @@
+footer {
+  padding: 0;
+  width: 100%;
+  background-color: rgb(110, 181, 247);
+  position: absolute;
+  bottom: 0;
+  @include clearfix;
+  .sitename {
+    font-size: 22px;
+    color: #fff;
+    line-height: 30px;
+    margin-bottom: 10px;
+    @include clearfix;
+    .sitetitle {
+      color: gray;
+      .sitetitle_logo {
+        padding-top: 20px;
+        padding-left: 50px;
+        height:70px;  
+      }
+    }
+  }
+}
