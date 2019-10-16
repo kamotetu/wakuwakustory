@@ -1,13 +1,14 @@
-class StorysController < ApplicationController
+class StoriesController < ApplicationController
+
   def index
     @users = User.all
   end
 
   def new
-    @story = Story.new
+    @stories = Story.new
   end
 
   def create
-
   end
+
 end
