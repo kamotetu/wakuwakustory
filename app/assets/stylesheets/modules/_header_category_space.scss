@@ -1,0 +1,33 @@
+.header_categorys_space {
+  margin: 20px;
+  .header_categorys_ul {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    .header_category {
+      margin: auto;
+      li {
+        width: 100px;
+        font-size: 17px;
+        display: inline-block;
+        border: 1px solid #446ca7;
+        border-radius: 5px;
+        background: white;
+        padding: 5px;
+        margin: auto;
+        text-align: center;
+        // background-color: #b1eeff;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all  0.3s ease;
+        color: black;
+      }
+      li:hover {
+        background-color: rgb(229, 246, 253);
+        color: black;
+      }
+    }
+    
+  }
+}
