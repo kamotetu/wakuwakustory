@@ -1,7 +1,7 @@
 footer {
   padding: 0;
   width: 100%;
-  background-color: rgb(110, 181, 247);
+  background-color: rgb(201, 224, 247);
   position: absolute;
   bottom: 0;
   @include clearfix;
@@ -10,7 +10,8 @@ footer {
     color: #fff;
     line-height: 30px;
     margin-bottom: 10px;
-    @include clearfix;
+    // @include clearfix;
+    float: left;
     .sitetitle {
       color: gray;
       .sitetitle_logo {
@@ -19,5 +20,15 @@ footer {
         height:70px;  
       }
     }
+  }
+  .copyright {
+    display: inline-block;
+    text-align: center;
+    padding-left: 15px;
+    width: 70%;
+    height: 33px;
+    line-height: 120px;
+    margin: auto;
+    position: relative;
   }
 }

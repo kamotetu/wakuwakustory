@@ -11,14 +11,14 @@
             <div class="field">
               <p class="hissu">必須</p>
               <%= f.label :ニックネーム, class: "signup_explanation" %><br />
-              <%= f.text_field :nickname, placeholder: "わくスト太郎", class: "input_signup_form" %>
+              <%= f.text_field :nickname, placeholder: "わくスト太郎", autofocus: true, class: "input_signup_form" %>
             </div>
 
             
             <div class="field">
               <p class="hissu">必須</p>
               <%= f.label :Eメールアドレス, class: "signup_explanation" %><br />
-              <%= f.email_field :email, placeholder: "wakusto@com", autofocus: true, autocomplete: "email", class: "input_signup_form" %>
+              <%= f.email_field :email, placeholder: "wakusto@com", autocomplete: "email", class: "input_signup_form" %>
             </div>
 
             <div class="field">
