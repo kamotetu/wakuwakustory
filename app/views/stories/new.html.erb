@@ -1,14 +1,15 @@
-<div class="wrapper">
-  <div class="story_container">
-    <%=form_with model: @story, class: :story_form_with do |s|%>
-      <div class="story_content">
-        <div class="story_title_area">
-          <div class="story_title_form_area">
-            <%=s.label :タイトル%>
-            <%=s.text_field :title, class: :story_title_form%>          
-          </div>
-        </div>
-      </div>
-    <%end%>
+<%=form_with model: @stories, local:true do |f|%>
+  <div class="form-group">
+    <%=f.label :title%>
+    <%=f.text_field :title, class: 'form-control', id: 'task_name'%>
   </div>
-</div>
+  <div class="form-group">
+    <%=f.label :story%>
+    <%=f.text_area :story, rows: 5, class: 'form-control', id: 'task_description'%>
+  </div>
+  <div class="form-group">
+    <%=f.label :tag_list%>
+    <%=f.text_field :tag_list, value: @stories.tag_list.join(','), class: "form-control"%>
+  </div>
+  <%=f.submit nil, class: 'btn btn-primary'%>
+<%end%>

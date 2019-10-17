@@ -11,4 +11,11 @@ class StoriesController < ApplicationController
   def create
   end
 
+  def task_params
+    params.require(:story).permit(
+      :title, 
+      :story, 
+      :tag_list) 
+  end
+
 end
