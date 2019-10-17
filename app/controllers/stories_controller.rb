@@ -9,6 +9,7 @@ class StoriesController < ApplicationController
   end
 
   def create
+    @story = Story.new
   end
 
   def task_params
