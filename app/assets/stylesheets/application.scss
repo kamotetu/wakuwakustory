@@ -8,3 +8,10 @@
 @import "modules/singup";
 @import "modules/footer";
 @import "modules/header_category_space";
+@import "jquery.tagit";
+@import "tagit.ui-zendesk";
+@import "modules/story_new";
+/*
+*= require jquery.tagit
+*= require tagit.ui-zendesk
+*/
