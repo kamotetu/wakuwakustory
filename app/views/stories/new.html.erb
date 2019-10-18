@@ -1,15 +1,22 @@
-<%=form_with model: @stories, local:true do |f|%>
-  <div class="form-group">
-    <%=f.label :title%>
-    <%=f.text_field :title, class: 'form-control', id: 'task_name'%>
+<div class="wrapper">
+  <div class="story_new_title_contents">
+    <h1 class="story_new_title_content">記事を登録</h1>
   </div>
-  <div class="form-group">
-    <%=f.label :story%>
-    <%=f.text_area :story, rows: 5, class: 'form-control', id: 'task_description'%>
+  <div class="story_new_container">
+    <%=form_with model: @stories, local:true do |f|%>
+      <div class="form-group">
+        <%=f.label :タイトル%><br />
+        <%=f.text_field :title, class: 'form-control', id: 'task_name'%>
+      </div>
+      <div class="form-group">
+        <%=f.label :記事%><br />
+        <%=f.text_area :story, rows: 4, class: 'form-control', id: 'task_description'%>
+      </div>
+      <div class="form-group">
+        <%=f.label :タグを入力%><br />
+        <%=f.text_field :tag_list, value: @stories.tag_list.join(','), "data-role" => "tagsinput", class: "form-control" %>
+      </div>
+      <%=f.submit nil, class: 'btn btn-primary'%>
+    <%end%>
   </div>
-  <div class="form-group">
-    <%=f.label :tag_list%>
-    <%=f.text_field :tag_list, value: @stories.tag_list.join(','), class: "form-control" %>
-  </div>
-  <%=f.submit nil, class: 'btn btn-primary'%>
-<%end%>
+</div>
