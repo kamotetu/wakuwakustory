@@ -3,4 +3,19 @@
 <%@users.each do |user|%>
 <%=simple_format(user.profile_text)%>
 <%end%>
+<table>
+  <%@stories.each do |story|%>
+    <tr>
+      <td>
+        <%=story.title%>
+      </td>
+      <td>
+        <%=story.story%>
+      </td>
+      <td><%= render 'stories/tag_list', tag_list: story.tag_list %></td>
+
+    </tr>
+  <%end%>
+</table>
+     
 
