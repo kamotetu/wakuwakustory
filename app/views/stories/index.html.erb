@@ -12,7 +12,9 @@
       <td>
         <%=story.story%>
       </td>
-      <td><%= render 'stories/tag_list', tag_list: story.tag_list %></td>
+      <td>
+        <%= render 'stories/tag_list', tag_list: story.tag_list %>
+      </td>
 
     </tr>
   <%end%>
