@@ -16,10 +16,11 @@
   box-shadow: none;
   outline: none;
   background-color: transparent;
-  padding: 0 6px;
+  // padding: 0 6px;
+  padding: 10px 16px 8px;
   margin: 0;
-  width: auto;
-  max-width: inherit;
+  width: 50px;
+  // max-width: inherit;
 }
 .bootstrap-tagsinput.form-control input::-moz-placeholder {
   color: #777;
