@@ -54,4 +54,4 @@ production:
   username: root #本番環境のmysqlへ接続できるよう上記をこう書き換える
   # password: <%= ENV['WAKUWAKUSTORY_DATABASE_PASSWORD'] %> #デフォルト
   password: <%= ENV['DATABASE_PASSWORD'] %> #上記と同じように書き換え
-  socket: /var/lib/mysql/mysql.sock #追記
+  socket: /var/lib/mysql/mysql.sock 
