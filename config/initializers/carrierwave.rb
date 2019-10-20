@@ -17,8 +17,8 @@ CarrierWave.configure do |config|
 
   config.fog_directory  = 'kamotetu-bucket'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/kamotetu-bucket'
-else
+  else
   config.storage :file
   config.enable_processing = false if Rails.env.test?
-end
+  end
 end

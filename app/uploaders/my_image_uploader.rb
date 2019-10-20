@@ -2,12 +2,13 @@ class MyImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
 
-  include CarrierWave::MiniMagick #gem fog-aws導入のためコメントアウト
-  process resize_to_fit: [300, 300] #gem fog-aws導入のためコメントアウト
+  include CarrierWave::MiniMagick 
+  process resize_to_fit: [300, 300] 
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog
+
   if Rails.env.development?
     storage :file
   elsif Rails.env.test?
