@@ -3,5 +3,10 @@ Rails.application.routes.draw do
 
   root "stories#index"
   resources :stories
+  resources :users do
+    member do
+      get 'my_page_main'
+      
+    end
   
 end
