@@ -8,20 +8,20 @@
         <div class="field">
           <p class="hissu">必須</p>
           <%=f.label :タイトル, class: :story_new_explanation %><br />
-          <%=f.text_field :title, class: 'form-control', id: 'story_title_form'%>
+          <%=f.text_field :title, class: 'input_story_new_form' %>
         </div>
         <div class="form-group">
         <p class="ninni">任意</p>
-          <%=f.label :tag_list, "タグをカンマ区切りで入力" %><br />
-          <%=f.text_field :tag_list, limit: 3, value: @stories.tag_list.join(','), "data-role" => "tagsinput", class: "form-control" %>
+          <%=f.label :tag_list, "タグをカンマ(小文字)区切りで入力" %><br />
+          <%=f.text_field :tag_list, value: @stories.tag_list.join(','), "data-role" => "tagsinput", class: "form-control" %>
         </div>
         <div class="field">
           <p class="hissu">必須</p>
           <%=f.label :記事, class: :story_new_explanation %><br />
-          <%=f.text_area :story, rows: 5, class: 'form-control', id: 'task_description'%>
+          <%=f.text_area :story, rows: 20, class: 'input_story_new_form' %>
         </div>
         
-        <%=f.submit nil, class: 'btn btn-primary'%>
+        <%=f.submit "投稿する", class: 'btn btn-primary'%>
       <%end%>
     </div>
   </div>
