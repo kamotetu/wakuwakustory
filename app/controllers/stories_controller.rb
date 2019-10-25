@@ -24,7 +24,26 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find(params[:id])
     @comments = @story.comments.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+  end
 
+  def destroy
+    @story = Story.find(params[:id])
+    if @story.user_id == current_user.id
+      @story.destroy
+    end
+  end
+
+  def edit
+    @story = Story.find(params[:id])
+  end
+
+  def update
+    @story = Story.find(params[:id])
+    if @story.user_id == current_user.id
+      @story.update(story_params)
+    else
+      redirect_to edit_story_path
+    end
   end
 
   private

@@ -62,8 +62,16 @@
       background-color: rgb(121, 169, 240);
       color: rgb(31, 32, 20);
       border-radius: 10px;
-      margin-left: 120px;
+      margin-left: 175px;
       margin-top: 30px;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all  0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: rgb(132, 181, 255);
+      color: rgb(32, 32, 32);
     }
   }
 }
