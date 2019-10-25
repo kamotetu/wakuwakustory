@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
 
   root "stories#index"
-  resources :stories
+  resources :stories do
+    resources :comments, only: [:create]
+  end
   resources :users do
     member do
-      get 'my_page_main'
-      
+      get 'mypagemain'
     end
+  end
   
 end

@@ -1,0 +1,60 @@
+<div class="wrapper">
+  <div class="story_show_contener">
+    <div class="story_show_main_contener">
+      <div class="story_show_title_area">
+        <h1 class="story_show_title">
+          <%=@story.title%>
+        </h1>
+        
+      </div>
+      <div class="story_show_tag_list_area">
+      <p class="story_show_tag_list_title">タグ</p>
+        <div class="story_show_tag_list">
+          <%=render 'stories/tag_list', tag_list: @story.tag_list%>
+        </div>
+      </div>
+      <div class="story_user_nickname_area">
+        <h1 class="story_user_nickname">作成者：<%=@story.user.nickname%></h1>
+        <div class="story_user_my_image_icon_area">
+          <%=image_tag @story.user.my_image.to_s, class: :story_user_my_image_icon%>
+        </div>
+      </div>
+      <div class="story_show_story">
+        <%=simple_format(@story.story)%>
+      </div>
+      <h2 class="story_show_comment_title">
+        コメント
+      </h2>
+      <%if @comments%>
+        <%@comments.each do |comment|%>
+          <div class="story_show_comment_area">
+            <div class="show_user_image">
+              <%=image_tag "#{comment.user.my_image}", class: :story_comment_user_icon%>
+            </div>
+            <div class="story_comment_area">
+              <%=comment.user.nickname%>:
+            </div><br />
+            <div class="story_user_comment">
+              <%=simple_format(comment.comment)%>
+            </div>
+          </div>
+      <%end%>
+      <%=paginate(@comments)%>
+      <%end%>
+        <%if @story.user_id != current_user.id%>
+          <div class="story_show_comment_input_area">
+          <%=form_with url: story_comments_path(@story), local:true do |f|%>
+            <div>
+              <%=f.label :コメントを投稿する, class: :story_show_explanation%>
+            </div>
+            <div>
+              <%=f.text_area :comment, rows: 5, class: :story_show_text_area%>
+            </div>
+            <%=f.submit "投稿する", class: 'btn-primary'%>
+          <%end%>
+        <%else%>
+      </div>
+      <%end%>
+    </div>
+  </div>
+</div>
