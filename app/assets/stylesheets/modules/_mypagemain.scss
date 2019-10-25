@@ -22,7 +22,7 @@
   .mypagemain_main_contents {
     margin-left: 100px;
     padding-top: 10px;
-    width: 60%;
+    width: 50%;
     .mystory_titles_area {
       // display: flex;
       @include clearfix;
@@ -43,10 +43,10 @@
         border-radius: 2px;
       }
       .mystory_title_tags {
-        display: inline;
+        display: inline-block;
+        // float: left;
       }
       .mystory_upload_time {
-        display: inline;
         float: right;
       }
     }

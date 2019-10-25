@@ -45,6 +45,9 @@
             </div>
             <div class="story_comment_area">
               <%=comment.user.nickname%>:
+            <div class="story_comment_time">
+              <%=comment.created_at.strftime('%Y/%m/%d %H:%M')%>
+            </div>
             </div><br />
             <div class="story_user_comment">
               <%=simple_format(comment.comment)%>
