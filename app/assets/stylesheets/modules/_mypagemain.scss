@@ -1,3 +1,4 @@
+
 .mypagemain_title_area {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 30px;
@@ -7,9 +8,13 @@
     line-height: 5;
   }
 }
+.mypagemain_explanation {
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
 .mypagemain_container {
   position: relative;
-  min-height: 100%;
+  min-height: 200px;
   background: #f5f5f5;
   font-family: 'M PLUS Rounded 1c', sans-serif;
   // font-size: 14px;
@@ -17,9 +22,47 @@
   color: #333;
   .mypagemain_main_contents {
     margin-left: 100px;
+    padding-top: 10px;
     width: 60%;
     .mystory_titles_area {
-      width: 50%;
+      // display: flex;
+      @include clearfix;
+      margin-top: 15px;
+      border-bottom: 1px solid rgb(221, 221, 221);
+      .mystory_titles {
+        display: inline-block;
+        .mystory_title {
+          display: inline-block;
+        }
+      }
+      .label-primary {
+        margin-left: 10px;
+        margin-top: 2px;
+        padding-right: 1px;
+        padding-left: 1px;
+        background-color: rgb(202, 202, 202);
+        border-radius: 2px;
+      }
+      .mystory_title_tags {
+        display: inline;
+      }
+      .mystory_upload_time {
+        display: inline;
+        float: right;
+      }
+    }
+    .mypage_paginate {
+      padding: 0;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      @include clearfix;
+      .pagination {
+        margin: 10px;
+        .current {
+          color: red;
+        }
+      }
     }
   }
 }
