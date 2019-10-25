@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="mypagemain_title_area">
+    <h1 class="mypagemain_title">マイページ</h1>
+  </div>
+  <div class="mypagemain_container">
+    <div class="mypagemain_main_contents">
+      <%@stories.each do |story|%>
+        <div class="mystory_titles_area">
+          <%=link_to story_path(story), class: :mystory_titles do%>
+            <ul>
+              <li class="mystories_title">
+                <%=story.title%>
+              </li>
+            </ul>
+          <%end%>
+        </div>
+      <%end%>
+    </div>
+  </div>
+</div>

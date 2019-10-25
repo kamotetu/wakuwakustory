@@ -1,15 +1,20 @@
+作成中
 <h1>新着</h1>
-<table>
+
+<div>
   <%@stories.each do |story|%>
-    <tr>
-      <td>
+  <%=link_to story_path(story) do%>
+    <ul>
+      <li>
         <%=story.title%>
-      </td>
-      <td>
+      </li>
+      <li>
         <%= render 'stories/tag_list', tag_list: story.tag_list %>
-      </td>
-    </tr>
+      </li>
+    </ul>
+    <%end%>
   <%end%>
-</table>
+</div>
+
      
 

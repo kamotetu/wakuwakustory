@@ -1,8 +1,8 @@
 class StoriesController < ApplicationController
 
   def index
-    @users = User.all
-    @stories = Story.all
+    @users = User.order("created_at DESC").page(params[:page]).per(5)
+    @stories = Story.order("created_at DESC").page(params[:page]).per(5)
   end
 
   def new
@@ -19,6 +19,12 @@ class StoriesController < ApplicationController
     else
       render 'stories/new'
     end
+  end
+
+  def show
+    @story = Story.find(params[:id])
+    @comments = @story.comments.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+
   end
 
   private
