@@ -14,7 +14,6 @@
               <%= f.text_field :nickname, placeholder: "わくスト太郎", autofocus: true, class: "input_signup_form" %>
             </div>
 
-            
             <div class="field">
               <p class="hissu">必須</p>
               <%= f.label :Eメールアドレス, class: "signup_explanation" %><br />
@@ -58,7 +57,7 @@
             <div class="field">
               <p class="ninni">任意</p>
               <%= f.label :自己紹介, class: "signup_explanation" %><br />
-              <%= f.text_area :profile_text, placeholder: "こんにちは、わくスト太郎です", class: :input_signup_profile_form %>
+              <%= f.text_area :profile_text, placeholder: "こんにちは、わくスト太郎です", rows: 20, class: :input_signup_profile_form %>
             </div>
           </div>
           <div class="signup_action_box">

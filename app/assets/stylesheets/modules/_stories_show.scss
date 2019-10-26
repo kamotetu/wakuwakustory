@@ -65,6 +65,7 @@
         .story_user_my_image_icon {
           border-radius: 50%;
           width: 35px;
+          height: 35px;
           display: inline-block;
         }
       }
@@ -105,6 +106,7 @@
       .story_comment_user_icon {
         border-radius: 50%;
         width: 35px;
+        height: 35px;
         display: inline-block;
       }
     }
@@ -119,6 +121,7 @@
   .story_show_comment_input_area {
     @include clearfix;
     margin-top: 20px;
+    margin-bottom: 30px;
     .story_show_explanation {
       font-family: 'M PLUS Rounded 1c', sans-serif;
     }
