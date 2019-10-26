@@ -24,5 +24,27 @@
         <%=paginate(@stories)%>
       </div>
     </div>
+    <div class="mypagemain_side_contents">
+      <div class="side_content_top">
+        <%=link_to root_path do%>
+          トップページ
+        <%end%>
+      </div>
+      <div class="side_content">
+        <%=link_to new_story_path do%>
+          投稿する
+        <%end%>
+      </div>
+      <div class="side_content">
+        <%=link_to edit_user_registration_path do%>
+          プロフィールを編集する
+        <%end%>
+      </div>
+      <div class="side_content">
+        <%=link_to destroy_user_session_path, method: :delete, data: {confirm: "削除しますか？"} do%>
+          ログアウト
+        <%end%>
+      </div>
+    </div>
   </div>
 </div>
