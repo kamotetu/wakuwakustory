@@ -45,10 +45,15 @@ class StoriesController < ApplicationController
     end
   end
 
+  def showblog
+
+  end
+
   private
   
   def story_params
     params.require(:story).permit(
+      :genre,
       :title, 
       :story, 
       :tag_list) 
