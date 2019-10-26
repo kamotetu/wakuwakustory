@@ -1,1 +1,30 @@
-hello
+
+<div class="wrapper">
+  
+  <h1 class="mypagemain_explanation">新着一覧：ブログ</h1>
+  <div class="mypagemain_container">
+    <div class="mypagemain_main_contents">
+      <%@stories.each do |story|%>
+        <div class="mystory_titles_area">
+          <%=link_to story_path(story), class: :mystory_titles do%>
+            <div class="mystory_title">
+            ○　<%=story.title%>
+            </div>
+          <%end%>
+          <div class="mystory_title_tags">
+            <%=render 'shared/mypage_tag_list', tag_list: story.tag_list%>
+          </div>
+          <div class="mystory_upload_time">
+            <%=story.created_at.strftime('%Y/%m/%d %H:%M')%>
+          </div>
+        </div>
+      <%end%>
+      <div class="mypage_paginate">
+        <%=paginate(@stories)%>
+      </div>
+    </div>
+  </div>
+</div>
+     <%@stories.each do |story|%>
+<%=story.title%>
+<%end%>
