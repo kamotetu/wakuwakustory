@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   root "stories#index"
   resources :stories do
+    member do
+      get 'showblog'
+    end
     resources :comments, only: [:create]
   end
   resources :users do
