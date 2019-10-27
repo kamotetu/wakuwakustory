@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div class="story_new_title_contents">
+    <h1 class="story_new_title_content">投稿を始める</h1>
+  </div>
+  <div class="story_new_container">
+    <div class="story_new_main_contents">
+      <%=form_with model: @maintitles, local:true do |f|%>
+      <div class="field">
+          <p class="hissu">必須</p>
+          <%=f.label :ジャンル, class: :story_new_explanation %><br />
+          <%=f.select :genre, Maintitle.genres.keys, {:prompt => "---"} %>
+        </div>
+        <div class="field">
+          <p class="hissu">必須</p>
+          <%=f.label :解説するタイトル, class: :story_new_explanation %><br />
+          <%=f.text_field :maintitle, class: 'input_story_new_form' %>
+        </div>
+        
+        <%=f.submit "登録する", class: 'btn btn-primary'%>
+      <%end%>
+    </div>
+  </div>
+</div>

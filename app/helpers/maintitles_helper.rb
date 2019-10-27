@@ -1,0 +1,2 @@
+module MaintitlesHelper
+end

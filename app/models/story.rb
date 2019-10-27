@@ -1,7 +1,8 @@
 class Story < ApplicationRecord
 
+  belongs_to :maintitle
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   
   has_many :tags, dependent: :destroy
 
