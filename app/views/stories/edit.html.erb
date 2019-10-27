@@ -8,7 +8,7 @@
         <div class="field">
           <p class="hissu">必須</p>
           <%=f.label :タイトル, class: :story_new_explanation %><br />
-          <%=f.text_field :title, class: 'input_story_new_form' %>
+          <%=f.text_field :title, class: 'input_story_new_form', value: @story.title %>
         </div>
         <div class="form-group">
         <p class="ninni">任意</p>
@@ -22,6 +22,7 @@
         </div>
         
         <%=f.submit "編集する", data: {confirm: "編集しますか？"}, class: 'btn btn-primary'%>
+        
       <%end%>
     </div>
   </div>

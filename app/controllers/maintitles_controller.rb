@@ -13,6 +13,29 @@ class MaintitlesController < ApplicationController
     end
   end
 
+  def edit
+    @maintitle = Maintitle.find(params[:id])
+  end
+
+  def update
+    @maintitle = Maintitle.find(params[:id])
+    if @maintitle.user_id == current_user.id
+      @maintitle.update(maintitle_params)
+      redirect_to mypagemain_user_path(current_user)
+    else
+      render 'maintitles/edit'
+    end
+  end
+
+  def destroy
+    @maintitle = Maintitle.find(params[:id])
+    if @maintitle.user_id == current_user.id  
+      @maintitle.destroy
+    else
+      
+    end
+  end
+
   private
   def maintitle_params
     params.require(:maintitle).permit(

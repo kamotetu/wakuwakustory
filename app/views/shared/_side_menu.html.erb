@@ -6,7 +6,12 @@
   </div>
   <div class="side_content">
     <%=link_to new_maintitle_path do%>
-      投稿する
+      新しく開設する
+    <%end%>
+  </div>
+  <div class="side_content">
+    <%=link_to establishment_user_path(current_user) do%>
+      開設一覧
     <%end%>
   </div>
   <div class="side_content">

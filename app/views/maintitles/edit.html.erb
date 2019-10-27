@@ -1,10 +1,10 @@
 <div class="wrapper">
   <div class="story_new_title_contents">
-    <h1 class="story_new_title_content">開設する</h1>
+    <h1 class="story_new_title_content">編集する</h1>
   </div>
   <div class="story_new_container">
     <div class="story_new_main_contents">
-      <%=form_with model: @maintitles, local:true do |f|%>
+      <%=form_with model: @maintitle, local:true do |f|%>
       <div class="field">
           <p class="hissu">必須</p>
           <%=f.label :ジャンル, class: :story_new_explanation %><br />
@@ -12,11 +12,11 @@
         </div>
         <div class="field">
           <p class="hissu">必須</p>
-          <%=f.label :解説するタイトル, class: :story_new_explanation %><br />
+          <%=f.label :開設するタイトル, class: :story_new_explanation %><br />
           <%=f.text_field :maintitle, class: 'input_story_new_form' %>
         </div>
         
-        <%=f.submit "登録する", class: 'btn btn-primary'%>
+        <%=f.submit "変更する", class: 'btn btn-primary'%>
       <%end%>
     </div>
   </div>

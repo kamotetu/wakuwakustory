@@ -14,6 +14,9 @@
         <div class="mypagemain_user_nickname">
           <%=@user.nickname%>
         </div>
+        <div class="mypagemain_user_profile">
+          <%=simple_format(@user.profile_text)%>
+        </div>
       </div>
       <div class="establishment_list_title">
         開設一覧
@@ -28,6 +31,7 @@
           <div class="mystory_title_genres">
             <%=maintitle.genre%>
           </div>
+          
           <div class="mystory_upload_time">
             <%=maintitle.created_at.strftime('%Y/%m/%d')%>
           </div>
@@ -35,6 +39,27 @@
       <%end%>
       <div class="mypage_paginate">
         <%=paginate(@maintitles)%>
+      </div>
+      <div class="mypage_article_list">
+        <%@stories.each do |story|%>
+        <div class="mystory_titles_area">
+          <%=link_to maintitle_story_path(@maintitle, story), class: :mystory_titles do%>
+            <div class="mystory_title">
+            ○　<%=maintitle.maintitle%>
+            </div>
+          <%end%>
+          <div class="mystory_title_genres">
+            <%=maintitle.genre%>
+          </div>
+          
+          <div class="mystory_upload_time">
+            <%=maintitle.created_at.strftime('%Y/%m/%d')%>
+          </div>
+        </div>
+      <%end%>
+      <div class="mypage_paginate">
+        <%=paginate(@maintitles)%>
+      </div>
       </div>
     </div>
     <%=render 'shared/side_menu'%>

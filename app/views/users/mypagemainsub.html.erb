@@ -2,9 +2,23 @@
   <div class="mypagemain_title_area">
     <h1 class="mypagemain_title"></h1>
   </div>
-  <h1 class="story_explanation">投稿一覧</h1>
+  <h1 class="story_explanation">
+    <%=@maintitle.maintitle%>　の投稿一覧
+  </h1>
   <div class="story_container">
     <div class="story_main_contents">
+      <div class="story_new_edit_area">
+        <div class="story_new_btn_area">
+          <%=link_to new_maintitle_story_path(@maintitle[:id]), class: :story_new_btn do%>
+            記事の投稿
+          <%end%>
+        </div>
+        <div class="story_edit_btn_area">
+          <%=link_to edit_maintitle_path(@maintitle[:id]), class: :story_edit_btn do%>
+            開設の編集、削除
+          <%end%>
+        </div>
+      </div>
       <%@stories.each do |story|%>
         <div class="story_titles_area">
           <%=link_to maintitle_story_path(@maintitle, story), class: :mystory_titles do%>
