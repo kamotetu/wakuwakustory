@@ -3,16 +3,19 @@ Rails.application.routes.draw do
 
   root "stories#index"
   resources :maintitles do
-  resources :stories do
-  end
-    member do
-      get 'showblog'
+    get 'mypagemainsub' => 'users#mypagemainsub'
+    resources :stories do
+      member do
+        get 'showblog'
+      end
+      resources :comments, only: [:create]
     end
-    resources :comments, only: [:create]
   end
   resources :users do
     member do
+    #   get 'mypagemainsub'
       get 'mypagemain'
+      get 'establishment'
     end
   end
   

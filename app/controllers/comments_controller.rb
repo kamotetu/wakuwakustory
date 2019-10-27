@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
+    binding.pry
     @comment = Comment.create(comment: comment_params[:comment], story_id: comment_params[:story_id], user_id: current_user.id)
     respond_to do |format|
       format.html { redirect_to story_path(params[:story_id])  }

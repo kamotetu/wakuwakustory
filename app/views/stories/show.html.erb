@@ -1,7 +1,6 @@
 <div class="wrapper">
   <div class="story_show_contener">
     <div class="story_show_main_contener">
-      ジャンル：　<%=@story.genre%>
       <div class="story_show_title_area">
         <h1 class="story_show_title">
           <%=@story.title%>
@@ -26,10 +25,10 @@
       <%if @story.user_id == current_user.id%>
         <div class="mystory_edit_delete_area">
           <div class="mystory_edit_delete">
-            <%=link_to edit_story_path, class: "mystory_edit_delete_btn" do%>
+            <%=link_to edit_maintitle_story_path, class: "mystory_edit_delete_btn" do%>
               編集する
             <%end%>
-            <%=link_to story_path, method: :delete, data: {confirm: "削除しますか？"}, class: "mystory_edit_delete_btn" do%>
+            <%=link_to maintitle_story_path, method: :delete, data: {confirm: "削除しますか？"}, class: "mystory_edit_delete_btn" do%>
               削除する
             <%end%>
           </div>
@@ -38,7 +37,7 @@
 
       <%if @story.user_id != current_user.id%>
         <div class="story_show_comment_input_area">
-          <%=form_with url: story_comments_path(@story), local:true, id: "new_comment" do |f|%>
+          <%=form_with model:[@maintitle, @story, @comments], local:true, id: "new_comment" do |f|%>
             <div>
               <%=f.label :コメントを投稿する, class: :story_show_explanation%>
             </div>

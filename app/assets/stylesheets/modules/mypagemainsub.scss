@@ -1,14 +1,4 @@
-
-// .mypagemain_title_area {
-//   font-family: 'M PLUS Rounded 1c', sans-serif;
-//   font-size: 30px;
-//   .mypagemain_title {
-//     font-weight: bold;
-//     text-align: center;
-//     margin-bottom: 10px;
-//   }
-// }
-.story_explanation {
+story_explanation {
   margin-left: 135px;
   margin-bottom: 20px;
 }
@@ -46,7 +36,6 @@
         margin-bottom: 5px;
         @include clearfix;
         .story_title_tags {
-          // display: inline-block;
           margin-left: 20px;
           @include clearfix;
           float: left;
@@ -58,9 +47,8 @@
           background-color: rgb(202, 202, 202);
           border-radius: 2px;
         }
-        .mystory_upload_time {
+        .story_upload_time {
           float: right;
-          // line-height: 5px;
         }
       }
     }
@@ -84,13 +72,9 @@
     width: 280px;
     margin-right: 120px;
     margin-top: 40px;
-    // padding: 10px;
-    // border: 1px solid rgb(179, 179, 179);
+    
     .side_content_top {
       padding: 10px;
-      // border-left: 1px solid rgb(179, 179, 179);
-      // border-right: 1px solid rgb(179, 179, 179);
-      // border-top: 1px solid rgb(179, 179, 179);
       border: 1px solid rgb(179, 179, 179);
     }
     .side_content {

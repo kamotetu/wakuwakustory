@@ -5,6 +5,7 @@
   .mypagemain_title {
     font-weight: bold;
     text-align: center;
+    margin-bottom: 10px;
   }
 }
 .mypagemain_explanation {
@@ -19,13 +20,40 @@
   // font-size: 14px;
   padding-bottom: 100px;
   color: #333;
+  @include clearfix;
   .mypagemain_main_contents {
-    margin-left: 100px;
     padding-top: 10px;
+    position: relative;
+    top: 0; left: 120px;
     width: 50%;
     float: left;
+    .mypagemain_user_profile_area {
+      width: 100%;
+      float: left;
+      margin-top: 15px;
+      .mypagemain_user_image_area {
+        background-color: #fff;
+        width: 100%;
+        height: 300px;
+        // position: relative;
+        .user_image_icon {
+          width: 300px;
+          height: 300px;
+          margin: auto;
+          .user_image {
+            width: 300px;
+            height: 300px;
+            margin: auto;
+          }
+        }
+      }
+      .mypagemain_user_nickname {
+        text-align: center;
+        font-size: 20px;
+        margin: 5px 0 10px 0;
+      }
+    }
     .mystory_titles_area {
-      // display: flex;
       @include clearfix;
       margin-top: 15px;
       border-bottom: 1px solid rgb(221, 221, 221);
@@ -43,8 +71,11 @@
         background-color: rgb(202, 202, 202);
         border-radius: 2px;
       }
-      .mystory_title_tags {
+      .mystory_title_genres {
         display: inline-block;
+        background-color: rgb(189, 189, 189);
+        border-radius: 5px;
+        padding: 0 3px 0 3px;
         // float: left;
       }
       .mystory_upload_time {
@@ -52,9 +83,9 @@
       }
     }
     .mypage_paginate {
-      padding: 0;
+      padding-top: 10px;
       width: 100%;
-      position: absolute;
+      // position: absolute;
       bottom: 0;
       @include clearfix;
       .pagination {
@@ -69,8 +100,8 @@
     float: right;
     background-color: #fff;
     width: 280px;
-    margin-right: 100px;
-    margin-top: 25px;
+    margin-right: 120px;
+    margin-top: 40px;
     // padding: 10px;
     // border: 1px solid rgb(179, 179, 179);
     .side_content_top {

@@ -4,7 +4,7 @@
   </div>
   <div class="story_new_container">
     <div class="story_new_main_contents">
-      <%=form_with model: @story, local:true do |f|%>
+      <%=form_with model: [@maintitle, @story], local:true do |f|%>
         <div class="field">
           <p class="hissu">必須</p>
           <%=f.label :タイトル, class: :story_new_explanation %><br />

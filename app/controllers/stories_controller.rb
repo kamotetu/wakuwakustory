@@ -5,12 +5,13 @@ class StoriesController < ApplicationController
   end
 
   def new
-    @stories = Story.new
+    @story = Story.new
     @maintitle = Maintitle.find(params[:maintitle_id])
   end
 
   def create
-    @story = current_user.stories.create(story_params)
+    @maintitle = Maintitle.find(params[:maintitle_id])
+    @story = @maintitle.stories.new(story_params)
     if @story.save
       redirect_to root_path
 
@@ -24,6 +25,7 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find(params[:id])
     @comments = @story.comments.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    @maintitle = Maintitle.find(params[:maintitle_id])
   end
 
   def destroy
@@ -35,6 +37,7 @@ class StoriesController < ApplicationController
 
   def edit
     @story = Story.find(params[:id])
+    @maintitle = Maintitle.find(params[:maintitle_id])
   end
 
   def update
@@ -54,10 +57,9 @@ class StoriesController < ApplicationController
   
   def story_params
     params.require(:story).permit(
-      :genre,
       :title, 
       :story, 
-      :tag_list) 
+      :tag_list).merge(user_id: current_user.id)
   end
 
 end

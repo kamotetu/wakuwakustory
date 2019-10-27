@@ -1,23 +1,10 @@
 <div class="wrapper">
   <div class="mypagemain_title_area">
-    <h1 class="mypagemain_title">マイページ</h1>
+    <h1 class="mypagemain_title"></h1>
   </div>
-  <%# <h1 class="mypagemain_explanation">開設一覧</h1> %>
+  <h1 class="mypagemain_explanation">開設一覧</h1>
   <div class="mypagemain_container">
     <div class="mypagemain_main_contents">
-      <div class="mypagemain_user_profile_area">
-        <div class="mypagemain_user_image_area">
-          <div class="user_image_icon">
-            <%=image_tag "#{@user.my_image.url}", class: :user_image%>
-          </div>
-        </div>
-        <div class="mypagemain_user_nickname">
-          <%=@user.nickname%>
-        </div>
-      </div>
-      <div class="establishment_list_title">
-        開設一覧
-      </div>
       <%@maintitles.each do |maintitle|%>
         <div class="mystory_titles_area">
           <%=link_to maintitle_mypagemainsub_path(maintitle), class: :mystory_titles do%>
