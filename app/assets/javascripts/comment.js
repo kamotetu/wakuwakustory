@@ -36,6 +36,7 @@ $(document).on('turbolinks:load', function() {
       $('.story_show_comment_content').prepend(html)
       $('.story_show_text_area').val('')
       $('.btn-primary').prop('disabled', false);
+      console.log(this);
     })
     .fail(function(){
       alert('error');
