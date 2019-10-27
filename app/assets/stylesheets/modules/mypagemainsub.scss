@@ -10,12 +10,37 @@ story_explanation {
   padding-bottom: 100px;
   color: #333;
   @include clearfix;
+  
   .story_main_contents {
     padding-top: 10px;
     position: relative;
     top: 0; left: 120px;
     width: 50%;
     float: left;
+    @include clearfix;
+    .story_new_edit_area {
+      display: block;
+      @include clearfix;
+      .story_new_btn_area {
+        height: 30px;
+        padding-top: 10px;
+        text-align: right;
+        .story_new_btn {
+          margin-top: 10px;
+          text-align: right;
+        }
+      }
+      .story_edit_btn_area {
+        height: 30px;
+        padding-top: 10px;
+        text-align: right;
+        .story_edit_btn {
+          margin-top: 10px;
+          text-align: right;
+
+        }
+      }
+    }
     .story_titles_area {
       @include clearfix;
       margin-top: 15px;

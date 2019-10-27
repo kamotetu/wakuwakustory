@@ -4,12 +4,15 @@
   height: 60px;
   @include clearfix;
   
-  .header_btn_left_content {
+  .header_btn_right_content {
     display: flex;
-    float: left;
+    float: right;
+    margin-right: 20px;
+    margin-left: 10px;
     .current_user_nickname {
       font-family: 'M PLUS Rounded 1c', sans-serif;
       display: inline-block;
+      margin: auto;
       
     }
     .header_my_image_area {

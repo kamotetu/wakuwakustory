@@ -42,6 +42,9 @@
         border-radius: 5px;
         padding: 0 2px 0 2px;
       }
+      .story_user_name {
+        float: right;
+      }
       .tags_and_time_area {
         margin-bottom: 5px;
         @include clearfix;
