@@ -6,6 +6,7 @@ class StoriesController < ApplicationController
 
   def new
     @stories = Story.new
+    @maintitle = Maintitle.find(params[:maintitle_id])
   end
 
   def create

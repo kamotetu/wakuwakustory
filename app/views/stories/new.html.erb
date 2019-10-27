@@ -4,12 +4,7 @@
   </div>
   <div class="story_new_container">
     <div class="story_new_main_contents">
-      <%=form_with model: @stories, local:true do |f|%>
-      <div class="field">
-          <p class="hissu">必須</p>
-          <%=f.label :ジャンル, class: :story_new_explanation %><br />
-          <%=f.select :genre, Story.genres.keys, {:prompt => "---"} %>
-        </div>
+      <%=form_with model: [@maintitle, @stories], local:true do |f|%>
         <div class="field">
           <p class="hissu">必須</p>
           <%=f.label :タイトル, class: :story_new_explanation %><br />

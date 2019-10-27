@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   root "stories#index"
+  resources :maintitles do
   resources :stories do
+  end
     member do
       get 'showblog'
     end
