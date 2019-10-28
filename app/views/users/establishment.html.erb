@@ -1,10 +1,8 @@
 <div class="wrapper">
   <div class="mypagemain_title_area">
-    <h1 class="mypagemain_title"></h1>
+    <h1 class="mypagemain_title"><%=@user.nickname%>さんの開設一覧</h1>
   </div>
-  <h1 class="mypagemain_explanation">
-    <%=@user.nickname%>さんの開設一覧
-  </h1>
+  
   <div class="mypagemain_container">
     <div class="mypagemain_main_contents">
       <%@maintitles.each do |maintitle|%>

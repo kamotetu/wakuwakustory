@@ -4,6 +4,11 @@
     
     <div class="header_btn_right_content">
       <ul class="right_content_btns">
+        <%=link_to root_path, class: "sign_btn" do%>
+          <li id="right_content_btn">
+            トップページ
+          </li>
+        <%end%>
         <%=link_to mypagemain_user_path(current_user), class: "sign_btn" do%>
           <li id="right_content_btn">
             マイページ

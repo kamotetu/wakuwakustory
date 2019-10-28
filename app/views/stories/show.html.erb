@@ -7,45 +7,73 @@
         </h1>
       </div>
 
-      <div class="story_show_tag_list_area">
-      <p class="story_show_tag_list_title">タグ</p>
-        <div class="story_show_tag_list">
-          <%=render 'stories/tag_list', tag_list: @story.tag_list%>
+      <div class="story_show_genre_tag_area">
+
+        <div class="story_show_maintitle_area">
+          <p class="story_show_maintitle_explanation">
+            掲載元：<%=@maintitle.maintitle%>
+          </p>
+          <div class="story_maintitle_genre">
+            <%=@maintitle.genre%>
+          </div>
+
         </div>
+
+        <div class="story_show_tag_list_area">
+          <p class="story_show_tag_list_title">
+            タグ
+          </p>
+          <div class="story_show_tag_list">
+            <%=render 'stories/tag_list', tag_list: @story.tag_list%>
+          </div>
+        </div>
+
       </div>
+
       <div class="story_user_nickname_area">
-        <h1 class="story_user_nickname">作成者：<%=@story.user.nickname%></h1>
+        
         <div class="story_user_my_image_icon_area">
           <%=image_tag @story.user.my_image.to_s, class: :story_user_my_image_icon%>
         </div>
+        <h1 class="story_user_nickname">
+          作成者：<%=@story.user.nickname%>
+        </h1>
+
       </div>
+
       <div class="story_show_story">
         <%=simple_format(@story.story)%>
       </div>
-      <%if @story.user_id == current_user.id%>
-        <div class="mystory_edit_delete_area">
-          <div class="mystory_edit_delete">
-            <%=link_to edit_maintitle_story_path, class: "mystory_edit_delete_btn" do%>
-              編集する
-            <%end%>
-            <%=link_to maintitle_story_path, method: :delete, data: {confirm: "削除しますか？"}, class: "mystory_edit_delete_btn" do%>
-              削除する
+      <%if user_signed_in?%>
+        <%if @story.user_id == current_user.id%>
+          <div class="mystory_edit_delete_area">
+            <div class="mystory_edit_delete">
+              <%=link_to edit_maintitle_story_path, class: "mystory_edit_delete_btn" do%>
+                編集する
+              <%end%>
+              <%=link_to maintitle_story_path, method: :delete, data: {confirm: "削除しますか？"}, class: "mystory_edit_delete_btn" do%>
+                削除する
+              <%end%>
+            </div>
+          </div>
+        <%end%>
+
+        <%if @story.user_id != current_user.id%>
+          <div class="story_show_comment_input_area">
+            <%=form_with model:[@maintitle, @story, @comment], local:true, id: "new_comment" do |f|%>
+              <div>
+                <%=f.label :コメントを投稿する, class: :story_show_explanation%>
+              </div>
+              <div>
+                <%=f.text_area :comment, rows: 5, class: :story_show_text_area, name: :comment%>
+              </div>
+              <%=f.submit "投稿する", class: 'btn-primary'%>
             <%end%>
           </div>
-        </div>
-      <%end%>
-
-      <%if @story.user_id != current_user.id%>
+        <%end%>
+      <%else%>
         <div class="story_show_comment_input_area">
-          <%=form_with model:[@maintitle, @story, @comments], local:true, id: "new_comment" do |f|%>
-            <div>
-              <%=f.label :コメントを投稿する, class: :story_show_explanation%>
-            </div>
-            <div>
-              <%=f.text_area :comment, rows: 5, class: :story_show_text_area%>
-            </div>
-            <%=f.submit "投稿する", class: 'btn-primary'%>
-          <%end%>
+          コメントを投稿する場合はログインしてください
         </div>
       <%end%>
 
