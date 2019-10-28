@@ -18,6 +18,9 @@ story_explanation {
     width: 50%;
     float: left;
     @include clearfix;
+    .story_user_nickname {
+      margin-left: 30px;
+    }
     .story_new_edit_area {
       display: block;
       @include clearfix;

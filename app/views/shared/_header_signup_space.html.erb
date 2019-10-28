@@ -1,7 +1,18 @@
 <div class="wrapper">
   <div class="btn_space">
   <%if user_signed_in?%>
-    
+    <div class="header_btn_left_content">
+      <p class="current_user_nickname">
+        <%=current_user.nickname%>
+      </p>
+      <div class="header_my_image_area">
+        <% if current_user.persisted? && current_user.my_image? %>
+          <%=image_tag current_user.my_image.to_s, class: :header_my_image_icon%>
+        <%else%>
+          <%=image_tag "no_avatar.png", class: :header_my_image_icon%>
+        <%end%>
+      </div>
+    </div>
     <div class="header_btn_right_content">
       <ul class="right_content_btns">
         <%=link_to root_path, class: "sign_btn" do%>
@@ -19,18 +30,7 @@
             ログアウト
           </li>
         <%end%>
-        <div class="header_btn_right_content">
-          <p class="current_user_nickname">
-            <%=current_user.nickname%>
-          </p>
-          <div class="header_my_image_area">
-            <% if current_user.persisted? && current_user.my_image? %>
-              <%=image_tag current_user.my_image.to_s, class: :header_my_image_icon%>
-            <%else%>
-              <%=image_tag "no_avatar.png", class: :header_my_image_icon%>
-            <%end%>
-          </div>
-        </div>
+        
       </ul>
     </div>
   <%else%>

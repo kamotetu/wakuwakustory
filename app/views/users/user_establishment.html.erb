@@ -7,7 +7,7 @@
     <div class="mypagemain_main_contents">
       <%@maintitles.each do |maintitle|%>
         <div class="mystory_titles_area">
-          <%=link_to maintitle_post_list_path(maintitle), class: :mystory_titles do%>
+          <%=link_to maintitle_mypagemainsub_path(maintitle), class: :mystory_titles do%>
             <div class="mystory_title">
             ○　<%=maintitle.maintitle%>
             </div>
@@ -24,14 +24,6 @@
         <%=paginate(@maintitles)%>
       </div>
     </div>
-    <%if user_signed_in?%>
-      <%if @user != current_user%>
-        <%=render 'shared/user_profile_side_menu'%>
-      <%elsif @user == current_user%>
-        <%=render 'shared/side_menu'%>
-      <%end%>
-    <%else%>
-      <%=render 'shared/user_profile_side_menu'%>
-    <%end%>
+    <%=render 'shared/side_menu'%>
   </div>
 </div>
