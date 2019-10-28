@@ -28,6 +28,7 @@ class StoriesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @story = Story.find(params[:id])
     @comments = @story.comments.includes(:user).order("created_at DESC").page(params[:page]).per(5)
     @maintitle = Maintitle.find(params[:maintitle_id])

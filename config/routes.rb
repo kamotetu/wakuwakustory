@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     #   get 'mypagemainsub'
       get 'mypagemain'
       get 'establishment'
+      get 'profile'
     end
   end
   

@@ -1,6 +1,8 @@
 <div class="wrapper">
   <div class="mypagemain_title_area">
-    <h1 class="mypagemain_title">マイページ</h1>
+    <h1 class="mypagemain_title">
+      <%=@user.nickname%>さんのプロフィール
+    </h1>
   </div>
   <%# <h1 class="mypagemain_explanation">開設一覧</h1> %>
   <div class="mypagemain_container">
@@ -65,6 +67,6 @@
       </div>
       </div>
     </div>
-    <%=render 'shared/side_menu'%>
+    <%=render 'shared/profile_side_menu'%>
   </div>
 </div>
