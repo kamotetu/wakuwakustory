@@ -11,7 +11,7 @@
 
         <div class="story_show_maintitle_area">
           <p class="story_show_maintitle_explanation">
-            掲載元：<%=@maintitle.maintitle%>
+            開設元：<%=@maintitle.maintitle%>
           </p>
           <div class="story_maintitle_genre">
             <%=@maintitle.genre%>
@@ -80,7 +80,7 @@
       <h2 class="story_show_comment_title">
         コメント
       </h2>
-      <div class="story_show_comment_content">
+      <div id="story_show_comment_content">
       <%# 非同期用の要素%>
       </div>
       <%if @comments%>
@@ -102,6 +102,11 @@
         <%end%>
         <%=paginate(@comments)%>
       <%end%>
+      <div class="return_top_page">
+        <%=link_to root_path do%>
+          トップページに戻る
+        <%end%>
+      </div>
     </div>
   </div>
 </div>

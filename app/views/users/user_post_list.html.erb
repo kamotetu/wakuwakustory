@@ -1,25 +1,17 @@
 <div class="wrapper">
   <div class="mypagemain_title_area">
-    <h1 class="mypagemain_title"><%=@maintitle.maintitle%>　の投稿一覧</h1>
+    <h1 class="mypagemain_title"><%=@user.nickname%>　の投稿一覧</h1>
   </div>
   
   <div class="story_container">
     <div class="story_main_contents">
-      <div class="story_new_edit_area">
-        <div class="story_new_btn_area">
-          <%=link_to new_maintitle_story_path(@maintitle[:id]), class: :story_new_btn do%>
-            記事の投稿
-          <%end%>
-        </div>
-        <div class="story_edit_btn_area">
-          <%=link_to edit_maintitle_path(@maintitle[:id]), class: :story_edit_btn do%>
-            開設の編集、削除
-          <%end%>
-        </div>
+      
+      <div class="story_user_nickname">
+        投稿者：　<%=@user.nickname%>
       </div>
       <%@stories.each do |story|%>
         <div class="story_titles_area">
-          <%=link_to maintitle_story_path(@maintitle, story), class: :mystory_titles do%>
+          <%=link_to maintitle_story_path(story.maintitle, story), class: :mystory_titles do%>
             <div class="story_title">
             ○　<%=story.title%>
             </div>
@@ -38,6 +30,14 @@
         <%=paginate(@stories)%>
       </div>
     </div>
-    <%=render 'shared/side_menu'%>
+    <%if user_signed_in?%>
+      <%if @user != current_user%>
+        <%=render 'shared/user_profile_side_menu'%>
+      <%elsif @user == current_user%>
+        <%=render 'shared/side_menu'%>
+      <%end%>
+    <%else%>
+      <%=render 'shared/user_profile_side_menu'%>
+    <%end%>
   </div>
 </div>

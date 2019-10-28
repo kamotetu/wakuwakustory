@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {   registrations: 'users/registrations',
+                                      sessions: 'users/sessions' }
 
   root "stories#index"
   resources :maintitles do
-    get 'mypagemainsub' => 'users#mypagemainsub'
+    get 'post_list' => 'users#post_list'
     resources :stories do
       member do
         get 'showblog'
@@ -16,7 +17,10 @@ Rails.application.routes.draw do
     #   get 'mypagemainsub'
       get 'mypagemain'
       get 'establishment'
+      get 'user_post_list'
+      get 'user_establishment'
       get 'profile'
+      get 'user_profile'
     end
   end
   

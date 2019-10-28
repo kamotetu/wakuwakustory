@@ -4,11 +4,11 @@
   height: 60px;
   @include clearfix;
   
-  .header_btn_right_content {
+  .header_btn_left_content {
     display: flex;
-    float: right;
+    float: left;
     margin-right: 20px;
-    margin-left: 10px;
+    margin-left: 20px;
     .current_user_nickname {
       font-family: 'M PLUS Rounded 1c', sans-serif;
       display: inline-block;

@@ -23,7 +23,6 @@ $(document).on('turbolinks:load', function() {
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
-    console.log(formData)
     $.ajax({
       url: url,
       type: "POST",
@@ -34,9 +33,10 @@ $(document).on('turbolinks:load', function() {
     })
     .done(function(data) {
       var html = buildHTML(data);
-      $('.story_show_comment_content').prepend(html)
+      $('#story_show_comment_content').prepend(html)
       $('.story_show_text_area').val('')
       $('.btn-primary').prop('disabled', false);
+      $("html,body").animate({scrollTop:$('#new_comment').offset().top});
     })
     .fail(function(){
       alert('error');
