@@ -1,0 +1,35 @@
+.genre_dropdwn_menu {
+  width: 100%;
+  @include clearfix;
+  margin-top: 5px;
+  padding: 0;
+  display: flex;
+  z-index: 1;
+  #genre_area {
+    width: 100px;
+    text-align: center;
+    .genre_icon:hover {
+      color: #fff;
+    }
+    ul {
+      background: rgb(255, 255, 255);
+      display: none;
+      min-width: 100px;
+      border-bottom: solid 1px rgb(211, 211, 211);
+      border-right: solid 1px rgb(211, 211, 211);
+      border-left: solid 1px rgb(211, 211, 211);
+      text-align: center;
+      li {
+        border-top: solid 1px rgb(211, 211, 211);
+        .dropdwn_genre_list {
+          color: rgb(84, 84, 84);
+          z-index: 1;
+        }
+      }
+      li:hover {
+        color: #fff;
+        background: rgb(191, 191, 191);
+      }
+    }
+  }
+}
