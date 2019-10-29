@@ -1,12 +1,11 @@
 class StoriesController < ApplicationController
-
+  
   def index
     @stories = Story.order("created_at DESC").page(params[:page]).per(5)
     @story = Story.order("created_at DESC").page(params[:page]).per(5)
     @story.each do |story|
       @maintitle = story.maintitle
     end
-    
   end
 
   def new

@@ -26,4 +26,9 @@ class ApplicationController < ActionController::Base
       "application"
     end
   end
+
+  # def tag_area
+  #   @tags =  
+  # end
+
 end

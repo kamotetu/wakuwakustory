@@ -1,31 +1,34 @@
 
 header {
-  text-align: center;
-  box-shadow: 2px 2px 2px 2px rgba(50, 50, 50, 0.2);
+  // text-align: left;
+  display: flex;
+  box-shadow: 2px 2px 1px 2px rgba(50, 50, 50, 0.1);
   background: rgb(110, 181, 247);
-  #headbox {
-    padding: 0;   
-    margin: 0;
-    #header_l {
-      float: none;
-      max-width: 100%;
-      box-sizing: border-box;
-      padding: 0;
-      .sitename {
-        font-size: 22px;
-        color: #fff;
-        line-height: 30px;
-        margin-bottom: 10px;
-        // background: orange;
-        @include clearfix;
-        .sitetitle {
-          color: gray;
-          .sitetitle_logo {
-            padding: 10px;
-            height:70px;  
-          }
-        }
+  position: relative;
+	height: 90px;
+  .sitename {
+    font-size: 22px;
+    color: #fff;
+    line-height: 30px;
+    margin-bottom: 10px;
+    display: inline-block;
+    .sitetitle {
+      color: gray;
+      .sitetitle_logo {
+        margin: 10px;
+        height: 70px;
+
       }
     }
+  }
+  .search_area {
+    display: inline-block;
+    // position: absolute;
+    bottom: 0;
+    // margin: 0 0 10px 135px;
+    font-size: 17px;
+    margin-left: 10px;
+    margin-top: 20px;
+    z-index: 1; 
   }
 }

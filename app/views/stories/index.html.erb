@@ -1,25 +1,35 @@
 
 <div class="wrapper">
   
-  <h1 class="story_explanation">新着一覧</h1>
   <div class="story_container">
+    
     <div class="story_main_contents">
+      <div class="new_article_list">
+        新着記事一覧
+      </div>
       <%@stories.each do |story|%>
-        <div class="story_titles_area">
+        <div class="index_story_titles_area">
           <%=link_to maintitle_story_path(@maintitle, story), class: :story_titles do %>
             <div class="story_title">
-            ○　<%=story.title%>
+              <%=story.title%>
             </div>
           <%end%>
-          <div class="story_genre">
-            <%if story.maintitle_id?%>
-              <%=story.maintitle.genre%>
-            <%end%>
-          </div>
+          
           <div class="story_user_name">
-            投稿者：<%=link_to profile_user_path(story.user.id) do%>
+            投稿者：<%=link_to profile_user_path(story.user.id), class: :index_nickname do%>
               <%=story.user.nickname%>
             <%end%>
+          </div>
+          <div class="story_maintitle_genre_area">
+            <div class="story_maintitle">
+              掲載元：<%=link_to "#", class: :index_maintitle do%>
+                <%=story.maintitle.maintitle%>
+              <%end%>
+
+            </div>
+            <div class="story_genre">
+              <%=story.maintitle.genre%>
+            </div>
           </div>
           <div class="tags_and_time_area">
             <div class="story_title_tags">
@@ -36,6 +46,7 @@
       </div>
     </div>
   </div>
+  
 </div>
      
 
