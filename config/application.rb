@@ -19,7 +19,5 @@ module Wakuwakustory
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
 
-    @tags = Tag.all
-    binding.pry
   end
 end

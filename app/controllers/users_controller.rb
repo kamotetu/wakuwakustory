@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def establishment #開設一覧
     @maintitles = Maintitle.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(10)
     @user = User.find(params[:id])
-    
+    @stories = Story.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(3)
   end
 
   def profile #未ログイン時、他のユーザープロフィール画面
@@ -33,15 +33,5 @@ class UsersController < ApplicationController
     @stories = Story.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(5)
   end
 
-  # def user_establishment
-  #   @maintitles = Maintitle.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(10)
-  #   @user = User.find(params[:id])
-  # end
-
-  # def user_profile
-  #   @user = User.find(params[:id])
-  #   @maintitles = Maintitle.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(5)
-  #   @stories = Story.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(5)
-  # end
-
+  
 end

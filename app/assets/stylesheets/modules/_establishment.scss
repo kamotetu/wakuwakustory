@@ -1,0 +1,157 @@
+
+.esta_title_area {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 30px;
+  .esta_title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+
+.esta_container {
+  position: relative;
+  min-height: 200px;
+  background: #f5f5f5;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  padding-bottom: 100px;
+  color: #333;
+  @include clearfix;
+  .esta_main_contents {
+    // padding-top: 10px;
+    position: relative;
+    top: 0; left: 120px;
+    width: 50%;
+    float: left;
+    width: 55%;
+    .new_esta_list {
+      margin-top: 20px;
+      margin-bottom: 25px;
+      font-size: 17px;
+    }
+    .esta_maintitles_list_area {
+      @include clearfix;
+      padding: 15px 5px 0 5px;
+      border-bottom: 1px solid rgb(221, 221, 221);
+      background-color: #fff;
+      color: gray;
+      border-bottom: 1px solid rgb(221, 221, 221);
+      .esta_maintitle_area {
+        .esta_maintitles {
+          display: inline-block;
+          margin-bottom: 3px;
+          border-bottom: 1px solid rgb(187, 187, 187);
+          .esta_maintitle {
+            display: inline-block;
+            color: rgb(70, 70, 70);
+          }
+        }
+        .esta_story_genre {
+          display: inline;
+          // background-color: rgb(58, 58, 58);
+          background: rgb(110, 181, 247);
+          border-radius: 5px;
+          padding: 0 2px 0 2px;
+          margin-left: 5px;
+          color: rgb(75, 75, 75);
+        }
+        .esta_maintitle_new_time {
+          float: right;
+        }
+      }
+      
+      
+      .mystory_title_genres {
+        display: inline-block;
+        // background-color: rgb(189, 189, 189);
+        background-color: rgb(193, 193, 255);
+        border-radius: 5px;
+        padding: 0 3px 0 3px;
+      }
+      
+      .esta_maintitle_genre_area {
+        margin-bottom: 3px;
+        float: left;
+        width: 100%;
+        .esta_maintitle_storys {
+          // float: left;
+          display: flex;
+          .esta_new_storys_title {
+
+          }
+          .esta_storys_list_area {
+            width: 89.7%;
+            .esta_storys_list_ul {
+              // float: left;
+              .esta_storys_list {
+                display: inline-block;
+                color: rgb(70, 70, 70);
+                width: 100%;
+                
+                .esta_story_list {
+                  display: inline-block;
+                  float: none;
+                  border-bottom: 1px solid rgb(187, 187, 187);
+                  color: rgb(70, 70, 70);
+                  margin-bottom: 3px;
+                  // width: 100%;
+                }
+                .esta_story_title_tags {
+                  display: inline-block;
+                  .label-primary {
+                    // margin-left: 13px;
+                    padding-right: 1px;
+                    padding-left: 1px;
+                    background-color: rgb(202, 202, 202);
+                    border-radius: 2px;
+                    color: rgb(70, 70, 70);
+                  }
+                }
+                .esta_time_area {
+                  float: right;
+                  .esta_story_upload_time {
+                    color: gray;
+
+                  }
+
+                }
+                
+              }
+            }
+
+          }
+          
+          
+          
+        }
+        .esta_story_more_link_area {
+          display: block;
+          .esta_story_more_link {
+            margin-left: 79px;
+            color: gray;
+          }
+        }
+      }
+      .esta_time_area {
+        float: right;
+        .esta_upload_time {
+            float: right;
+        }
+      }
+    }
+    .mypage_paginate {
+      padding-top: 10px;
+      width: 100%;
+      // position: absolute;
+      bottom: 0;
+      @include clearfix;
+      .pagination {
+        margin: 10px;
+        .current {
+          color: red;
+        }
+      }
+    }
+  }
+}

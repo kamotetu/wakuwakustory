@@ -3,6 +3,7 @@ Rails.application.routes.draw do
                                       sessions: 'users/sessions' }
 
   root "stories#index"
+  get 'blog' => 'genres#blog'
   resources :maintitles do
     get 'post_list' => 'users#post_list'
     resources :stories do

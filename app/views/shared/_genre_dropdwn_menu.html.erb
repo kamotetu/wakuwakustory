@@ -1,6 +1,6 @@
 <ul class="genre_dropdwn_menu">
   <li id="genre_area">
-    ジャンル
+    <%=fa_icon 'search'%>ジャンル
     <ul>
       <li>
         <%=link_to '#', class: :dropdwn_genre_list do%>
@@ -8,7 +8,7 @@
         <%end%>
       </li>
       <li>
-        <%=link_to '#', class: :dropdwn_genre_list do%>
+        <%=link_to blog_path, class: :dropdwn_genre_list do%>
           ブログ
         <%end%>
       </li>
