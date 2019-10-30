@@ -8,7 +8,7 @@
         <div class="mystory_titles_area">
           <%=link_to story_path(story), class: :mystory_titles do%>
             <div class="mystory_title">
-            ○　<%=story.title%>
+              <%=story.title%>
             </div>
           <%end%>
           <div class="mystory_title_tags">
@@ -25,6 +25,3 @@
     </div>
   </div>
 </div>
-     <%@stories.each do |story|%>
-<%=story.title%>
-<%end%>

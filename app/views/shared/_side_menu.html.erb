@@ -5,6 +5,11 @@
     <%end%>
   </div>
   <div class="side_content">
+    <%=link_to mypagemain_user_path(current_user) do%>
+      マイページ
+    <%end%>
+  </div>
+  <div class="side_content">
     <%=link_to new_maintitle_path do%>
       新しく開設する
     <%end%>

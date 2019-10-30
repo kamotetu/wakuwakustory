@@ -5,7 +5,8 @@
   .mypagemain_title {
     font-weight: bold;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
 }
 .mypagemain_explanation {
@@ -21,7 +22,7 @@
   color: #333;
   @include clearfix;
   .mypagemain_main_contents {
-    padding-top: 10px;
+    // padding-top: 10px;
     position: relative;
     top: 0; left: 120px;
     width: 50%;
@@ -29,7 +30,7 @@
     .mypagemain_user_profile_area {
       width: 100%;
       float: left;
-      margin-top: 30px;
+      margin-top: 80px;
       // background-color: #fff;
       .mypagemain_user_image_area {
         background-color: #fff;
@@ -63,7 +64,7 @@
     }
     .mystory_titles_area {
       @include clearfix;
-      margin-top: 15px;
+      margin-top: 20px;
       border-bottom: 1px solid rgb(221, 221, 221);
       .mystory_titles {
         display: inline-block;
