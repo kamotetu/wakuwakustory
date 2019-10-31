@@ -18,7 +18,7 @@
       </div>
       <%@stories.each do |story|%>
         <div class="index_story_titles_area">
-          タイトル：<%=link_to maintitle_story_path(@maintitle, story), class: :story_titles do %>
+          タイトル：<%=link_to maintitle_story_path(story.maintitle_id, story), class: :story_titles do %>
             <div class="story_title">
               <%=story.title%>
             </div>
@@ -31,7 +31,7 @@
           </div>
           <div class="story_maintitle_genre_area">
             <div class="story_maintitle">
-              掲載元　：<%=link_to "#", class: :index_maintitle do%>
+              掲載元　：<%=link_to maintitle_post_list_path(story.maintitle_id), class: :index_maintitle do%>
                 <%=story.maintitle.maintitle%>
               <%end%>
 
@@ -51,7 +51,7 @@
           </div>
         </div>
       <%end%>
-      <div class="mypage_paginate">
+      <div class="index_paginate">
         <%=paginate(@stories)%>
       </div>
     </div>

@@ -1,19 +1,29 @@
 .profile_side_contents {
   float: right;
-  background-color: #fff;
+  
   width: 280px;
   margin-right: 120px;
   margin-top: 80px;
   
   .side_content_top {
     padding: 10px;
-    
+    background-color: #fff;
     border: 1px solid rgb(179, 179, 179);
+    .side_menu_list {
+      color: rgb(75, 75, 75);
+    }
   }
   .side_content {
     padding: 10px;
     border-bottom: 1px solid rgb(179, 179, 179);
     border-left: 1px solid rgb(179, 179, 179);
     border-right: 1px solid rgb(179, 179, 179);
+    background-color: #fff;
+    .side_menu_list {
+      color: rgb(75, 75, 75);
+    }
   }
+}
+.side_content_signup_area {
+  margin-top: 10px;
 }

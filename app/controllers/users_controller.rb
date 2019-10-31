@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def user_post_list #未ログイン投稿一覧画
-    @stories = Story.where(user_id: params[:id]).page(params[:page]).per(5)
+    @stories = Story.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(5)
     @user = User.find(params[:id])
     @maintitles = Maintitle.where(user_id: params[:id])
   end

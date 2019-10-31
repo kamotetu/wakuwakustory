@@ -1,19 +1,31 @@
 <div class="profile_side_contents">
   
   <div class="side_content_top">
-    <%=link_to establishment_user_path(@user) do%>
+    <%=link_to establishment_user_path(@user), class: :side_menu_list do%>
       開設一覧
     <%end%>
   </div>
   <div class="side_content">
-    <%=link_to user_post_list_user_path(@user) do%>
+    <%=link_to user_post_list_user_path(@user), class: :side_menu_list do%>
       投稿一覧
     <%end%>
   </div>
-  <div class="side_content">
-    <%=link_to root_path do%>
-      トップページ
-    <%end%>
+  <div class="side_content_signup_area">
+    <div class="side_content_top">
+      <%=link_to new_user_registration_path, class: :side_menu_list do%>
+        新規登録
+      <%end%>
+    </div>
+    <div class="side_content">
+      <%=link_to new_user_session_path, class: :side_menu_list do%>
+        ログイン
+      <%end%>
+    </div>
+    <div class="side_content">
+      <%=link_to root_path, class: :side_menu_list do%>
+        トップページ
+      <%end%>
+    </div>
   </div>
   
 </div>

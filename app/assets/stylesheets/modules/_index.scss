@@ -112,40 +112,40 @@
         }
       }
     }
-    .mypage_paginate {
+    .index_paginate {
       padding: 0;
       width: 100%;
       // position: absolute;
       bottom: 0;
       @include clearfix;
       .pagination {
-        margin: 10px;
+        margin: 10px 10px 50px 10px;
         .current {
           color: red;
         }
       }
     }
   }
-  .mypagemain_side_contents {
-    float: right;
-    background-color: #fff;
-    width: 280px;
-    margin-right: 120px;
-    margin-top: 80px;
-    // padding: 10px;
-    // border: 1px solid rgb(179, 179, 179);
-    .side_content_top {
-      padding: 10px;
-      // border-left: 1px solid rgb(179, 179, 179);
-      // border-right: 1px solid rgb(179, 179, 179);
-      // border-top: 1px solid rgb(179, 179, 179);
-      border: 1px solid rgb(179, 179, 179);
-    }
-    .side_content {
-      padding: 10px;
-      border-bottom: 1px solid rgb(179, 179, 179);
-      border-left: 1px solid rgb(179, 179, 179);
-      border-right: 1px solid rgb(179, 179, 179);
-    }
-  }
+  // .mypagemain_side_contents {
+  //   float: right;
+  //   background-color: #fff;
+  //   width: 280px;
+  //   margin-right: 120px;
+  //   margin-top: 80px;
+  //   // padding: 10px;
+  //   // border: 1px solid rgb(179, 179, 179);
+  //   .side_content_top {
+  //     padding: 10px;
+  //     // border-left: 1px solid rgb(179, 179, 179);
+  //     // border-right: 1px solid rgb(179, 179, 179);
+  //     // border-top: 1px solid rgb(179, 179, 179);
+  //     border: 1px solid rgb(179, 179, 179);
+  //   }
+  //   .side_content {
+  //     padding: 10px;
+  //     border-bottom: 1px solid rgb(179, 179, 179);
+  //     border-left: 1px solid rgb(179, 179, 179);
+  //     border-right: 1px solid rgb(179, 179, 179);
+  //   }
+  // }
 }

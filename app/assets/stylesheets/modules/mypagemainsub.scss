@@ -1,4 +1,4 @@
-story_explanation {
+.story_explanation {
   margin-left: 135px;
   margin-bottom: 20px;
 }
@@ -94,22 +94,22 @@ story_explanation {
       }
     }
   }
-  .mypagemain_side_contents {
-    float: right;
-    background-color: #fff;
-    width: 280px;
-    margin-right: 120px;
-    margin-top: 40px;
+  // .mypagemain_side_contents {
+  //   float: right;
+  //   background-color: #fff;
+  //   width: 280px;
+  //   margin-right: 120px;
+  //   margin-top: 40px;
     
-    .side_content_top {
-      padding: 10px;
-      border: 1px solid rgb(179, 179, 179);
-    }
-    .side_content {
-      padding: 10px;
-      border-bottom: 1px solid rgb(179, 179, 179);
-      border-left: 1px solid rgb(179, 179, 179);
-      border-right: 1px solid rgb(179, 179, 179);
-    }
-  }
+  //   .side_content_top {
+  //     padding: 10px;
+  //     border: 1px solid rgb(179, 179, 179);
+  //   }
+  //   .side_content {
+  //     padding: 10px;
+  //     border-bottom: 1px solid rgb(179, 179, 179);
+  //     border-left: 1px solid rgb(179, 179, 179);
+  //     border-right: 1px solid rgb(179, 179, 179);
+  //   }
+  // }
 }

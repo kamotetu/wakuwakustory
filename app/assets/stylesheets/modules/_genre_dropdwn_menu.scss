@@ -5,6 +5,7 @@
   padding: 0;
   display: flex;
   z-index: 1;
+  position: absolute;
   #genre_area {
     width: 100px;
     text-align: center;
@@ -19,6 +20,8 @@
       border-right: solid 1px rgb(211, 211, 211);
       border-left: solid 1px rgb(211, 211, 211);
       text-align: center;
+      position: relative;
+      margin-top: 5px;
       li {
         border-top: solid 1px rgb(211, 211, 211);
         .dropdwn_genre_list {
