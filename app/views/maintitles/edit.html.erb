@@ -1,9 +1,9 @@
 <div class="wrapper">
-  <div class="story_new_title_contents">
-    <h1 class="story_new_title_content">編集する</h1>
+  <div class="maintitle_new_title_contents">
+    <h1 class="maintitle_new_title_content">編集する</h1>
   </div>
-  <div class="story_new_container">
-    <div class="story_new_main_contents">
+  <div class="maintitle_new_container">
+    <div class="maintitle_new_main_contents">
       <%=form_with model: @maintitle, local:true do |f|%>
       <div class="field">
           <p class="hissu">必須</p>
@@ -14,6 +14,11 @@
           <p class="hissu">必須</p>
           <%=f.label :開設するタイトル, class: :story_new_explanation %><br />
           <%=f.text_field :maintitle, class: 'input_story_new_form' %>
+        </div>
+        <div class="field">
+          <p class="ninni">任意</p>
+          <%=f.label :説明, class: :story_new_explanation %><br />
+          <%=f.text_area :explanation, rows: 15, class: 'input_story_new_form' %>
         </div>
         
         <%=f.submit "変更する", class: 'btn btn-primary'%>

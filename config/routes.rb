@@ -3,6 +3,10 @@ Rails.application.routes.draw do
                                       sessions: 'users/sessions' }
 
   root "stories#index"
+
+  get 'titleindex' => 'searches#titleindex'
+  get 'maintitleindex' => 'searches#maintitleindex'
+
   get 'novel' => 'genres#novel'
   get 'blog' => 'genres#blog'
   get 'share' => 'genres#share'
@@ -23,9 +27,7 @@ Rails.application.routes.draw do
       get 'mypagemain'
       get 'establishment'
       get 'user_post_list'
-      get 'user_establishment'
       get 'profile'
-      get 'user_profile'
     end
   end
   

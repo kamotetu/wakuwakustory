@@ -1,11 +1,11 @@
 .genre_dropdwn_menu {
-  width: 100%;
+  // width: 100%;
   @include clearfix;
   margin-top: 5px;
   padding: 0;
   display: flex;
   z-index: 1;
-  position: absolute;
+  // position: absolute;
   #genre_area {
     width: 100px;
     text-align: center;
