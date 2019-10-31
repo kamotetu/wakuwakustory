@@ -53,9 +53,6 @@ class StoriesController < ApplicationController
     end
   end
 
-  def showblog
-    @stories = Story.where(genre: "ブログ").page(params[:page]).per(5)
-  end
 
   private
   

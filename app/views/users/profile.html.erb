@@ -34,7 +34,7 @@
         <div class="mystory_titles_area">
           <%=link_to maintitle_post_list_path(maintitle), class: :mystory_titles do%>
             <div class="mystory_title">
-            ○　<%=maintitle.maintitle%>
+              <%=maintitle.maintitle%>
             </div>
           <%end%>
           <div class="mystory_title_genres">
@@ -58,7 +58,7 @@
             <%@maintitle = story.maintitle%>
             <%=link_to maintitle_story_path(@maintitle, story), class: :mystory_titles do%>
               <div class="mystory_title">
-              ○　<%=story.title%>
+                <%=story.title%>
               </div>
             <%end%>
             <div class="mystory_title_tags">

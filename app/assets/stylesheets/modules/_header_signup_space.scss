@@ -32,14 +32,42 @@
       }
     }
   }
-
-  .dropdwn_search_area {
-    float: left;
-    display: flex;
-    margin-top: 46px;
-    box-sizing: border-box;
-    // z-index: 1;
+  .header_seach_area {
+    display: inline-block;
+    .dropdwn_search_area {
+      float: left;
+      display: flex;
+      margin-top: 46px;
+      box-sizing: border-box;
+      // z-index: 1;
+    }
+    .title_search_area {
+      float: left;
+      display: flex;
+      margin-top: 51px;
+      box-sizing: border-box;
+      margin-left: 20px;
+      .title_search_form_area {
+        border: 1px solid grey;
+        border-radius: 2px;
+        width: 250px;
+        .title_search_form {
+          border: none;
+          width: 90%;
+        }
+        .title_search_btn {
+          float: right;
+          padding-top: 4px;
+          padding-bottom: 7px;
+          border: none;
+        }
+        .title_search_btn:hover {
+          background-color: gray;
+        }
+      }
+    }
   }
+  
   
   .header_btn_right_content {
     float: right;

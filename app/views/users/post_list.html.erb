@@ -56,9 +56,12 @@
           ジャンル：<%=@maintitle.genre%>
         </div>
       </div>
+        説明
       <div class="posli_maintitle_explanation_area">
         <%if @maintitle.explanation?%>
           <%=simple_format(@maintitle.explanation)%>
+        <%else%>
+          未登録
         <%end%>
       </div>
       <div class="posli_story_list_explanation_area">
