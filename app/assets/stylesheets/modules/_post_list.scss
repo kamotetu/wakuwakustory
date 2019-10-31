@@ -1,0 +1,177 @@
+.story_explanation {
+  margin-left: 135px;
+  margin-bottom: 20px;
+}
+.story_container {
+  position: relative;
+  min-height: 200px;
+  background: #f5f5f5;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  padding-bottom: 100px;
+  color: #333;
+  @include clearfix;
+  
+  .story_main_contents {
+    padding-top: 10px;
+    position: relative;
+    top: 0; left: 120px;
+    width: 50%;
+    float: left;
+    @include clearfix;
+    .posli_story_new_edit_area {
+      // height: 30px;
+      padding-top: 10px;
+      text-align: right;
+      .posli_story_new_btn_area {
+        .posli_story_new_btn {
+          border-bottom: 1px solid rgb(187, 187, 187);
+          color: rgb(70, 70, 70);
+        }
+      }
+      .posli_story_edit_btn_area {
+        margin-top: 3px;
+        .posli_story_edit_btn {
+          border-bottom: 1px solid rgb(187, 187, 187);
+          color: rgb(70, 70, 70);
+        }
+      }
+    }
+    .posli_story_user_time_genre_area {
+      margin-top: 10px;
+      .posli_user_nickname_image_area {
+        display: flex;
+        .posli_story_user_nickname {
+          margin-bottom: 10px;
+          display: inline-block;
+          margin-right: 10px;
+          margin-top: 7px;
+        }
+        .posli_story_user_image {
+          // display: flex;
+          .posli_story_user_image_icon {
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: inline-block;
+          }
+        }
+      }
+      
+      .posli_maintitle_time {
+        float: right;
+      }
+      .posli_maintitle_genre {
+        margin-bottom: 25px;
+        // line-height: 10px;
+      }
+    }
+
+    .posli_maintitle_explanation_area {
+      background-color: #fff;
+      margin-bottom: 25px;
+      border: 1px solid rgb(221, 221, 221);
+      border-radius: 5px;
+      padding: 10px;
+    }
+    .posli_story_list_explanation_area {
+      .posli_story_list_explanation {
+        padding: 10px;
+      }
+    }
+    
+
+    .story_new_edit_area {
+      display: block;
+      @include clearfix;
+      .story_new_btn_area {
+        height: 30px;
+        padding-top: 10px;
+        text-align: right;
+        .story_new_btn {
+          margin-top: 10px;
+          text-align: right;
+        }
+      }
+      .story_edit_btn_area {
+        height: 30px;
+        padding-top: 10px;
+        text-align: right;
+        .story_edit_btn {
+          margin-top: 10px;
+          text-align: right;
+
+        }
+      }
+    }
+    .posli_story_titles_area {
+      @include clearfix;
+      padding: 15px 5px 0 5px;
+      border-bottom: 1px solid rgb(221, 221, 221);
+      background-color: #fff;
+      color: gray;
+      border-bottom: 1px solid rgb(221, 221, 221);
+      .posli_mystory_titles {
+        display: inline-block;
+        margin-bottom: 3px;
+        border-bottom: 1px solid rgb(187, 187, 187);
+        .posli_story_title {
+          display: inline-block;
+          color: rgb(70, 70, 70);
+        }
+      }
+      
+      
+      .posli_tags_and_time_area {
+        margin-bottom: 5px;
+        @include clearfix;
+        .posli_story_title_tags {
+          // margin-left: 78px;
+          @include clearfix;
+          float: left;
+          .label-primary {
+            padding-right: 1px;
+            padding-left: 1px;
+            background-color: rgb(202, 202, 202);
+            border-radius: 2px;
+            color: rgb(70, 70, 70);
+          }
+        }
+        
+        .story_upload_time {
+          float: right;
+        }
+      }
+    }
+    .mypage_paginate {
+      padding: 0;
+      width: 100%;
+      // position: absolute;
+      bottom: 0;
+      @include clearfix;
+      .pagination {
+        margin: 10px;
+        .current {
+          color: red;
+        }
+      }
+    }
+  }
+  // .mypagemain_side_contents {
+  //   float: right;
+  //   background-color: #fff;
+  //   width: 280px;
+  //   margin-right: 120px;
+  //   margin-top: 80px;
+    
+  //   .side_content_top {
+  //     padding: 10px;
+  //     border: 1px solid rgb(179, 179, 179);
+  //   }
+  //   .side_content {
+  //     padding: 10px;
+  //     border-bottom: 1px solid rgb(179, 179, 179);
+  //     border-left: 1px solid rgb(179, 179, 179);
+  //     border-right: 1px solid rgb(179, 179, 179);
+  //   }
+  // }
+}

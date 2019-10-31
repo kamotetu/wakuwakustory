@@ -1,5 +1,17 @@
-<div class="mypagemain_side_contents">
+<div class="profile_side_contents">
+  
   <div class="side_content_top">
+    <%=link_to establishment_user_path(@user), class: :side_menu_list do%>
+      このユーザーの開設一覧
+    <%end%>
+  </div>
+  <div class="side_content">
+    <%=link_to user_post_list_user_path(@user), class: :side_menu_list do%>
+      このユーザーの投稿一覧
+    <%end%>
+  </div>
+  <div class="side_content_signup_area">
+    <div class="side_content_top">
     <%=link_to root_path, class: :side_menu_list do%>
       トップページ
     <%end%>
@@ -34,4 +46,6 @@
       ログアウト
     <%end%>
   </div>
+  </div>
+  
 </div>

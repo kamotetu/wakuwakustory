@@ -1,20 +1,20 @@
 <div class="wrapper">
   <div class="mypagemain_title_area">
-    <h1 class="mypagemain_title"><%=@maintitle.maintitle%>　の投稿一覧</h1>
+    <h1 class="mypagemain_title"><%=@maintitle.maintitle%>の投稿記事一覧</h1>
   </div>
   
   <div class="story_container">
     <div class="story_main_contents">
       <%if user_signed_in?%>
         <%if @user == current_user%>
-          <div class="story_new_edit_area">
-            <div class="story_new_btn_area">
-              <%=link_to new_maintitle_story_path(@maintitle[:id]), class: :story_new_btn do%>
+          <div class="posli_story_new_edit_area">
+            <div class="posli_story_new_btn_area">
+              <%=link_to new_maintitle_story_path(@maintitle), class: :posli_story_new_btn do%>
                 記事の投稿
               <%end%>
             </div>
-            <div class="story_edit_btn_area">
-              <%=link_to edit_maintitle_path(@maintitle[:id]), class: :story_edit_btn do%>
+            <div class="posli_story_edit_btn_area">
+              <%=link_to edit_maintitle_path(@maintitle), class: :posli_story_edit_btn do%>
                 開設の編集、削除
               <%end%>
             </div>
@@ -39,19 +39,43 @@
             </div>
           </div>
       <%end%>
-      <div class="story_user_nickname">
-        投稿者：　<%=@user.nickname%>
+      
+      <div class="posli_story_user_time_genre_area">
+        <div class="posli_user_nickname_image_area">
+          <div class="posli_story_user_nickname">
+            作成者：　<%=@user.nickname%>
+          </div>
+          <div class="posli_story_user_image">
+            <%=image_tag @user.my_image.to_s, class: :posli_story_user_image_icon%>
+          </div>
+        </div>
+        <div class="posli_maintitle_time">
+          開設日：　<%=@maintitle.created_at.strftime('%Y/%m/%d')%>
+        </div>
+        <div class="posli_maintitle_genre">
+          ジャンル：<%=@maintitle.genre%>
+        </div>
+      </div>
+      <div class="posli_maintitle_explanation_area">
+        <%if @maintitle.explanation?%>
+          <%=simple_format(@maintitle.explanation)%>
+        <%end%>
+      </div>
+      <div class="posli_story_list_explanation_area">
+        <h1 class="posli_story_list_explanation">
+          投稿記事一覧
+        </h1>
       </div>
       <%@stories.each do |story|%>
-        <div class="story_titles_area">
-          <%=link_to maintitle_story_path(@maintitle, story), class: :mystory_titles do%>
-            <div class="story_title">
-            ○　<%=story.title%>
+        <div class="posli_story_titles_area">
+          タイトル：<%=link_to maintitle_story_path(@maintitle, story), class: :posli_mystory_titles do%>
+            <div class="posli_story_title">
+              <%=story.title%>
             </div>
           <%end%>
-          <div class="tags_and_time_area">
-            <div class="story_title_tags">
-              <%=render 'shared/mypage_tag_list', tag_list: story.tag_list%>
+          <div class="posli_tags_and_time_area">
+            <div class="posli_story_title_tags">
+              タグ　　：<%=render 'shared/mypage_tag_list', tag_list: story.tag_list%>
             </div>
             <div class="story_upload_time">
               <%=story.created_at.strftime('%Y/%m/%d %H:%M')%>
@@ -65,7 +89,7 @@
     </div>
     <%if user_signed_in?%>
       <%if @user != current_user%>
-        <%=render 'shared/user_profile_side_menu'%>
+        <%=render 'shared/not_current_side_menu'%>
       <%elsif @user == current_user%>
         <%=render 'shared/side_menu'%>
       <%end%>

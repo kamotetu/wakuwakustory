@@ -3,9 +3,7 @@ class StoriesController < ApplicationController
   def index
     @stories = Story.order("created_at DESC").page(params[:page]).per(5)
     @story = Story.order("created_at DESC").page(params[:page]).per(5)
-    @story.each do |story|
-      @maintitle = story.maintitle
-    end
+    
   end
 
   def new
@@ -31,6 +29,7 @@ class StoriesController < ApplicationController
     @story = Story.find(params[:id])
     @comments = @story.comments.includes(:user).order("created_at DESC").page(params[:page]).per(5)
     @maintitle = Maintitle.find(params[:maintitle_id])
+    @user = User.find(@story.user_id)
   end
 
   def destroy

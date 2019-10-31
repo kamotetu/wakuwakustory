@@ -3,7 +3,11 @@ Rails.application.routes.draw do
                                       sessions: 'users/sessions' }
 
   root "stories#index"
+  get 'novel' => 'genres#novel'
   get 'blog' => 'genres#blog'
+  get 'share' => 'genres#share'
+  get 'essay' => 'genres#essay'
+  get 'columu' => 'genres#columu'
   resources :maintitles do
     get 'post_list' => 'users#post_list'
     resources :stories do

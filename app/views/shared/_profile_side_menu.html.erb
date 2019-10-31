@@ -1,17 +1,17 @@
 <div class="profile_side_contents">
   
   <div class="side_content_top">
-    <%=link_to root_path do%>
+    <%=link_to root_path, class: :side_menu_list do%>
       トップページ
     <%end%>
   </div>
   <div class="side_content">
-    <%=link_to new_user_registration_path do%>
+    <%=link_to new_user_registration_path, class: :side_menu_list do%>
       新規登録
     <%end%>
   </div>
   <div class="side_content">
-    <%=link_to new_user_session_path do%>
+    <%=link_to new_user_session_path, class: :side_menu_list do%>
       ログイン
     <%end%>
   </div>

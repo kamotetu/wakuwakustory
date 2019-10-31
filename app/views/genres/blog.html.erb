@@ -7,20 +7,20 @@
       </div>
       <%@stories.each do |story|%>
         <div class="index_story_titles_area">
-          <%=link_to "#", class: :story_titles do %>
+          <%=link_to maintitle_story_path(story.maintitle_id, story), class: :story_titles do %>
             <div class="story_title">
               <%=story.title%>
             </div>
           <%end%>
           
           <div class="story_user_name">
-            投稿者：<%=link_to "#", class: :index_nickname do%>
+            投稿者：<%=link_to profile_user_path(story.user_id), class: :index_nickname do%>
               <%=story.user.nickname%>
             <%end%>
           </div>
           <div class="story_maintitle_genre_area">
             <div class="story_maintitle">
-              掲載元：<%=link_to "#", class: :index_maintitle do%>
+              掲載元：<%=link_to maintitle_post_list_path(story.maintitle_id), class: :index_maintitle do%>
                 <%=story.maintitle.maintitle%>
               <%end%>
 
@@ -43,12 +43,11 @@
         <%=paginate(@stories)%>
       </div>
     </div>
+    
     <%if user_signed_in?%>
-      <%if @user != current_user%>
-        <%=render 'shared/user_profile_side_menu'%>
-      <%elsif @user == current_user%>
-        <%=render 'shared/side_menu'%>
-      <%end%>
+      
+      <%=render 'shared/side_menu'%>
+      
     <%else%>
       <%=render 'shared/profile_side_menu'%>
     <%end%>

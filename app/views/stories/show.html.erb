@@ -103,19 +103,19 @@
         <%=paginate(@comments)%>
       <%end%>
       <div class="return_top_page">
-        <%=link_to root_path do%>
+        <%=link_to root_path, class: :return_top_page_btn do%>
           トップページに戻る
         <%end%>
       </div>
     </div>
     <%if user_signed_in?%>
       <%if @user != current_user%>
-        <%=render 'shared/user_profile_side_menu'%>
+        <%=render 'shared/not_current_side_menu'%>
       <%elsif @user == current_user%>
         <%=render 'shared/side_menu'%>
       <%end%>
     <%else%>
-      <%=render 'shared/profile_side_menu'%>
+      <%=render 'shared/user_profile_side_menu'%>
     <%end%>
   </div>
 </div>
