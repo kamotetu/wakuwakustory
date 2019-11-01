@@ -73,7 +73,11 @@
         <%end%>
       <%else%>
         <div class="story_show_comment_input_area">
-          コメントを投稿する場合はログインしてください
+          コメントを投稿する場合は
+          <%=link_to new_user_session_path, class: :story_show_signup_btn do%>
+          ログイン
+          <%end%>
+          してください
         </div>
       <%end%>
 

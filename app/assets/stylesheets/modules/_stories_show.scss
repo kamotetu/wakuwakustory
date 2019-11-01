@@ -51,6 +51,7 @@
         border: 2px solid #3e515c;
         margin-top: 15px;
         @include clearfix;
+        background-color: #fff;
         .story_show_tag_list_title {
           float: left;
           border: 2px solid #3e515c;
@@ -58,8 +59,10 @@
           padding-right: 10px;
         }
         .story_show_tag_list {
-          display: flex;
-          flex-wrap: wrap;
+          // display: flex;
+          // flex-wrap: wrap;
+          margin-top: 2px;
+          display: inline-block;
           .label-primary {
             // margin-right: 8px;
             margin-left: 8px;
@@ -99,10 +102,11 @@
       }
     }
     .story_show_story {
-      min-height: 400px;
+      min-height: 300px;
       margin-bottom: 10px;
       border: 1px solid gray;
       padding: 10px;
+      background-color: #fff;
     }
     .mystory_edit_delete_area {
       // display: inline;
@@ -130,6 +134,7 @@
       @include clearfix;
       margin-top: 10px;
       border: 1px solid rgb(196, 196, 196);
+      background-color: #fff;
     }
     .show_user_image {
       float: left;
@@ -152,6 +157,10 @@
     @include clearfix;
     margin-top: 20px;
     margin-bottom: 30px;
+    .story_show_signup_btn {
+      color: rgb(75, 75, 75);
+      border-bottom: 1px solid rgb(187, 187, 187);
+    }
     .story_show_explanation {
       font-family: 'M PLUS Rounded 1c', sans-serif;
     }
