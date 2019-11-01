@@ -8,7 +8,7 @@
       <div class="new_article_list">
         記事一覧
       </div>
-      <%if @search != ""%>
+      <%if @stories.present?%>
         <%@stories.each do |story|%>
           <div class="index_story_titles_area">
             タイトル：<%=link_to maintitle_story_path(story.maintitle_id, story), class: :story_titles do %>
@@ -47,7 +47,7 @@
       <%else%>
         見つかりませんでした
       <%end%>
-      <%if @search != ""%>
+      <%if @stories.present?%>
         <div class="mypage_paginate">
           <%=paginate(@stories)%>
         </div>
@@ -56,7 +56,7 @@
     <%if user_signed_in?%>
       <%=render 'shared/side_menu'%>
     <%else%>
-      <%=render 'shared/user_profile_side_menu'%>
+      <%=render 'shared/profile_side_menu'%>
     <%end%>
   </div>
 </div>

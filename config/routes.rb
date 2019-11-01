@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'titleindex' => 'searches#titleindex'
   get 'maintitleindex' => 'searches#maintitleindex'
+  get 'genreindex' => 'searches#genreindex'
 
   get 'novel' => 'genres#novel'
   get 'blog' => 'genres#blog'

@@ -17,6 +17,5 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.permit(:comment, :story_id).merge(user_id: current_user.id)
-    # ).merge(story_id: [:story_id], user_id: current_user.id)
   end
 end

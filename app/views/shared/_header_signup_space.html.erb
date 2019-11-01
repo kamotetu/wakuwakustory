@@ -60,20 +60,23 @@
       <p class="current_user_nickname">
         こんにちはゲストさん
       </p>
+      <div class="header_my_image_area">
+        <%=image_tag "no_avatar.png", class: :header_my_image_icon%>
+      </div>
     </div>
-
-    <div class="dropdwn_search_area">
-      <%=render 'shared/genre_dropdwn_menu'%>
-    </div>
-    <div class="title_search_area">
-      <%=form_tag titleindex_path, method: :get, class: :title_search_form_area do %>
-        <%=text_field_tag :search, "", class: :title_search_form, placeholder: "タイトル" %>
-        <%=button_tag type: "submit", class: :title_search_btn do %>
-          <%=fa_icon 'search' %>
+    <div class="header_seach_area">
+      <div class="dropdwn_search_area">
+        <%=render 'shared/genre_dropdwn_menu'%>
+      </div>
+      <div class="title_search_area">
+        <%=form_tag titleindex_path, method: :get, class: :title_search_form_area do %>
+          <%=text_field_tag :search, "", class: :title_search_form, placeholder: "タイトル" %>
+          <%=button_tag type: "submit", class: :title_search_btn do %>
+            <%=fa_icon 'search' %>
+          <%end %>
         <%end %>
-      <%end %>
-    </div>
-    <div class="title_search_area">
+      </div>
+      <div class="title_search_area">
         <%=form_tag maintitleindex_path, method: :get, class: :title_search_form_area do %>
           <%=text_field_tag :search, "", class: :title_search_form, placeholder: '開設名から検索' %>
           <%=button_tag type: "submit", class: :title_search_btn do %>
@@ -81,7 +84,7 @@
           <%end %>
         <%end %>
       </div>
-
+    </div>
     <div class="header_btn_right_content">
       <ul class="right_content_btns"> 
         <%=link_to root_path, class: "sign_btn" do %>

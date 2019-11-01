@@ -3,27 +3,27 @@
     <%=fa_icon 'search'%>ジャンル
     <ul>
       <li>
-        <%=link_to novel_path, class: :dropdwn_genre_list do%>
+        <%=link_to genreindex_path(search: "小説"), class: :dropdwn_genre_list do%>
           小説
         <%end%>
       </li>
       <li>
-        <%=link_to blog_path, class: :dropdwn_genre_list do%>
+        <%=link_to genreindex_path(search: "ブログ"), class: :dropdwn_genre_list do%>
           ブログ
         <%end%>
       </li>
       <li>
-        <%=link_to share_path, class: :dropdwn_genre_list  do%>
+        <%=link_to genreindex_path(search: "情報共有"), class: :dropdwn_genre_list  do%>
           情報共有
         <%end%>
       </li>
       <li>
-        <%=link_to essay_path, class: :dropdwn_genre_list  do%>
+        <%=link_to genreindex_path(search: "エッセイ"), class: :dropdwn_genre_list  do%>
           エッセイ
         <%end%>
       </li>
       <li>
-        <%=link_to columu_path, class: :dropdwn_genre_list  do%>
+        <%=link_to genreindex_path(search: "コラム"), class: :dropdwn_genre_list  do%>
           コラム
         <%end%>
       </li>
