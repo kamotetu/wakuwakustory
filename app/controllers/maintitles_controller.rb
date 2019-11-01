@@ -1,4 +1,7 @@
 class MaintitlesController < ApplicationController
+  before_action :set_maintitle, only: [:edit,
+                                       :update,
+                                       :destroy]
 
   def new
     @maintitles = Maintitle.new
@@ -14,25 +17,26 @@ class MaintitlesController < ApplicationController
   end
 
   def edit
-    @maintitle = Maintitle.find(params[:id])
+    #set_maintitle
   end
 
   def update
-    @maintitle = Maintitle.find(params[:id])
+    #set_maintitle
     if @maintitle.user_id == current_user.id
       @maintitle.update(maintitle_params)
-      redirect_to mypagemain_user_path(current_user)
+      redirect_to maintitle_post_list_path(@maintitle)
     else
       render 'maintitles/edit'
     end
   end
 
   def destroy
-    @maintitle = Maintitle.find(params[:id])
+    #set_maintitle
     if @maintitle.user_id == current_user.id  
       @maintitle.destroy
+    
     else
-      
+      render 'maintitles/edit'
     end
   end
 
@@ -43,5 +47,9 @@ class MaintitlesController < ApplicationController
       :maintitle,
       :explanation
     ).merge(user_id: current_user.id)
+  end
+
+  def set_maintitle
+    @maintitle = Maintitle.find(params[:id])
   end
 end
