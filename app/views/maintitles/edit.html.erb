@@ -4,6 +4,11 @@
   </div>
   <div class="maintitle_new_container">
     <div class="maintitle_new_main_contents">
+      <div class="maintitle_delete_area">
+        <%=link_to maintitle_path, method: :delete, data: {confirm: "#{@maintitle.maintitle}を削除しますか？"}, class: :maintitle_delete_btn do%>
+          削除する
+        <%end%>
+      </div>
       <%=form_with model: @maintitle, local:true do |f|%>
       <div class="field">
           <p class="hissu">必須</p>

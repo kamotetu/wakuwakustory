@@ -8,23 +8,14 @@ Rails.application.routes.draw do
   get 'maintitleindex' => 'searches#maintitleindex'
   get 'genreindex' => 'searches#genreindex'
 
-  get 'novel' => 'genres#novel'
-  get 'blog' => 'genres#blog'
-  get 'share' => 'genres#share'
-  get 'essay' => 'genres#essay'
-  get 'columu' => 'genres#columu'
   resources :maintitles do
     get 'post_list' => 'users#post_list'
     resources :stories do
-      member do
-        get 'showblog'
-      end
       resources :comments, only: [:create]
     end
   end
   resources :users do
     member do
-    #   get 'mypagemainsub'
       get 'mypagemain'
       get 'establishment'
       get 'user_post_list'
