@@ -17,6 +17,16 @@
           <%=f.label :tag_list, "タグをカンマ(小文字)区切りで入力" %><br />
           <%=f.text_field :tag_list, value: @story.tag_list.join(','), "data-role" => "tagsinput", class: "form-control" %>
         </div>
+        <div class="form-group">
+          <p class="ninni">任意</p>
+          <%=f.label :画像アップロード, class: :story_new_explanation %><br />
+          <%=f.file_field :image, class: 'input_story_file_btn' %>
+        </div>
+        <div class="field form-group">
+          <p class="ninni">任意</p>
+          <%=f.label :画像の説明, class: :story_new_explanation %><br />
+          <%=f.text_field :image_explanation, class: 'input_story_new_form' %>
+        </div>
         <div class="field">
           <p class="hissu">必須</p>
           <%=f.label :記事, class: :story_new_explanation %><br />

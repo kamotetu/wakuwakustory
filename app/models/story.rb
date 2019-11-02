@@ -8,6 +8,8 @@ class Story < ApplicationRecord
 
   acts_as_taggable
 
+  mount_uploader :image, ImageUploader
+
   validates :title, presence: true
   validates :story, presence: true
 

@@ -4,6 +4,10 @@ class StoriesController < ApplicationController
                                        :create,
                                        :show,
                                        :edit]
+  before_action :set_story, only: [:show,
+                                   :destroy,
+                                   :edit,
+                                   :update]
 
   def index
     @stories = Story.includes([:user, :maintitle, tags: :taggings]).order("created_at DESC").page(params[:page]).per(5)
@@ -20,7 +24,7 @@ class StoriesController < ApplicationController
     #set_maintitle
     @story = @maintitle.stories.new(story_params)
     if @story.save
-      redirect_to maintitle_post_list_path(@maintitle)
+      redirect_to maintitle_story_path(@maintitle, @story)
 
       # flash[:success] = "記事を作成しました"
       # redirect_to articles_url
@@ -31,14 +35,14 @@ class StoriesController < ApplicationController
 
   def show
     #set_maintitle
+    #set_story
     @comment = Comment.new
-    @story = Story.find(params[:id])
     @comments = @story.comments.includes(:user).order("created_at DESC").page(params[:page]).per(5)
     @user = User.find(@story.user_id)
   end
 
   def destroy
-    @story = Story.find(params[:id])
+    #set_story
     if @story.user_id == current_user.id
       @story.destroy
     end
@@ -46,11 +50,11 @@ class StoriesController < ApplicationController
 
   def edit
     #set_maintitle
-    @story = Story.find(params[:id])
+    #set_story
   end
 
   def update
-    @story = Story.find(params[:id])
+    #set_story
     if @story.user_id == current_user.id
       @story.update(story_params)
     else
@@ -65,11 +69,17 @@ class StoriesController < ApplicationController
     params.require(:story).permit(
       :title, 
       :story, 
-      :tag_list).merge(user_id: current_user.id)
+      :tag_list,
+      :image,
+      :image_explanation).merge(user_id: current_user.id)
   end
 
   def set_maintitle
     @maintitle = Maintitle.find(params[:maintitle_id])
+  end
+
+  def set_story
+    @story = Story.find(params[:id])
   end
 
 end

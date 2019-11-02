@@ -27,7 +27,6 @@
             <%=render 'stories/tag_list', tag_list: @story.tag_list%>
           </div>
         </div>
-
       </div>
 
       <div class="story_user_nickname_area">
@@ -40,6 +39,16 @@
         </h1>
 
       </div>
+      <%if @story.image.present?%>
+        <div class="story_show_image_area">
+          <%=image_tag @story.image.to_s, class: :story_show_image%>
+        </div>
+      <%end%>
+      <%if @story.image_explanation.present?%>
+        <div class="story_show_image_explanation_area">
+          <%=simple_format(@story.image_explanation)%>
+        </div>
+      <%end%>
 
       <div class="story_show_story">
         <%=simple_format(@story.story)%>

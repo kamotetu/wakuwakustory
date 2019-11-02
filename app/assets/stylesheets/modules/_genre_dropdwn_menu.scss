@@ -9,11 +9,19 @@
   #genre_area {
     width: 100px;
     text-align: center;
-    border-bottom: 1px solid rgb(187, 187, 187);
+    // border-bottom: 1px solid rgb(187, 187, 187);
+    // position: relative;
+    // top: 0;
+    // bottom: 0;
+    // right: 0;
+    // left: 0;
+    
     .genre_icon:hover {
       color: #fff;
     }
     ul {
+      position: absolute;
+      
       background: rgb(255, 255, 255);
       display: none;
       min-width: 100px;
@@ -24,6 +32,7 @@
       position: relative;
       margin-top: 5px;
       li {
+        position: relative;
         border-top: solid 1px rgb(211, 211, 211);
         .dropdwn_genre_list {
           color: rgb(84, 84, 84);
