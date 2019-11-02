@@ -5,7 +5,7 @@ class UsersController < ApplicationController
                                   :profile]
 
   def post_list #投稿一覧
-    @stories = Story.where(maintitle_id: params[:maintitle_id]).page(params[:page]).per(5)
+    @stories = Story.where(maintitle_id: params[:maintitle_id]).order("created_at DESC").page(params[:page]).per(5)
     @maintitle = Maintitle.find(params[:maintitle_id])
     @user = @maintitle.user
     # @maintitles = Maintitle.where(user_id: current_user.id).page(params[:page]).per(5)

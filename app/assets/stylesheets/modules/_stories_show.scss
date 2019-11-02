@@ -31,6 +31,29 @@
         font-family: 'M PLUS Rounded 1c', sans-serif;
       }
     }
+    .story_show_image_area {
+      margin-top: 10px;
+      width: 100%;
+      height: 500px;
+      background-color: #fff;
+      position: relative;
+      .story_show_image {
+        width: auto;
+        height: 450px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom :0;
+        margin:  auto;
+      }
+    }
+    .story_show_image_explanation_area {
+      background-color: #fff;
+      color: gray;
+      padding: 1px 30px 20px 30px;
+      margin-bottom: 40px;
+    }
     .story_show_genre_tag_area {
       margin-top: 10px;
       .story_show_maintitle_area {
