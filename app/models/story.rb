@@ -8,5 +8,7 @@ class Story < ApplicationRecord
 
   acts_as_taggable
 
+  validates :title, presence: true
+  validates :story, presence: true
 
 end

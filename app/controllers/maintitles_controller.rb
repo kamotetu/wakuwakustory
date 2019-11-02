@@ -41,12 +41,12 @@ class MaintitlesController < ApplicationController
   end
 
   private
+
   def maintitle_params
     params.require(:maintitle).permit(
-      :genre,
       :maintitle,
-      :explanation
-    ).merge(user_id: current_user.id)
+      :genre,
+      :explanation).merge(user_id: current_user.id)
   end
 
   def set_maintitle

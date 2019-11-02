@@ -39,7 +39,7 @@ $(document).on('turbolinks:load', function() {
       $("html,body").animate({scrollTop:$('#new_comment').offset().top});
     })
     .fail(function(){
-      alert('error');
+      alert('コメントを入力してください');
       $('.btn-primary').prop('disabled', false);
     })
   })
