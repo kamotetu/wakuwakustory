@@ -8,66 +8,72 @@
       <div class="new_esta_list">
         開設一覧
       </div>
-      <%if @maintitles.present?%>
-        <%@maintitles.each do |maintitle|%>
-          <div class="esta_maintitles_list_area">
-            <div class="esta_maintitle_area">
-              開設名　：<%=link_to maintitle_post_list_path(maintitle), class: :esta_maintitles do %>
-                <div class="esta_maintitle">
-                  <%=maintitle.maintitle%>
+      <%if @search != ""%>
+        <%if @maintitles.present?%>
+          <%@maintitles.each do |maintitle|%>
+            <div class="esta_maintitles_list_area">
+              <div class="esta_maintitle_area">
+                開設名　：<%=link_to maintitle_post_list_path(maintitle), class: :esta_maintitles do %>
+                  <div class="esta_maintitle">
+                    <%=maintitle.maintitle%>
+                  </div>
+                <%end%>
+                <div class="esta_story_genre">
+                  <%=maintitle.genre%>
                 </div>
-              <%end%>
-              <div class="esta_story_genre">
-                <%=maintitle.genre%>
-              </div>
-              <div class="esta_maintitle_new_time">
-                開設日：<%=maintitle.created_at.strftime('%Y/%m/%d')%>
-              </div>
-            </div>
-            
-            <div class="esta_maintitle_genre_area">
-              <div class="esta_maintitle_storys">
-                <div class="esta_new_storys_title">
-                  新着記事：
+                <div class="esta_maintitle_new_time">
+                  開設日：<%=maintitle.created_at.strftime('%Y/%m/%d')%>
                 </div>
-                <div class="esta_storys_list_area">
-                <%maintitle.stories.first(5).reverse_each do |story|%>
-                  <%if story.title?%>
-                    <ul class="esta_storys_list_ul">
-                      <li class="esta_storys_list">
-                        <%=link_to maintitle_story_path(maintitle, story), class: :esta_story_list do %>
-                          <%=story.title%>
-                        <%end%>
-                        <div class="esta_story_title_tags">
-                          <%=render 'shared/mypage_tag_list', tag_list: story.tag_list%>
-                        </div>
-                        <div class="esta_time_area">
-                          <div class="esta_story_upload_time">
-                            <%=story.created_at.strftime('%Y/%m/%d %H:%M') %>
+              </div>
+              
+              <div class="esta_maintitle_genre_area">
+                <div class="esta_maintitle_storys">
+                  <div class="esta_new_storys_title">
+                    新着記事：
+                  </div>
+                  <div class="esta_storys_list_area">
+                  <%maintitle.stories.first(5).reverse_each do |story|%>
+                    <%if story.title?%>
+                      <ul class="esta_storys_list_ul">
+                        <li class="esta_storys_list">
+                          <%=link_to maintitle_story_path(maintitle, story), class: :esta_story_list do %>
+                            <%=story.title%>
+                          <%end%>
+                          <div class="esta_story_title_tags">
+                            <%=render 'shared/mypage_tag_list', tag_list: story.tag_list%>
                           </div>
-                        </div>
-                      </li>
-                    </ul>
+                          <div class="esta_time_area">
+                            <div class="esta_story_upload_time">
+                              <%=story.created_at.strftime('%Y/%m/%d %H:%M') %>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    <%end%>
                   <%end%>
-                <%end%>
+                  </div>
+                </div>
+                <div class="esta_story_more_link_area">
+                  <%=link_to  maintitle_post_list_path(maintitle), class: :esta_story_more_link do %>
+                    もっと見る
+                  <%end%>
                 </div>
               </div>
-              <div class="esta_story_more_link_area">
-                <%=link_to  maintitle_post_list_path(maintitle), class: :esta_story_more_link do %>
-                  もっと見る
-                <%end%>
-              </div>
+              
             </div>
-            
-          </div>
+          <%end%>
+        <%else%>
+          見つかりませんでした
         <%end%>
       <%else%>
         見つかりませんでした
       <%end%>
-      <%if @maintitles.present?%>
-        <div class="mypage_paginate">
-          <%=paginate(@maintitles)%>
-        </div>
+      <%if @search =! ""%>
+        <%if @maintitles.present?%>
+          <div class="mypage_paginate">
+            <%=paginate(@maintitles)%>
+          </div>
+        <%end%>
       <%end%>
     </div>
     <%if user_signed_in?%>
