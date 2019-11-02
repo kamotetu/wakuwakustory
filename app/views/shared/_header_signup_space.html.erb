@@ -78,7 +78,7 @@
       </div>
       <div class="title_search_area">
         <%=form_tag maintitleindex_path, method: :get, class: :title_search_form_area do %>
-          <%=text_field_tag :search, "", class: :title_search_form, placeholder: '開設名から検索' %>
+          <%=text_field_tag :search, "", class: :title_search_form, placeholder: '開設名' %>
           <%=button_tag type: "submit", class: :title_search_btn do %>
             <%=fa_icon 'search' %>
           <%end %>
