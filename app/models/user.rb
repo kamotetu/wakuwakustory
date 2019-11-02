@@ -8,5 +8,6 @@ class User < ApplicationRecord
   
   mount_uploader :my_image, MyImageUploader
 
+  validates :nickname, presence: true
 
 end
