@@ -52,6 +52,39 @@
         background-color: gray;
         color: white;
       }
+      .story_new_explanation {
+        .input_my_image_icon {
+          font-size: 30px;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+        .input_story_file_btn {
+          display: none;
+          
+        }
+        .story_new_image_delete_btn {
+
+        }
+      }
+      #story_new_image_delete_btn {
+        padding-top: 5px;
+      }
+    }
+    .story_file_view_area {
+      width: 300px;
+      height: 200px;
+      background-color: #fff;
+      position: relative;
+      .story_file_view_image {
+        height: 190px;
+        width: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
     }
     .btn-primary {
       display: block;

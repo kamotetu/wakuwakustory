@@ -19,12 +19,18 @@
         </div>
         <div class="form-group">
           <p class="ninni">任意</p>
-          <%=f.label :画像アップロード, class: :story_new_explanation %><br />
-          <%=f.file_field :image, class: 'input_story_file_btn' %>
+          <%=f.label :image, class: :story_new_explanation do%>画像アップロード<br />
+            <%=fa_icon "camera-retro", class: "input_my_image_icon" %>
+            <%=f.file_field :image, class: 'input_story_file_btn' %>👈クリックで画像アップロード（５MBまで）
+            <div class="story_file_view_area">
+              <%=image_tag "no_file2.jpeg", class: :story_file_view_image%>
+            </div>
+          <%end%>
+          <p><%=f.check_box :remove_image, id: :story_new_image_delete_btn%>　登録画像を削除</p>
         </div>
         <div class="field form-group">
           <p class="ninni">任意</p>
-          <%=f.label :画像の説明, class: :story_new_explanation %><br />
+          <%=f.label :画像の説明（画像がない場合反映されません）, class: :story_new_explanation %><br />
           <%=f.text_field :image_explanation, class: 'input_story_new_form' %>
         </div>
         <div class="field">
