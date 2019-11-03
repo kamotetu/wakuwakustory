@@ -3,7 +3,8 @@ class StoriesController < ApplicationController
   before_action :set_maintitle, only: [:new,
                                        :create,
                                        :show,
-                                       :edit]
+                                       :edit,
+                                       :update]
   before_action :set_story, only: [:show,
                                    :destroy,
                                    :edit,
@@ -57,8 +58,9 @@ class StoriesController < ApplicationController
     #set_story
     if @story.user_id == current_user.id
       @story.update(story_params)
+      redirect_to maintitle_story_path(@maintitle, @story)
     else
-      redirect_to edit_story_path
+      render 'stories/edit'
     end
   end
 
@@ -71,6 +73,7 @@ class StoriesController < ApplicationController
       :story, 
       :tag_list,
       :image,
+      :remove_image,
       :image_explanation).merge(user_id: current_user.id)
   end
 
