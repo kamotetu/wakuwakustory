@@ -19,7 +19,7 @@
           <p class="ninni">任意</p>
           <%=f.label :image, class: :story_new_explanation do%>画像アップロード<br />
             <%=fa_icon "camera-retro", class: "input_my_image_icon" %>
-            <%=f.file_field :image, class: 'input_story_file_btn' %>👈クリックで画像アップロード（５MBまで）
+            <%=f.file_field :image, class: 'input_story_file_btn' %>👈クリックで画像アップロード（５MBまで）<br />横向きに表示されても投稿時には縦になります
             <div class="story_file_view_area">
               <%if @story.image?%>
                 <%=image_tag @story.image.to_s, class: :story_file_view_image%>
