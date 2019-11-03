@@ -2,12 +2,15 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:user_post_list,
                                   :mypagemain,
                                   :establishment,
-                                  :profile]
+                                  :profile,
+                                  :likes,
+                                  :favorite_list]
 
   def post_list #投稿一覧
     @stories = Story.where(maintitle_id: params[:maintitle_id]).order("created_at DESC").page(params[:page]).per(5)
     @maintitle = Maintitle.find(params[:maintitle_id])
-    @user = @maintitle.user
+    @user_id = @maintitle.user_id
+    @user = User.find(@user_id)
     # @maintitles = Maintitle.where(user_id: current_user.id).page(params[:page]).per(5)
   end
 
@@ -35,6 +38,21 @@ class UsersController < ApplicationController
     @maintitles = Maintitle.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(5)
     @stories = Story.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(5)
   end
+
+  def favorite_list
+    @favorites = Favorite.where(user_id: @user.id)
+    @a = []
+    @favorites.each do |favorite|
+      p = favorite.maintitle_id
+      @a.push(p)
+    end
+    @maintitles = Maintitle.where(user_id: @a).order("created_at DESC").page(params[:page]).per(10)
+  end
+  # def likes #お気に入り機能
+  #   @favposts = @user.favposts.page(params[:page])
+  #   counts(@user)
+  # end
+
 
   private
 

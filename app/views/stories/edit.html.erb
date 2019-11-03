@@ -19,15 +19,18 @@
           <p class="ninni">任意</p>
           <%=f.label :image, class: :story_new_explanation do%>画像アップロード<br />
             <%=fa_icon "camera-retro", class: "input_my_image_icon" %>
-            <%=f.file_field :image, class: 'input_story_file_btn' %>👈クリックで画像アップロード（５MBまで）<br />横向きに表示されても投稿時には縦になります
-            <div class="story_file_view_area">
-              <%if @story.image?%>
-                <%=image_tag @story.image.to_s, class: :story_file_view_image%>
-              <%else%>
-                <%=image_tag "no_file2.jpeg", class: :story_file_view_image%>
-              <%end%>
-            </div>
+            <%=f.file_field :image, class: 'input_story_file_btn' %>
           <%end%>
+          <p class="input_story_file_explanation">
+            👈クリックで画像アップロード（５MBまで）<br />　　横向きに表示されても投稿時には縦になります
+          </p>
+          <div class="story_file_view_area">
+            <%if @story.image?%>
+              <%=image_tag @story.image.to_s, class: :story_file_view_image%>
+            <%else%>
+              <%=image_tag "no_file2.jpeg", class: :story_file_view_image%>
+            <%end%>
+          </div>
           <p><%=f.check_box :remove_image, id: :story_new_image_delete_btn%>　登録画像を削除</p>
         </div>
         

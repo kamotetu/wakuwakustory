@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_02_123653) do
+ActiveRecord::Schema.define(version: 2019_11_03_064437) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "comment"
@@ -20,14 +20,23 @@ ActiveRecord::Schema.define(version: 2019_11_02_123653) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "maintitle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["maintitle_id"], name: "index_favorites_on_maintitle_id"
+    t.index ["user_id", "maintitle_id"], name: "index_favorites_on_user_id_and_maintitle_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "maintitles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "maintitle"
-    t.integer "story_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "genre", null: false
-    t.bigint "user_id"
     t.text "explanation"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_maintitles_on_user_id"
   end
 
@@ -84,6 +93,8 @@ ActiveRecord::Schema.define(version: 2019_11_02_123653) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favorites", "maintitles"
+  add_foreign_key "favorites", "users"
   add_foreign_key "maintitles", "users"
   add_foreign_key "stories", "maintitles"
 end

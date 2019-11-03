@@ -19,9 +19,19 @@
               <%end%>
             </div>
           </div>
-        
+        <%else%>
+          <div class="favorite_area">
+            <% if !Favorite.exists?(user_id:current_user.id, maintitle_id: @maintitle.id) %>
+              <div class="like_area">
+                <%= link_to "お気に入り", maintitle_like_path(@maintitle),method: :post, class: :favorite_btn%>
+              </div>
+            <% else %>
+              <div class="unlike_area">
+                <%= link_to "お気に入り", maintitle_unlike_path(@maintitle), method: :delete, class: :favorite_btn %>
+              </div>
+            <%end%>
+          </div>
         <%end%>
-      
       <%end%>
       
       <div class="posli_story_user_time_genre_area">

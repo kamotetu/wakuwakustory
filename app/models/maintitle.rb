@@ -1,6 +1,7 @@
 class Maintitle < ApplicationRecord
   has_many :stories, dependent: :destroy
-  belongs_to :user
+  has_many :favorites
+  has_many :users, through: :favorites
 
   validates :maintitle,
             :genre, presence: true
