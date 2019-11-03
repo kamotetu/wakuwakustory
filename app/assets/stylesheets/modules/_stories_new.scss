@@ -59,14 +59,17 @@
           font-size: 30px;
           margin-top: 10px;
           cursor: pointer;
+          display: inline-block;
         }
         .input_story_file_btn {
           display: none;
-          
         }
         .story_new_image_delete_btn {
 
         }
+      }
+      .input_story_file_explanation {
+        display: inline;
       }
       #story_new_image_delete_btn {
         padding-top: 5px;

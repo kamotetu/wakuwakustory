@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :maintitles do
     get 'post_list' => 'users#post_list'
+    post 'like' => 'favorites#create'
+    delete 'unlike' => 'favorites#destroy'
     resources :stories do
       resources :comments, only: [:create]
     end
@@ -20,6 +22,8 @@ Rails.application.routes.draw do
       get 'establishment'
       get 'user_post_list'
       get 'profile'
+      get 'likes'
+      get 'favorite_list'
     end
   end
   

@@ -12,7 +12,7 @@ class StoriesController < ApplicationController
 
   def index
     @stories = Story.includes([:user, :maintitle, tags: :taggings]).order("created_at DESC").page(params[:page]).per(5)
-    # @story = Story.order("created_at DESC").page(params[:page]).per(5)
+    # @stories = Story.all.order("created_at DESC").page(params[:page]).per(5)
     
   end
 

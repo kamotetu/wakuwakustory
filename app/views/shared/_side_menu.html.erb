@@ -25,6 +25,11 @@
     <%end%>
   </div>
   <div class="side_content">
+    <%=link_to favorite_list_user_path(current_user), class: :side_menu_list do%>
+      お気に入り一覧
+    <%end%>
+  </div>
+  <div class="side_content">
     <%=link_to edit_user_registration_path, class: :side_menu_list do%>
       プロフィールを編集する
     <%end%>
