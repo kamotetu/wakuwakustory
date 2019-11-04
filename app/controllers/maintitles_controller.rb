@@ -4,7 +4,7 @@ class MaintitlesController < ApplicationController
                                        :destroy]
 
   def new
-    @maintitles = Maintitle.new
+    @maintitle = Maintitle.new
   end
 
   def create
