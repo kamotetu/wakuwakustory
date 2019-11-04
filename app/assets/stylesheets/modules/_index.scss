@@ -1,25 +1,40 @@
 .story_index_title_area {
+  display: block;
   font-family: 'Big Shoulders Text', cursive;
-  position: absolute;
+  // position: absolute;
   height: 424px;
-  margin: auto;
-  // background-image: image-url("index_image_3.jpg");
+  // margin: auto;
   background-size: cover;
   position: relative;
   @include clearfix; 
   color: #fff;
   .story_index_title {
-    text-align: center;
-    line-height: 400px;
+    
     opacity: 0.7;
     font-size: 30px;
+    display: inline-block;
+    position: absolute;
+    top: 45%;
+    left: 43%;
+    margin: auto;
+  }
+  .story_index_subtitle {
+    opacity: 0.8;
+    display: inline-block;
+    position: absolute;
+    top: 70%;
+    left: 34%;
+    margin: auto;
+    text-align: center;
+
   }
   .pakutaso {
     color: #fff;
     opacity: 0.7;
     font-size: 10px;
-    position: relative;
-    left: 88%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
 
