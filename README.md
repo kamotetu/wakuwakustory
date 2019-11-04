@@ -3,7 +3,8 @@
 # DB
 
 ## usersテーブル
-
+|Column|Type|Options|
+|------|----|-------|
 |nickname|string|null :false|
 |email|string|null :false|
 |my_image|string||
@@ -14,6 +15,8 @@
 - has_many :maintitles
 
 ## storiesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |title|string|null :false|
 |story|text|null :false|
 |user_id|integer|null :false, foreign_key: true|
@@ -28,6 +31,8 @@
 
 
 ## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
 |comment|string||
 |user_id|bigint|null :false, foreign_key: true|
 |story_id|bigint|null :false, foreign_key: true|
@@ -37,6 +42,8 @@
 - belongs_to :user
 
 ## maintiltesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |maintitle|string|null :false|
 |genre|integer|null :false|
 |explanation|text||
@@ -48,6 +55,8 @@
 - has_many :users, through: :favorites
 
 ## favoritesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |user_id|bigint|foregn_key: true|
 |maintitle_id|bigint|foregn_key: true|
 
