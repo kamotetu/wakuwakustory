@@ -68,9 +68,22 @@
 
 # Thank you for reading Readme!
 
-### このサービスはブログや、オリジナルの小説やエッセイなどを投稿して、シェアできるサービスです
+![wakusuto_main_image](https://user-images.githubusercontent.com/54009505/68096905-3b7dfb00-fef7-11e9-8d53-5dd484186aa5.png)
+
+ このサービスはブログや、オリジナルの小説やエッセイなど様々なジャンルを投稿して、シェアできるサービスです
 
 ## 使い方
+
+### ログイン、ログアウト
+
+### 検索機能
+
+![index_view](https://user-images.githubusercontent.com/54009505/68098615-f8288a00-ff00-11e9-941a-dddc1a603ad8.jpeg)
+
+ワードやジャンルから検索可能です
+
+
+
 
 
 
