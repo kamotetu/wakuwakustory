@@ -6,13 +6,11 @@
     <div class="mypagemain_main_contents">
       <div class="mypagemain_user_profile_area">
         <div class="mypagemain_user_image_area">
-          <%# <div class="user_image_icon"> %>
           <%if @user.my_image?%>
             <%=image_tag @user.my_image.to_s, class: :user_image%>
           <%else%>
             <%=image_tag "no_avatar.png", class: :user_image%>
           <%end%>
-          <%# </div> %>
         </div>
         <div class="mypagemain_user_nickname">
           <%=@user.nickname%>
