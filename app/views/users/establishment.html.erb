@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="esta_title_area">
-    <h1 class="esta_title"><%=@user.nickname%>さんの開設一覧</h1>
+    <h1 class="esta_title"><%=@user.nickname%>さんのタイトル一覧</h1>
   </div>
   
   <div class="esta_container">
@@ -11,13 +11,16 @@
       <%@maintitles.each do |maintitle|%>
         <div class="esta_maintitles_list_area">
           <div class="esta_maintitle_area">
-            開設名　：<%=link_to maintitle_post_list_path(maintitle), class: :esta_maintitles do %>
+            タイトル：<%=link_to maintitle_post_list_path(maintitle), class: :esta_maintitles do %>
               <div class="esta_maintitle">
                 <%=maintitle.maintitle%>
               </div>
             <%end%>
             <div class="esta_story_genre">
               <%=maintitle.genre%>
+            </div>
+            <div class="esta_maintitle_tags">
+              <%=render 'shared/mypage_tag_list', tag_list: maintitle.tag_list%>
             </div>
             <div class="esta_maintitle_new_time">
               開設日：<%=maintitle.created_at.strftime('%Y/%m/%d')%>

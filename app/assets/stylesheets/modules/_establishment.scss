@@ -47,6 +47,18 @@
             color: rgb(70, 70, 70);
           }
         }
+        .esta_maintitle_tags {
+          display: inline-block;
+          margin-left: 5px;
+          .label-primary {
+            // margin-left: 13px;
+            padding-right: 1px;
+            padding-left: 1px;
+            background-color: rgb(202, 202, 202);
+            border-radius: 2px;
+            color: rgb(70, 70, 70);
+          }
+        }
         .esta_story_genre {
           display: inline;
           // background-color: rgb(58, 58, 58);

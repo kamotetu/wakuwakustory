@@ -3,10 +3,12 @@ class Maintitle < ApplicationRecord
   has_many :favorites
   has_many :users, through: :favorites
 
+  acts_as_taggable
+
   validates :maintitle, presence: true
   validates :genre, presence: true
 
-  enum genre:{"小説": 1,"ブログ": 2, "情報発信": 3, "エッセイ": 4, "コラム": 5}
+  enum genre:{"青春": 1,"恋愛": 2, "時代,歴史": 3, "ホラー": 4, "ファンタジー": 5, "推理": 6, "ライトノベル": 7, "その他": 8}
 
   
 
