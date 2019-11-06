@@ -2,7 +2,7 @@
   
   <div class="side_content_top">
     <%=link_to establishment_user_path(@user), class: :side_menu_list do%>
-      このユーザーの開設一覧
+      このユーザーの小説一覧
     <%end%>
   </div>
   <div class="side_content">
@@ -21,31 +21,13 @@
       マイページ
     <%end%>
   </div>
-  <div class="side_content">
-    <%=link_to new_maintitle_path, class: :side_menu_list do%>
-      新しく開設する
-    <%end%>
-  </div>
-  <div class="side_content">
-    <%=link_to establishment_user_path(current_user), class: :side_menu_list do%>
-      開設一覧
-    <%end%>
-  </div>
-  <div class="side_content">
-    <%=link_to user_post_list_user_path(current_user), class: :side_menu_list do%>
-      投稿一覧
-    <%end%>
-  </div>
+  
   <div class="side_content">
     <%=link_to favorite_list_user_path(current_user), class: :side_menu_list do%>
-      お気に入り一覧
+      お気に入りタイトル一覧
     <%end%>
   </div>
-  <div class="side_content">
-    <%=link_to edit_user_registration_path, class: :side_menu_list do%>
-      プロフィールを編集する
-    <%end%>
-  </div>
+  
   <div class="side_content">
     <%=link_to destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}, class: :side_menu_list do%>
       ログアウト

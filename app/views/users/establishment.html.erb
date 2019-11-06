@@ -6,12 +6,12 @@
   <div class="esta_container">
     <div class="esta_main_contents">
       <div class="new_esta_list">
-        開設一覧
+        小説一覧
       </div>
       <%@maintitles.each do |maintitle|%>
         <div class="esta_maintitles_list_area">
           <div class="esta_maintitle_area">
-            タイトル：<%=link_to maintitle_post_list_path(maintitle), class: :esta_maintitles do %>
+            小説名　：<%=link_to maintitle_post_list_path(maintitle), class: :esta_maintitles do %>
               <div class="esta_maintitle">
                 <%=maintitle.maintitle%>
               </div>
@@ -30,7 +30,7 @@
           <div class="esta_maintitle_genre_area">
             <div class="esta_maintitle_storys">
               <div class="esta_new_storys_title">
-                新着記事：
+                タイトル：
               </div>
               <div class="esta_storys_list_area">
               <%maintitle.stories.first(5).reverse_each do |story|%>

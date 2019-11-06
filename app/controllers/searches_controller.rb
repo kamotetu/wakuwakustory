@@ -15,16 +15,22 @@ class SearchesController < ApplicationController
   end
 
   def genreindex
-    if @search == "小説"
+    if @search == "青春"
       @genre = 1
-    elsif @search == "ブログ"
+    elsif @search == "恋愛"
       @genre = 2
-    elsif @search == "情報共有"
+    elsif @search == "時代,歴史"
       @genre = 3
-    elsif @search == "エッセイ"
+    elsif @search == "ホラー"
       @genre = 4
-    elsif @search == "コラム"
+    elsif @search == "ファンタジー"
       @genre = 5
+    elsif @search == "推理"
+      @genre = 6
+    elsif @search == "ライトノベル"
+      @genre = 7
+    elsif @search == "その他"
+      @genre = 8
     end
     @maintitles = Maintitle.where(genre: @genre).order("created_at DESC").page(params[:page]).per(10)
   end

@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="maintitle_new_title_contents">
-    <h1 class="maintitle_new_title_content">編集する</h1>
+    <h1 class="maintitle_new_title_content"><%=@maintitle.maintitle%>を編集する</h1>
   </div>
   <div class="maintitle_new_container">
     <div class="maintitle_new_main_contents">
@@ -17,13 +17,36 @@
         </div>
         <div class="field">
           <p class="hissu">必須</p>
-          <%=f.label :開設するタイトル, class: :story_new_explanation %><br />
-          <%=f.text_field :maintitle, class: 'input_story_new_form' %>
+          <%=f.label :タイトル, class: :story_new_explanation %><br />
+          <%=f.text_area :maintitle, class: 'input_story_new_form' %>
+        </div>
+        <div class="form-group">
+          <p class="ninni">任意</p>
+          <%=f.label :tag_list, "タグをカンマ(小文字)区切りで入力" %><br />
+          <%=f.text_field :tag_list, value: @maintitle.tag_list.join(','), "data-role" => "tagsinput", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <p class="ninni">任意</p>
+          <%=f.label :cover, class: :story_new_explanation do%>表紙をアップロード<br />
+            <%=fa_icon "camera-retro", class: "input_my_image_icon" %>
+            <%=f.file_field :cover, class: 'input_story_file_btn' %>
+          <%end%>
+          <p class="input_story_file_explanation">
+            👈クリック
+          </p>
+          <div class="story_file_view_area">
+            <%if @maintitle.cover?%>
+              <%=image_tag @maintitle.cover.to_s, class: :story_file_view_image%>
+            <%else%>
+              <%=image_tag "no_image3.png", class: :story_file_view_image%>
+            <%end%>
+          </div>
+          <p><%=f.check_box :remove_cover, id: :story_new_image_delete_btn%>　登録画像を削除</p>
         </div>
         <div class="field">
           <p class="ninni">任意</p>
-          <%=f.label :説明, class: :story_new_explanation %><br />
-          <%=f.text_area :explanation, rows: 15, class: 'input_story_new_form' %>
+          <%=f.label :小説の説明, class: :story_new_explanation %><br />
+          <%=f.text_area :explanation, rows: 4, class: 'input_story_new_form' %>
         </div>
         
         <%=f.submit "変更する", class: 'btn btn-primary'%>

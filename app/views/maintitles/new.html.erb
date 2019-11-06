@@ -13,7 +13,7 @@
         <div class="field">
           <p class="hissu">必須</p>
           <%=f.label :タイトル, class: :story_new_explanation %><br />
-          <%=f.text_field :maintitle, class: 'input_story_new_form' %>
+          <%=f.text_area :maintitle, class: 'input_story_new_form' %>
         </div>
         <div class="form-group">
           <p class="ninni">任意</p>
@@ -27,8 +27,9 @@
             <%=f.file_field :cover, class: 'input_story_file_btn' %>
           <%end%>
           <p class="input_story_file_explanation">
-            👈クリック<br />　　横向きに表示されても投稿時には縦になります
+            👈クリック
           </p>
+          
           <div class="story_file_view_area">
             <%=image_tag "no_image3.png", class: :story_file_view_image%>
           </div>
@@ -36,8 +37,8 @@
         </div>
         <div class="field">
           <p class="ninni">任意</p>
-          <%=f.label :タイトルの説明, class: :story_new_explanation %><br />
-          <%=f.text_area :explanation, rows: 15, class: 'input_story_new_form' %>
+          <%=f.label :小説の説明, class: :story_new_explanation %><br />
+          <%=f.text_area :explanation, rows: 4, class: 'input_story_new_form' %>
         </div>
         
         <%=f.submit "登録する", class: 'btn btn-primary'%>

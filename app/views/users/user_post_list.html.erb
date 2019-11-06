@@ -17,13 +17,13 @@
           <%end%>
           
           <div class="story_user_name">
-            投稿者：<%=link_to profile_user_path(story.user.id), class: :index_nickname do%>
+            作成者：<%=link_to profile_user_path(story.user.id), class: :index_nickname do%>
               <%=story.user.nickname%>
             <%end%>
           </div>
           <div class="story_maintitle_genre_area">
             <div class="story_maintitle">
-              掲載元　：<%=link_to maintitle_post_list_path(story.maintitle_id), class: :index_maintitle do%>
+              小説名　：<%=link_to maintitle_post_list_path(story.maintitle_id), class: :index_maintitle do%>
                 <%=story.maintitle.maintitle%>
               <%end%>
 

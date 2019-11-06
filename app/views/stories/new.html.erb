@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="story_new_title_contents">
     <h1 class="story_new_title_content">
-      <%=@maintitle.maintitle%>の記事を登録
+      <%=@maintitle.maintitle%>の小説を投稿する
     </h1>
   </div>
   <div class="story_new_container">
@@ -10,7 +10,7 @@
         <div class="field">
           <p class="hissu">必須</p>
           <%=f.label :タイトル, class: :story_new_explanation %><br />
-          <%=f.text_area :title, class: 'input_story_new_form' %>
+          <%=f.text_area :title, placeholder: "例）〜第○章〜など", class: 'input_story_new_form' %>
         </div>
         <div class="form-group">
           <p class="ninni">任意</p>
@@ -34,17 +34,17 @@
         <div class="field form-group">
           <p class="ninni">任意</p>
           <%=f.label :前回のあらすじなど、自由に投稿, class: :story_new_explanation %><br />
-          <%=f.text_area :image_explanation, class: 'input_story_new_form' %>
+          <%=f.text_area :synopsis, class: 'input_story_new_form' %>
         </div>
         <div class="field form-group">
           <p class="hissu">必須</p>
-          <%=f.label :記事, class: :story_new_explanation %><br />
+          <%=f.label :執筆, class: :story_new_explanation %><br />
           <%=f.text_area :story, rows: 4, class: 'input_story_new_form' %>
         </div>
         <div class="field form-group">
           <p class="ninni">任意</p>
           <%=f.label :次回予告など、自由に投稿, class: :story_new_explanation %><br />
-          <%=f.text_area :image_explanation, class: 'input_story_new_form' %>
+          <%=f.text_area :notice, class: 'input_story_new_form' %>
         </div>
         
         <%=f.submit "投稿する", class: 'btn btn-primary'%>

@@ -18,24 +18,7 @@
     width: 50%;
     float: left;
     @include clearfix;
-    .posli_story_new_edit_area {
-      // height: 30px;
-      padding-top: 10px;
-      text-align: right;
-      .posli_story_new_btn_area {
-        .posli_story_new_btn {
-          border-bottom: 1px solid rgb(187, 187, 187);
-          color: rgb(70, 70, 70);
-        }
-      }
-      .posli_story_edit_btn_area {
-        margin-top: 3px;
-        .posli_story_edit_btn {
-          border-bottom: 1px solid rgb(187, 187, 187);
-          color: rgb(70, 70, 70);
-        }
-      }
-    }
+    
     .favorite_area {
       display: inline-block;
       .like_area {
@@ -86,6 +69,24 @@
     }
     }
     
+    .posli_cover_area {
+      margin-top: 10px;
+      width: 100%;
+      height: 500px;
+      background-color: #fff;
+      position: relative;
+      .posli_cover {
+        width: auto;
+        height: 450px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom :0;
+        margin:  auto;
+      }
+    }
+
     
     .posli_story_user_time_genre_area {
       margin-top: 10px;
@@ -123,7 +124,35 @@
       border-radius: 5px;
       padding: 10px;
     }
+
+    .posli_story_new_edit_area {
+      // height: 30px;
+      padding-top: 10px;
+      text-align: right;
+      // display: inline-block;
+      // float: right;
+      @include clearfix;
+      .posli_story_new_btn_area {
+        float: right;
+        margin-left: 10px;
+        .posli_story_new_btn {
+          border-bottom: 1px solid rgb(187, 187, 187);
+          color: rgb(70, 70, 70);
+        }
+      }
+      .posli_story_edit_btn_area {
+        // margin-top: 3px;
+        float: right;
+        .posli_story_edit_btn {
+          border-bottom: 1px solid rgb(187, 187, 187);
+          color: rgb(70, 70, 70);
+          margin-left: 10px;
+        }
+      }
+    }
+
     .posli_story_list_explanation_area {
+      // float: left;
       .posli_story_list_explanation {
         padding: 10px;
       }
