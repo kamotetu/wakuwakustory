@@ -5,6 +5,8 @@ class Maintitle < ApplicationRecord
 
   acts_as_taggable
 
+  mount_uploader :cover, CoverUploader
+
   validates :maintitle, presence: true
   validates :genre, presence: true
 

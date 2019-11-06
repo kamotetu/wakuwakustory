@@ -74,7 +74,8 @@ class StoriesController < ApplicationController
       :tag_list,
       :image,
       :remove_image,
-      :image_explanation).merge(user_id: current_user.id)
+      :synopsis,
+      :notice).merge(user_id: current_user.id)
   end
 
   def set_maintitle

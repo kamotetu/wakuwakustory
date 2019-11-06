@@ -71,6 +71,7 @@
       background-color: #fff;
       .mystory_titles {
         display: inline-block;
+        margin-bottom: 2px;
         color: rgb(75, 75, 75);
         .mystory_title {
           display: inline-block;
@@ -85,8 +86,35 @@
         border-radius: 5px;
         padding: 0 5px 0 2px;
       }
+      .mypage_maintitle_tags {
+        display: block;
+        .label-primary {
+          padding-right: 1px;
+          padding-left: 1px;
+          background-color: rgb(202, 202, 202);
+          border-radius: 2px;
+          color: rgb(70, 70, 70);
+        }
+      }
+      .mystory_maintitle_name_area {
+        display: flex;
+        .mystory_maintitle_name {
+          border-bottom: 1px solid rgb(187, 187, 187);
+        }
+        .mystory_maintitle_genre {
+          display: inline;
+          padding-right: 1px;
+          padding-left: 1px;
+          background-color: rgb(202, 202, 202);
+          border-radius: 2px;
+          color: rgb(70, 70, 70);
+          margin-left: 5px;
+        }
+      }
+      
       .mystory_upload_time {
         float: right;
+        display: inline;
       }
     }
     .article_list_title {

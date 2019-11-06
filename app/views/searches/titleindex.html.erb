@@ -6,7 +6,7 @@
   <div class="story_container">
     <div class="story_main_contents">
       <div class="new_article_list">
-        記事一覧
+        タイトル一覧
       </div>
       <%if @search != ""%>
         <%if @stories.present?%>
@@ -25,7 +25,7 @@
               </div>
               <div class="story_maintitle_genre_area">
                 <div class="story_maintitle">
-                  掲載元　：<%=link_to maintitle_post_list_path(story.maintitle_id), class: :index_maintitle do%>
+                  小説名　：<%=link_to maintitle_post_list_path(story.maintitle_id), class: :index_maintitle do%>
                     <%=story.maintitle.maintitle%>
                   <%end%>
 

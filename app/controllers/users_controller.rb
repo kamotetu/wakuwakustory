@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       p = favorite.maintitle_id
       @a.push(p)
     end
-    @maintitles = Maintitle.where(user_id: @a).order("created_at DESC").page(params[:page]).per(10)
+    @maintitles = Maintitle.where(id: @a).order("created_at DESC").page(params[:page]).per(10)
   end
   # def likes #お気に入り機能
   #   @favposts = @user.favposts.page(params[:page])

@@ -20,17 +20,21 @@
         </div>
       </div>
       <div class="establishment_list_title">
-        開設一覧
+        小説一覧
       </div>
       <%@maintitles.each do |maintitle|%>
         <div class="mystory_titles_area">
+        小説名：
           <%=link_to maintitle_post_list_path(maintitle), class: :mystory_titles do%>
             <div class="mystory_title">
-            <%=maintitle.maintitle%>
+              <%=maintitle.maintitle%>
             </div>
           <%end%>
           <div class="mystory_title_genres">
             <%=maintitle.genre%>
+          </div>
+          <div class="mypage_maintitle_tags">
+            タグ　：<%=render 'shared/mypage_tag_list', tag_list: maintitle.tag_list%>
           </div>
           
           <div class="mystory_upload_time">
@@ -47,6 +51,7 @@
       <div class="mypage_article_list">
         <%@stories.each do |story|%>
         <div class="mystory_titles_area">
+        タイトル：
           <%@maintitle = story.maintitle%>
           <%=link_to maintitle_story_path(@maintitle, story), class: :mystory_titles do%>
             <div class="mystory_title">
@@ -55,6 +60,15 @@
           <%end%>
           <div class="mystory_title_tags">
             <%=render 'shared/mypage_tag_list', tag_list: story.tag_list%>
+          </div>
+          <div class="mystory_maintitle_name_area">
+          小説名　：
+            <div class="mystory_maintitle_name">
+              <%=@maintitle.maintitle%>
+            </div>
+            <div class="mystory_maintitle_genre">
+              <%=@maintitle.genre%>
+            </div>
           </div>
           <div class="mystory_upload_time">
             <%=story.created_at.strftime('%Y/%m/%d')%>
@@ -66,6 +80,6 @@
       </div>
       </div>
     </div>
-    <%=render 'shared/side_menu'%>
+    <%=render 'shared/mypage_side_menu'%>
   </div>
 </div>

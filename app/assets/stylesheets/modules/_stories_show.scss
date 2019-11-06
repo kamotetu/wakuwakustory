@@ -131,6 +131,13 @@
       padding: 10px;
       background-color: #fff;
     }
+    .story_show_notice_area {
+      background-color: #fff;
+      color: gray;
+      padding: 1px 30px 20px 30px;
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
     .mystory_edit_delete_area {
       // display: inline;
       @include clearfix;

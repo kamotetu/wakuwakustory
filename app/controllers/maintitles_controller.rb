@@ -47,7 +47,9 @@ class MaintitlesController < ApplicationController
       :maintitle,
       :genre,
       :explanation,
-      :tag_list).merge(user_id: current_user.id)
+      :tag_list,
+      :cover,
+      :remove_cover).merge(user_id: current_user.id)
   end
 
   def set_maintitle
