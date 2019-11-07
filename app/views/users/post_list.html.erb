@@ -31,7 +31,11 @@
             作者　　：<%=@user.nickname%>
           </div>
           <div class="posli_story_user_image">
-            <%=image_tag @user.my_image.to_s, class: :posli_story_user_image_icon%>
+            <%if @user.my_image.present?%>
+              <%=image_tag @user.my_image.to_s, class: :posli_story_user_image_icon%>
+            <%else%>
+              <%=image_tag "no_avatar.png", class: :posli_story_user_image_icon%>
+            <%end%>
           </div>
         </div>
         <div class="posli_maintitle_time">
