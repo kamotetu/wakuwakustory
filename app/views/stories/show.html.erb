@@ -32,7 +32,11 @@
       <div class="story_user_nickname_area">
         
         <div class="story_user_my_image_icon_area">
-          <%=image_tag @story.user.my_image.to_s, class: :story_user_my_image_icon%>
+          <%if @story.user.my_image.present?%>
+            <%=image_tag @story.user.my_image.to_s, class: :story_user_my_image_icon%>
+          <%else%>
+            <%=image_tag "no_avatar.png", class: :story_user_my_image_icon%>
+          <%end%>
         </div>
         <h1 class="story_user_nickname">
           作成者：<%=@story.user.nickname%>
@@ -105,9 +109,17 @@
       <%if @comments%>
         <%@comments.each do |comment|%>
           <div class="story_show_comment_area">
-            <div class="show_user_image">
-              <%=image_tag "#{comment.user.my_image}", class: :story_comment_user_icon%>
-            </div>
+            <%if comment.user.my_image.present?%>
+              <div class="show_user_image">
+                <%=image_tag "#{comment.user.my_image}", class: :story_comment_user_icon%>
+              </div>
+            
+            <%else%>
+              <div class="show_user_image">
+                <%=image_tag "no_avatar.png", class: :story_comment_user_icon%>
+              </div>
+              
+            <%end%>
             <div class="story_comment_area">
               <%=comment.user.nickname%>:
             <div class="story_comment_time">
