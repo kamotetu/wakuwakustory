@@ -21,7 +21,7 @@ $(document).on('turbolinks:load', function() {
   function buildHTML(comment){
     var html_no = `<div class="story_show_comment_area">
                   <div class="show_user_image">
-                    <img class="story_comment_user_icon" src="/assets/no_avatar.png" >
+                    <img class="story_comment_user_icon" src="/assets/no_avatar-773f182a0fc1786e5b53345bc3dd134bb85e6891ebe27050526e4529b14ee225.png" >
                   </div>
                   <div class="story_comment_area">
                     ${comment.user_name}:
