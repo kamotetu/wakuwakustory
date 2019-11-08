@@ -50,16 +50,17 @@
       <%end%>
       <%if @story.synopsis.present?%>
         <div class="story_show_image_explanation_area">
-          <%=simple_format(@story.synopsis)%>
+          <%=safe_join(@story.synopsis.split("\n"),tag(:br))%>
         </div>
       <%end%>
       <div class="story_show_story">
-        <%=simple_format(@story.story)%>
+        <%# <%=simple_format(@story.story)%>
+        <%=safe_join(@story.story.split("\n"),tag(:br))%>
       </div>
 
       <%if @story.notice.present?%>
         <div class="story_show_notice_area">
-          <%=simple_format(@story.notice)%>
+          <%=safe_join(@story.notice.split("\n"),tag(:br))%>
         </div>
       <%end%>
 
@@ -127,7 +128,7 @@
             </div>
             </div><br />
             <div class="story_user_comment">
-              <%=simple_format(comment.comment)%>
+              <%=safe_join(comment.comment.split("\n"),tag(:br))%>
             </div>
           </div>
         <%end%>
