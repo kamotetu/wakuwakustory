@@ -18,6 +18,23 @@ $(document).on('turbolinks:load', function() {
                 </div>`
     return html;
   }
+  function buildHTML(comment){
+    var html_no = `<div class="story_show_comment_area">
+                  <div class="show_user_image">
+                    <img class="story_comment_user_icon" src="/assets/no_avatar.png" >
+                  </div>
+                  <div class="story_comment_area">
+                    ${comment.user_name}:
+                  <div class="story_comment_time">
+                    ${comment.time}
+                  </div>
+                  </div><br />
+                  <div class="story_user_comment">
+                    ${comment.comment}
+                  </div>
+                </div>`
+    return html_no;
+  }
 
   $('#new_comment').on('submit', function(e) {
     e.preventDefault();
@@ -33,7 +50,13 @@ $(document).on('turbolinks:load', function() {
     })
     .done(function(data) {
       var html = buildHTML(data);
-      $('#story_show_comment_content').prepend(html)
+      console.log(data.user_image);
+      if(data.user_image == null){
+        $('#story_show_comment_content').prepend(html)
+      }else{
+        $('#story_show_comment_content').prepend(html_no)
+      }
+      
       $('.story_show_text_area').val('')
       $('.btn-primary').prop('disabled', false);
       $("html,body").animate({scrollTop:$('#new_comment').offset().top});
