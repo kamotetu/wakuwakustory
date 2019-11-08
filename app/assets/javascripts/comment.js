@@ -18,7 +18,7 @@ $(document).on('turbolinks:load', function() {
                 </div>`
     return html;
   }
-  function buildHTML(comment){
+  function buildHTML_no(comment){
     var html_no = `<div class="story_show_comment_area">
                   <div class="show_user_image">
                     <img class="story_comment_user_icon" src="/assets/no_avatar-773f182a0fc1786e5b53345bc3dd134bb85e6891ebe27050526e4529b14ee225.png" >
@@ -50,11 +50,11 @@ $(document).on('turbolinks:load', function() {
     })
     .done(function(data) {
       var html = buildHTML(data);
-      console.log(data.user_image);
+      var html_no = buildHTML_no(data)
       if(data.user_image == null){
-        $('#story_show_comment_content').prepend(html)
-      }else{
         $('#story_show_comment_content').prepend(html_no)
+      }else{
+        $('#story_show_comment_content').prepend(html)
       }
       
       $('.story_show_text_area').val('')
