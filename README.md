@@ -22,7 +22,8 @@
 |user_id|integer|null :false, foreign_key: true|
 |maintitle_id|bigint|foreign_key: true|
 |image|string||
-|image_explanatiln|string||
+|synopsis|text||
+|notice|text||
 
 ### Association
 - belongs_to :user
@@ -48,6 +49,7 @@
 |genre|integer|null :false|
 |explanation|text||
 |user_id|bigint|foregn_key: true|
+|cover|string||
 
 ### Association
 - has_many :stories
