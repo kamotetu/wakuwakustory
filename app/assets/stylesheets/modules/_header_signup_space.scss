@@ -34,6 +34,30 @@
       }
     }
   }
+  .header_btn_left_content {
+    display: flex;
+    float: left;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 15px;
+    
+    .current_user_nickname {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      display: inline-block;
+      // margin: auto;
+      margin-top: 15px;
+      
+    }
+    .header_my_image_area {
+      display: flex;
+      .header_my_image_icon {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+      }
+    }
+  }
   .sign_up_current_user_icon:hover {
     color: $hover_text_color;
   }
