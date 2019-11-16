@@ -27,6 +27,11 @@
     top: 0; left: 120px;
     width: 50%;
     float: left;
+    .new_article_list {
+      margin-top: 20px;
+      margin-bottom: 25px;
+      font-size: 17px;
+    }
     .mypagemain_user_profile_area {
       width: 100%;
       float: left;
@@ -94,6 +99,7 @@
         margin-top: auto;
         margin-bottom: auto;
         margin-left: 3px;
+        color: gray;
         .mystory_maintitle_explanation {
           display: flex;
           .mystory_maintitle {
@@ -104,6 +110,12 @@
                 font-weight: 900;
               }
             }
+          }
+        }
+        .mystory_title_author_explanation {
+          display: flex;
+          .mystory_title_author {
+
           }
         }
         .mystory_titles {

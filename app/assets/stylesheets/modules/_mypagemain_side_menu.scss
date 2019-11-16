@@ -8,15 +8,19 @@
   
   .side_content_top {
     padding: 10px;
-    
     border: 1px solid rgb(179, 179, 179);
+  }
+  .side_content_top:hover {
+    background-color: $hover_box_color;
   }
   .side_content {
     padding: 10px;
     border-bottom: 1px solid rgb(179, 179, 179);
     border-left: 1px solid rgb(179, 179, 179);
     border-right: 1px solid rgb(179, 179, 179);
-    
+  }
+  .side_content:hover {
+    background-color: rgb(240, 240, 240);
   }
   .side_menu_list {
     color: rgb(75, 75, 75);

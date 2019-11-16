@@ -13,6 +13,9 @@
       color: rgb(75, 75, 75);
     }
   }
+  .side_content_top:hover {
+    background-color: $hover_box_color;
+  }
   .side_content {
     padding: 10px;
     border-bottom: 1px solid rgb(179, 179, 179);
@@ -22,6 +25,9 @@
     .side_menu_list {
       color: rgb(75, 75, 75);
     }
+  }
+  .side_content:hover {
+    background-color: $hover_box_color;
   }
 }
 .side_content_signup_area {

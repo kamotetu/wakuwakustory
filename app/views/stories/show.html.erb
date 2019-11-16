@@ -10,13 +10,18 @@
       <div class="story_show_genre_tag_area">
 
         <div class="story_show_maintitle_area">
-          <p class="story_show_maintitle_explanation">
-            開設元：<%=@maintitle.maintitle%>
-          </p>
+          <div class="story_show_maintitle_explanation">
+            小説名　：
+            <div class="story_show_maintitle">
+              <%=safe_join(@maintitle.maintitle.split("\n"),tag(:br))%>
+            </div>
+          </div>
+        </div>
+        <div class="story_maintitle_genre_area">
+          ジャンル：
           <div class="story_maintitle_genre">
             <%=@maintitle.genre%>
           </div>
-
         </div>
 
         <div class="story_show_tag_list_area">
@@ -39,7 +44,7 @@
           <%end%>
         </div>
         <h1 class="story_user_nickname">
-          作成者：<%=@story.user.nickname%>
+          著者：<%=@story.user.nickname%>
         </h1>
 
       </div>
@@ -54,7 +59,6 @@
         </div>
       <%end%>
       <div class="story_show_story">
-        <%# <%=simple_format(@story.story)%>
         <%=safe_join(@story.story.split("\n"),tag(:br))%>
       </div>
 

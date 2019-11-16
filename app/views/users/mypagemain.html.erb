@@ -16,68 +16,119 @@
           <%=@user.nickname%>
         </div>
         <div class="mypagemain_user_profile">
-          <%=simple_format(@user.profile_text)%>
+          <%=safe_join(@user.profile_text.split("\n"),tag(:br))%>
         </div>
       </div>
       <div class="establishment_list_title">
         小説一覧
       </div>
       <%@maintitles.each do |maintitle|%>
-        <div class="mystory_titles_area">
-        小説名：
-          <%=link_to maintitle_post_list_path(maintitle), class: :mystory_titles do%>
-            <div class="mystory_title">
-              <%=maintitle.maintitle%>
+        <%=link_to maintitle_post_list_path(maintitle), class: :mystory_titles do%>
+          <div class="mystory_novels_area">
+            <div class="mystory_novels_cover_area">
+              <%if maintitle.cover.present?%>
+                <%=image_tag maintitle.cover.to_s, class: :mystory_novel_cover%>
+              <%else%>
+                <%=image_tag "no_image3.png", class: :mystory_novel_cover%>
+              <%end%>
             </div>
-          <%end%>
-          <div class="mystory_title_genres">
-            <%=maintitle.genre%>
+            <div class="mystory_maintitle_explanation_area">
+              <div class="mystory_maintitle_explanation">
+              小説名　：
+                <div class="mystory_maintitle">
+                  
+                    <div class="mystory_title">
+                      <%=safe_join(maintitle.maintitle.split("\n"),tag(:br))%>
+                    </div>
+                  
+                </div>
+              </div>
+              <div class="mystory_title_genres_explanation">
+                ジャンル：
+                <div class="mystory_title_genres">
+                  <%=maintitle.genre%>
+                </div>
+              </div>
+              <div class="mypage_maintitle_tags_explanation">
+                タグ　　：
+                <div class="mypage_maintitle_tags">
+                  <%=render 'shared/mypage_tag_list', tag_list: maintitle.tag_list%>
+                </div>
+              </div>
+              
+              <div class="mystory_upload_time_explanation">
+                作成日　：
+                <div class="mystory_upload_time">
+                  <%=maintitle.created_at.strftime('%Y/%m/%d')%>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="mypage_maintitle_tags">
-            タグ　：<%=render 'shared/mypage_tag_list', tag_list: maintitle.tag_list%>
-          </div>
-          
-          <div class="mystory_upload_time">
-            <%=maintitle.created_at.strftime('%Y/%m/%d')%>
-          </div>
-        </div>
+        <%end%>
       <%end%>
-      <div class="mypage_paginate">
-        <%=paginate(@maintitles)%>
+      <div class="mystory_maintitle_more">
+        <%=link_to establishment_user_path(current_user), class: :mystory_maintitle_more_btn do%>
+          小説一覧ページへ
+        <%end%>
       </div>
       <div class="article_list_title">
         最近の投稿
       </div>
-      <div class="mypage_article_list">
-        <%@stories.each do |story|%>
-        <div class="mystory_titles_area">
-        タイトル：
-          <%@maintitle = story.maintitle%>
-          <%=link_to maintitle_story_path(@maintitle, story), class: :mystory_titles do%>
-            <div class="mystory_title">
-            <%=story.title%>
+      <%@stories.each do |story|%>
+        <%@maintitle = story.maintitle%>
+        <%=link_to maintitle_story_path(@maintitle, story), class: :mystory_title do%>
+          <div class="mystory_titles_area">
+            <div class="mystory_novels_cover_area">
+              <%if story.image.present?%>
+                <%=image_tag story.image.to_s, class: :mystory_novel_cover%>
+              <%else%>
+                <%=image_tag "no_image3.png", class: :mystory_novel_cover%>
+              <%end%>
             </div>
-          <%end%>
-          <div class="mystory_title_tags">
-            <%=render 'shared/mypage_tag_list', tag_list: story.tag_list%>
-          </div>
-          <div class="mystory_maintitle_name_area">
-          小説名　：
-            <div class="mystory_maintitle_name">
-              <%=@maintitle.maintitle%>
+            <div class="mystory_story_title_area">
+              <div class="mystory_titles_area_explanation">
+                タイトル：
+                
+                <div class="mystory_titles">
+                  
+                    <%=safe_join(story.title.split("\n"),tag(:br))%>
+                  
+                </div>
+              </div>
+              <div class="mystory_title_tags_explanation">
+                タグ　　：
+                <div class="mystory_title_tags">
+                  <%if story.tag_list.present?%>
+                    <%=render 'shared/mypage_tag_list', tag_list: story.tag_list%>
+                  <%end%>
+                </div>
+              </div>
+              <div class="mystory_story_maintitle_explanation">
+              小説名　：
+                <div class="mystory_maintitle_name">
+                  <%=safe_join(@maintitle.maintitle.split("\n"),tag(:br))%>
+                </div>
+              </div>
+              <div class="mystory_maintitle_genre_explanation">
+                ジャンル：
+                <div class="mystory_maintitle_genre">
+                  <%=@maintitle.genre%>
+                </div>
+              </div>
+              <div class="mystory_upload_time_explanation">
+                投稿日　：
+                <div class="mystory_upload_time">
+                  <%=story.created_at.strftime('%Y/%m/%d %H:%M')%>
+                </div>
+              </div>
             </div>
-            <div class="mystory_maintitle_genre">
-              <%=@maintitle.genre%>
-            </div>
           </div>
-          <div class="mystory_upload_time">
-            <%=story.created_at.strftime('%Y/%m/%d')%>
-          </div>
-        </div>
+        <%end%>
       <%end%>
-      <div class="mypage_paginate">
-        <%=paginate(@stories)%>
-      </div>
+      <div class="mypagemain_story_more_area">
+        <%=link_to user_post_list_user_path(current_user), class: :mypagemain_story_more do%>
+          投稿一覧ページへ
+        <%end%>
       </div>
     </div>
     <%=render 'shared/mypage_side_menu'%>

@@ -1,42 +1,42 @@
 <div class="mypagemain_side_contents">
-  <div class="side_content_top">
-    <%=link_to root_path, class: :side_menu_list do%>
+  <%=link_to root_path, class: :side_menu_list do%>
+    <div class="side_content_top">
       トップページ
-    <%end%>
-  </div>
-  <div class="side_content">
-    <%=link_to mypagemain_user_path(current_user), class: :side_menu_list do%>
+    </div>
+  <%end%>
+  <%=link_to mypagemain_user_path(current_user), class: :side_menu_list do%>
+    <div class="side_content">
       マイページ
-    <%end%>
-  </div>
-  <div class="side_content">
-    <%=link_to new_maintitle_path, class: :side_menu_list do%>
+    </div>
+  <%end%>
+  <%=link_to new_maintitle_path, class: :side_menu_list do%>
+    <div class="side_content">
       新しく小説を書く
-    <%end%>
-  </div>
-  <div class="side_content">
-    <%=link_to establishment_user_path(current_user), class: :side_menu_list do%>
+    </div>
+  <%end%>
+  <%=link_to establishment_user_path(current_user), class: :side_menu_list do%>
+    <div class="side_content">
       小説一覧
-    <%end%>
-  </div>
-  <div class="side_content">
-    <%=link_to user_post_list_user_path(current_user), class: :side_menu_list do%>
+    </div>
+  <%end%>
+  <%=link_to user_post_list_user_path(current_user), class: :side_menu_list do%>
+    <div class="side_content">
       投稿一覧
-    <%end%>
-  </div>
-  <div class="side_content">
-    <%=link_to favorite_list_user_path(current_user), class: :side_menu_list do%>
+    </div>
+  <%end%>
+  <%=link_to favorite_list_user_path(current_user), class: :side_menu_list do%>
+    <div class="side_content">
       お気に入り一覧
-    <%end%>
-  </div>
-  <div class="side_content">
-    <%=link_to edit_user_registration_path, class: :side_menu_list do%>
+    </div>
+  <%end%>
+  <%=link_to edit_user_registration_path, class: :side_menu_list do%>
+    <div class="side_content">
       プロフィールを編集する
-    <%end%>
-  </div>
-  <div class="side_content">
-    <%=link_to destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}, class: :side_menu_list do%>
+    </div>
+  <%end%>
+  <%=link_to destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}, class: :side_menu_list do%>
+    <div class="side_content">
       ログアウト
-    <%end%>
-  </div>
+    </div>
+  <%end%>
 </div>

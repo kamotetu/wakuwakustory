@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="maintitle_new_title_contents">
-    <h1 class="maintitle_new_title_content"><%=@maintitle.maintitle%>を編集する</h1>
+    <h1 class="maintitle_new_title_content"><%=safe_join(@maintitle.maintitle.split("\n"),tag(:br))%><br />を編集する</h1>
   </div>
   <div class="maintitle_new_container">
     <div class="maintitle_new_main_contents">
