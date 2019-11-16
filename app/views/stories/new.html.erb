@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="story_new_title_contents">
     <h1 class="story_new_title_content">
-      <%=@maintitle.maintitle%>の小説を投稿する
+      <%=safe_join(@maintitle.maintitle.split("\n"),tag(:br))%><br />の小説を投稿する
     </h1>
   </div>
   <div class="story_new_container">
@@ -38,7 +38,7 @@
         </div>
         <div class="field form-group">
           <p class="hissu">必須</p>
-          <%=f.label :執筆, class: :story_new_explanation %><br />
+          <%=f.label :本文, class: :story_new_explanation %><br />
           <%=f.text_area :story, rows: 4, class: 'input_story_new_form' %>
         </div>
         <div class="field form-group">

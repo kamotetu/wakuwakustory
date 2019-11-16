@@ -53,6 +53,7 @@
       color: gray;
       padding: 1px 30px 20px 30px;
       margin-bottom: 40px;
+      
     }
     .story_show_genre_tag_area {
       margin-top: 10px;
@@ -60,10 +61,15 @@
         display: flex;
         .story_show_maintitle_explanation {
           font-family: 'M PLUS Rounded 1c', sans-serif;
+          display: flex;
+          .story_show_maintitle {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+          }
         }
+      }
+      .story_maintitle_genre_area {
+        display: flex;
         .story_maintitle_genre {
-          // display: inline-block;
-          // background-color: rgb(193, 193, 255);
           background: rgb(110, 181, 247);
           border-radius: 5px;
           padding: 0 2px 0 2px;

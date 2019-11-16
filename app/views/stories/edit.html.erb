@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="story_new_title_contents">
     <h1 class="story_new_title_content">
-      <%=@story.title%>を編集
+      <%=safe_join(@story.title.split("\n"),tag(:br))%><br />を編集
     </h1>
   </div>
   <div class="story_new_container">
@@ -10,7 +10,7 @@
         <div class="field">
           <p class="hissu">必須</p>
           <%=f.label :タイトル, class: :story_new_explanation %><br />
-          <%=f.text_field :title, class: 'input_story_new_form', value: @story.title %>
+          <%=f.text_area :title, class: 'input_story_new_form', value: @story.title %>
         </div>
         <div class="form-group">
         <p class="ninni">任意</p>

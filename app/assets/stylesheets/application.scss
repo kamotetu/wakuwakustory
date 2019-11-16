@@ -1,6 +1,7 @@
 @import "font-awesome";
 @import "mixins/mixin"; 
 @import "./reset";
+@import "config/colors";
 @import "https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap";
 @import "https://fonts.googleapis.com/css?family=Big+Shoulders+Text&display=swap";
 @import "modules/header";
@@ -20,3 +21,4 @@
 @import "modules/index";
 @import "modules/establishment";
 @import "modules/post_list";
+@import "modules/maintitleindex";

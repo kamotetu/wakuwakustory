@@ -1,49 +1,37 @@
 <div class="wrapper">
   <div class="mypagemain_title_area">
-    <h1 class="mypagemain_title"><%=@search%>　の検索結果一覧</h1>
+    <h1 class="mypagemain_title">"<%=@search%>"の検索結果一覧</h1>
   </div>
   
-  <div class="story_container">
-    <div class="story_main_contents">
+  <div class="mypagemain_container">
+    <div class="mypagemain_main_contents">
       <div class="new_article_list">
-        タイトル一覧
+        著者一覧
       </div>
       <%if @search != ""%>
-        <%if @stories.present?%>
-          <%@stories.each do |story|%>
-            <div class="index_story_titles_area">
-              タイトル：<%=link_to maintitle_story_path(story.maintitle_id, story), class: :story_titles do %>
-                <div class="story_title">
-                  <%=story.title%>
-                </div>
-              <%end%>
-              
-              <div class="story_user_name">
-                投稿者：<%=link_to profile_user_path(story.user.id), class: :index_nickname do%>
-                  <%=story.user.nickname%>
-                <%end%>
-              </div>
-              <div class="story_maintitle_genre_area">
-                <div class="story_maintitle">
-                  小説名　：<%=link_to maintitle_post_list_path(story.maintitle_id), class: :index_maintitle do%>
-                    <%=story.maintitle.maintitle%>
+        <%if @users.present?%>
+          <%@users.each do |user|%>
+            <%=link_to profile_user_path(user), class: :mystory_titles do%>
+              <div class="mystory_novels_area">
+                <div class="mystory_novels_cover_area">
+                  <%if user.my_image.present?%>
+                    <%=image_tag user.my_image.to_s, class: :mystory_novel_cover%>
+                  <%else%>
+                    <%=image_tag "no_image3.png", class: :mystory_novel_cover%>
                   <%end%>
-
                 </div>
-                <div class="story_genre">
-                  <%=story.maintitle.genre%>
-                </div>
-              </div>
-              <div class="tags_and_time_area">
-              
-                <div class="story_title_tags">
-                  タグ　　：<%=render 'shared/mypage_tag_list', tag_list: story.tag_list%>
-                </div>
-                <div class="mystory_upload_time">
-                  <%=story.created_at.strftime('%Y/%m/%d %H:%M')%>
+                <div class="mystory_maintitle_explanation_area">
+                  
+                  <div class="mystory_title_author_explanation">
+                    著者：
+                    <div class="mystory_title_author">
+                      <%=safe_join(user.nickname.split("\n"),tag(:br))%>
+                    </div>
+                  </div>
+                  
                 </div>
               </div>
-            </div>
+            <%end%>
           <%end%>
         <%else%>
           見つかりませんでした

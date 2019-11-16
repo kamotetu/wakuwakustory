@@ -1,18 +1,20 @@
 <div class="wrapper">
   <div class="btn_space">
   <%if user_signed_in?%>
-    <div class="header_btn_left_content">
-      <p class="current_user_nickname">
-        <%=current_user.nickname%>
-      </p>
-      <div class="header_my_image_area">
-        <% if current_user.persisted? && current_user.my_image? %>
-          <%=image_tag current_user.my_image.to_s, class: :header_my_image_icon%>
-        <%else%>
-          <%=image_tag "no_avatar.png", class: :header_my_image_icon%>
-        <%end%>
+    <%=link_to mypagemain_user_path(current_user), class: :sign_up_current_user_icon do%>
+      <div class="header_btn_left_content">
+        <p class="current_user_nickname">
+          <%=safe_join(current_user.nickname.split("\n"),tag(:br))%>
+        </p>
+        <div class="header_my_image_area">
+          <% if current_user.persisted? && current_user.my_image? %>
+            <%=image_tag current_user.my_image.to_s, class: :header_my_image_icon%>
+          <%else%>
+            <%=image_tag "no_avatar.png", class: :header_my_image_icon%>
+          <%end%>
+        </div>
       </div>
-    </div>
+    <%end%>
     <div class="header_seach_area">
       <div class="dropdwn_search_area">
         <%=render 'shared/genre_dropdwn_menu'%>
@@ -20,7 +22,7 @@
 
       <div class="title_search_area">
         <%=form_tag titleindex_path, method: :get, class: :title_search_form_area do %>
-          <%=text_field_tag :search, "", class: :title_search_form, placeholder: 'タイトル' %>
+          <%=text_field_tag :search, "", class: :title_search_form, placeholder: '著者' %>
           <%=button_tag type: "submit", class: :title_search_btn do %>
             <%=fa_icon 'search' %>
           <%end %>

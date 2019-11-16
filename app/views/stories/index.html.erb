@@ -13,45 +13,36 @@
   </div>
   
   <div class="story_container">
-    
     <div class="story_main_contents">
       <div class="new_article_list">
-        新着記事一覧
+        小説一覧
       </div>
       <%@stories.each do |story|%>
-        <div class="index_story_titles_area">
-          タイトル：<%=link_to maintitle_story_path(story.maintitle_id, story), class: :story_titles do %>
-            <div class="story_title">
-              <%=story.title%>
-            </div>
-          <%end%>
-          
-          <div class="story_user_name">
-            投稿者：<%=link_to profile_user_path(story.user.id), class: :index_nickname do%>
-              <%=story.user.nickname%>
-            <%end%>
-          </div>
-          <div class="story_maintitle_genre_area">
-            <div class="story_maintitle">
-              小説名　：<%=link_to maintitle_post_list_path(story.maintitle_id), class: :index_maintitle do%>
-                <%=story.maintitle.maintitle%>
-              <%end%>
-
-            </div>
-            <div class="story_genre">
-              <%=story.maintitle.genre%>
-            </div>
-          </div>
-          <div class="tags_and_time_area">
-          
-            <div class="story_title_tags">
-              タグ　　：<%=render 'shared/mypage_tag_list', tag_list: story.tag_list%>
-            </div>
-            <div class="mystory_upload_time">
-              <%=story.created_at.strftime('%Y/%m/%d %H:%M')%>
+        <%=link_to maintitle_post_list_path(story.maintitle_id), class: :index_maintitle_image_path do%>
+          <div class="index_story_titles_area">
+            
+              <div class="index_maintitle_image_area">
+                <%if story.maintitle.cover.present?%>
+                  <%=image_tag story.maintitle.cover.url, class: :index_maintitle_image%>
+                <%else%>
+                  <%=image_tag "no_image3.png", class: :index_maintitle_image%>
+                <%end%>
+              </div>
+            
+            <div class="index_maintitle_content">
+              
+              <div class="story_maintitle">
+                  <%=safe_join(story.maintitle.maintitle.split("\n"),tag(:br))%>
+              </div>
+              <div class="story_genre">
+                <%=story.maintitle.genre%>
+              </div>
+              <div class="story_user_name">
+                  <%=story.user.nickname%>
+              </div>
             </div>
           </div>
-        </div>
+        <%end%>
       <%end%>
       <div class="index_paginate">
         <%=paginate(@stories)%>

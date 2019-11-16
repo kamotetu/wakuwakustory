@@ -97,6 +97,12 @@
           display: inline-block;
           margin-right: 10px;
           margin-top: 7px;
+          .posli_story_user_nickname_link {
+            color: gray;
+          }
+          .posli_story_user_nickname_link:hover {
+            color: rgb(0, 81, 255);
+          }
         }
         .posli_story_user_image {
           // display: flex;
@@ -112,8 +118,15 @@
       .posli_maintitle_time {
         float: right;
       }
-      .posli_maintitle_genre {
+      .posli_maintitle_genre_explanation {
         margin-bottom: 25px;
+        .posli_maintitle_genre {
+          background: rgb(110, 181, 247);
+          border-radius: 5px;
+          padding: 0 2px 0 2px;
+          // margin-left: 5px;
+          display: inline-block;
+        }
       }
     }
 
@@ -126,18 +139,18 @@
     }
 
     .posli_story_new_edit_area {
-      // height: 30px;
       padding-top: 10px;
       text-align: right;
-      // display: inline-block;
-      // float: right;
       @include clearfix;
       .posli_story_new_btn_area {
         float: right;
         margin-left: 10px;
         .posli_story_new_btn {
           border-bottom: 1px solid rgb(187, 187, 187);
-          color: rgb(70, 70, 70);
+          color: gray;
+        }
+        :hover {
+          color: rgb(96, 96, 255);
         }
       }
       .posli_story_edit_btn_area {
@@ -145,8 +158,11 @@
         float: right;
         .posli_story_edit_btn {
           border-bottom: 1px solid rgb(187, 187, 187);
-          color: rgb(70, 70, 70);
+          color: gray;
           margin-left: 10px;
+        }
+        :hover {
+          color: rgb(96, 96, 255);
         }
       }
     }
@@ -157,6 +173,92 @@
         padding: 10px;
       }
     }
+
+    .mystory_titles_area {
+      @include clearfix;
+      padding: 20px 5px 5px 5px;
+      border-bottom: 1px solid rgb(221, 221, 221);
+      background-color: #fff;
+      font-size: 14px;
+      margin-top: auto;
+      margin-bottom: auto;
+      color: rgb(60, 60, 60);
+      display: flex;
+      .mystory_novels_cover_area {
+        height: 80px;
+        width: 95px;
+        // background-color: red;
+        position: relative;
+        .mystory_novel_cover {
+          height: 65px;
+          width: auto;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          margin: auto;
+        }
+      }
+      .mystory_story_title_area {
+        margin-top: auto;
+        margin-bottom: auto;
+        color: gray;
+        .mystory_titles_area_explanation {
+          display: flex;
+        }
+        .mystory_titles {
+          margin-bottom: 3px;
+          color: gray;
+          .mystory_title {
+            color: gray;
+            font-weight: bold;
+          }
+          :hover {
+            color: rgb(27, 27, 255);
+          }
+        }
+        .mystory_title_tags_explanation {
+          display: flex;      
+          .mystory_title_tags {
+            .label-primary {
+              display: inline-block;
+              background-color: rgb(189, 189, 189);
+              border-radius: 5px;
+              padding: 0 3px 0 3px;
+            }
+          }
+        }
+        .mystory_story_maintitle_explanation {
+          display: flex;
+          .mystory_maintitle_genre {
+          }
+        }
+        .mystory_maintitle_genre_explanation {
+          display: flex;
+          .mystory_maintitle_genre {
+            display: inline-block;
+            background: rgb(110, 181, 247);
+            border-radius: 5px;
+            padding: 0 2px 0 2px;
+            // margin-left: 5px;
+            display: inline-block;
+            color: rgb(75, 75, 75);
+            font-size: 13px;
+          }
+        }
+        
+        .mystory_upload_time_explanation {
+          display: flex;
+          .mystory_upload_time {
+            
+          }
+        }
+      }
+      }
+      .mystory_titles_area:hover {
+        background-color: rgb(240, 240, 240);
+      }
     
 
     .story_new_edit_area {
@@ -187,26 +289,28 @@
       padding: 15px 5px 0 5px;
       border-bottom: 1px solid rgb(221, 221, 221);
       background-color: #fff;
-      color: gray;
+      // color: gray;
       border-bottom: 1px solid rgb(221, 221, 221);
-      .posli_mystory_titles {
-        display: inline-block;
-        margin-bottom: 3px;
-        border-bottom: 1px solid rgb(187, 187, 187);
-        .posli_story_title {
-          display: inline-block;
-          color: rgb(70, 70, 70);
+      font-size: 14px;
+      .posli_story_titles_explanation {
+        display: flex;
+        .posli_story_titles {
+          .posli_title {
+            color: gray;
+          }
+          :hover {
+            color: $hover_text_color;
+          }
         }
       }
       
-      
-      .posli_tags_and_time_area {
+      .posli_tags_explanation {
         margin-bottom: 5px;
-        @include clearfix;
+        display: flex;
         .posli_story_title_tags {
           // margin-left: 78px;
           @include clearfix;
-          float: left;
+          // float: left;
           .label-primary {
             padding-right: 1px;
             padding-left: 1px;
@@ -215,9 +319,11 @@
             color: rgb(70, 70, 70);
           }
         }
-        
-        .story_upload_time {
-          float: right;
+      }
+      .posli_story_upload_time_explanation {
+        display: flex;
+        .posli_story_upload_time {
+
         }
       }
     }
