@@ -3,7 +3,6 @@ class UsersController < ApplicationController
                                   :mypagemain,
                                   :establishment,
                                   :profile,
-                                  :likes,
                                   :favorite_list]
 
   def post_list #投稿一覧
@@ -48,10 +47,7 @@ class UsersController < ApplicationController
     end
     @maintitles = Maintitle.where(id: @a).order("created_at DESC").page(params[:page]).per(10)
   end
-  # def likes #お気に入り機能
-  #   @favposts = @user.favposts.page(params[:page])
-  #   counts(@user)
-  # end
+  
 
 
   private

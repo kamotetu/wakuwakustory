@@ -22,7 +22,6 @@ Rails.application.routes.draw do
       get 'establishment'
       get 'user_post_list'
       get 'profile'
-      get 'likes'
       get 'favorite_list'
     end
   end
