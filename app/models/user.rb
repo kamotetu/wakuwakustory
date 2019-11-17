@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :stories
   
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :maintitles, through: :favorites
   # has_many :favorite_maintitles, through: :favorites, source: :maintitle
   

@@ -4,7 +4,7 @@ class FavoritesController < ApplicationController
     @user = current_user
     @maintitle = Maintitle.find(params[:maintitle_id])
     if Favorite.create(user_id: @user.id, maintitle_id: @maintitle.id)
-    redirect_to maintitle_post_list_path
+      redirect_to maintitle_post_list_path
     else
       redirect_to root_path
     end
