@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'userindex' => 'searches#userindex'
   get 'maintitleindex' => 'searches#maintitleindex'
   get 'genreindex' => 'searches#genreindex'
-
+  get 'maintitles/fav/:id' => 'maintitles#fav', as: "fav_maintitles"
   resources :maintitles do
     get 'post_list' => 'users#post_list'
     post 'like' => 'favorites#create'

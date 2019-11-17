@@ -40,6 +40,19 @@ class MaintitlesController < ApplicationController
     end
   end
 
+  # def fav
+  #   maintitle = Maintitle.find(params[:id])
+  #   if maintitle.favorited_by?(current_user)
+  #     fav = current_user.favorites.find_by(maintitle_id: maintitle.id)
+  #     fav.destroy
+  #     render json: maintitle.id
+  #   else
+  #     fav = current_user.favorites.new(maintitle_id: maintitle.id)
+  #     fav.save
+  #     render json: maintitle.id
+  #   end
+  # end
+
   private
 
   def maintitle_params
