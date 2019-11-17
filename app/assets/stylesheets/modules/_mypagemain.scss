@@ -89,75 +89,78 @@
           margin: auto;
         }
       }
-      .mystory_maintitle_explanation_area {
-        display: inline-block;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-left: 3px;
-        .mystory_maintitle_explanation {
-          display: flex;
-          .mystory_maintitle {
-            font-weight: bold;
-            color: gray;
-            .mystory_titles {
-              .mystory_title {
-                font-weight: 900;
+      .mystory_story_title_area {
+        color: gray;
+        .mystory_maintitle_explanation_area {
+          display: inline-block;
+          margin-top: auto;
+          margin-bottom: auto;
+          margin-left: 3px;
+          .mystory_maintitle_explanation {
+            display: flex;
+            .mystory_maintitle {
+              font-weight: bold;
+              color: gray;
+              .mystory_titles {
+                .mystory_title {
+                  font-weight: 900;
+                }
               }
             }
           }
-        }
-        .mystory_titles {
-          display: inline-block;
-          margin-bottom: 2px;
-          color: gray;
-          font-weight: bold;
-          :hover {
-            color: rgb(27, 27, 255);
-          }
-          .mystory_title {
+          .mystory_titles {
             display: inline-block;
-            
-          }
-        }
-        .mystory_title_genres_explanation {
-          display: flex;
-          .mystory_title_genres {
             margin-bottom: 2px;
-            background-color: rgb(110, 181, 247);
-            border-radius: 5px;
-            padding: 0 5px 0 2px;
-            color: rgb(75, 75, 75);
+            color: gray;
+            font-weight: bold;
+            :hover {
+              color: rgb(27, 27, 255);
+            }
+            .mystory_title {
+              display: inline-block;
+              
+            }
           }
-        }
-        .mypage_maintitle_tags_explanation {
-          display: flex;
-          .label-primary {
-            border-radius: 5px;
-            padding: 0 5px 0 2px;
-            background-color: rgb(202, 202, 202);
-            color: rgb(70, 70, 70);
+          .mystory_title_genres_explanation {
+            display: flex;
+            .mystory_title_genres {
+              margin-bottom: 2px;
+              background-color: rgb(110, 181, 247);
+              border-radius: 5px;
+              padding: 0 5px 0 2px;
+              color: rgb(75, 75, 75);
+            }
           }
-        }
-        .mystory_maintitle_name_area {
-          display: flex;
-          .mystory_maintitle_name {
-            border-bottom: 1px solid rgb(187, 187, 187);
+          .mypage_maintitle_tags_explanation {
+            display: flex;
+            .label-primary {
+              border-radius: 5px;
+              padding: 0 5px 0 2px;
+              background-color: rgb(202, 202, 202);
+              color: rgb(70, 70, 70);
+            }
           }
-          .mystory_maintitle_genre {
-            display: inline;
-            padding-right: 1px;
-            padding-left: 1px;
-            background-color: rgb(202, 202, 202);
-            border-radius: 2px;
-            color: rgb(70, 70, 70);
-            margin-left: 5px;
+          .mystory_maintitle_name_area {
+            display: flex;
+            .mystory_maintitle_name {
+              border-bottom: 1px solid rgb(187, 187, 187);
+            }
+            .mystory_maintitle_genre {
+              display: inline;
+              padding-right: 1px;
+              padding-left: 1px;
+              background-color: rgb(202, 202, 202);
+              border-radius: 2px;
+              color: rgb(70, 70, 70);
+              margin-left: 5px;
+            }
           }
-        }
-        
-        .mystory_upload_time_explanation {
-          display: flex;
-          .mystory_upload_time {
-          } 
+          
+          .mystory_upload_time_explanation {
+            display: flex;
+            .mystory_upload_time {
+            } 
+          }
         }
       }
     }
@@ -189,7 +192,7 @@
       font-size: 14px;
       margin-top: auto;
       margin-bottom: auto;
-      color: rgb(60, 60, 60);
+      color: gray;
       display: flex;
       .mystory_novels_cover_area {
         height: 110px;

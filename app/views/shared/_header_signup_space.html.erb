@@ -21,7 +21,7 @@
       </div>
 
       <div class="title_search_area">
-        <%=form_tag titleindex_path, method: :get, class: :title_search_form_area do %>
+        <%=form_tag userindex_path, method: :get, class: :title_search_form_area do %>
           <%=text_field_tag :search, "", class: :title_search_form, placeholder: '著者' %>
           <%=button_tag type: "submit", class: :title_search_btn do %>
             <%=fa_icon 'search' %>
@@ -71,8 +71,8 @@
         <%=render 'shared/genre_dropdwn_menu'%>
       </div>
       <div class="title_search_area">
-        <%=form_tag titleindex_path, method: :get, class: :title_search_form_area do %>
-          <%=text_field_tag :search, "", class: :title_search_form, placeholder: "タイトル" %>
+        <%=form_tag userindex_path, method: :get, class: :title_search_form_area do %>
+          <%=text_field_tag :search, "", class: :title_search_form, placeholder: "著者" %>
           <%=button_tag type: "submit", class: :title_search_btn do %>
             <%=fa_icon 'search' %>
           <%end %>

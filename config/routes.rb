@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root "stories#index"
 
-  get 'titleindex' => 'searches#titleindex'
+  get 'userindex' => 'searches#userindex'
   get 'maintitleindex' => 'searches#maintitleindex'
   get 'genreindex' => 'searches#genreindex'
 

@@ -124,7 +124,6 @@
           background: rgb(110, 181, 247);
           border-radius: 5px;
           padding: 0 2px 0 2px;
-          // margin-left: 5px;
           display: inline-block;
         }
       }
@@ -215,7 +214,7 @@
             font-weight: bold;
           }
           :hover {
-            color: rgb(27, 27, 255);
+            color: $hover_text_color;
           }
         }
         .mystory_title_tags_explanation {
@@ -226,6 +225,7 @@
               background-color: rgb(189, 189, 189);
               border-radius: 5px;
               padding: 0 3px 0 3px;
+              color: $genre_text_color;
             }
           }
         }

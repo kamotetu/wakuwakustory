@@ -2,11 +2,11 @@ class SearchesController < ApplicationController
 
   before_action -> {
                     set_search_action
-  }, only: [:titleindex, 
+  }, only: [:userindex, 
             :maintitleindex]
   before_action :set_search, only: [:genreindex]
 
-  def titleindex
+  def userindex
     @users = User.where(['nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ?', "%#{@search}%", "%#{@search_kana}%", "%#{@search_hira}%", "%#{@search_zenhan}%", "%#{@search_hanzen}%"]).order("created_at DESC").page(params[:page]).per(10)
   end
 
