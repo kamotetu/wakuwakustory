@@ -201,7 +201,7 @@
       font-size: 14px;
       margin-top: auto;
       margin-bottom: auto;
-      color: rgb(60, 60, 60);
+      color: gray;
       display: flex;
       .mystory_novels_cover_area {
         height: 110px;
@@ -243,6 +243,7 @@
               background-color: rgb(189, 189, 189);
               border-radius: 5px;
               padding: 0 3px 0 3px;
+              color: $genre_text_color;
             }
           }
         }
