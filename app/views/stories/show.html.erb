@@ -3,7 +3,7 @@
     <div class="story_show_main_contener">
       <div class="story_show_title_area">
         <h1 class="story_show_title">
-          <%=@story.title%>
+          <%=safe_join(@story.title.split("\n"),tag(:br))%>
         </h1>
       </div>
 
