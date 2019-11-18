@@ -81,3 +81,4 @@ gem 'fog-aws'
 gem 'kaminari', '~> 0.17.0'
 gem "ransack"
 gem 'nokogiri', '~> 1.10.5'
+gem 'gon'

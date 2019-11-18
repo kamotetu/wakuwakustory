@@ -9,13 +9,21 @@
         <%if @user != current_user%>
           <div class="favorite_area">
             <% if !Favorite.exists?(user_id:current_user.id, maintitle_id: @maintitle.id) %>
-              <div class="like_area">
-                <%= link_to "お気に入り", maintitle_like_path(@maintitle),method: :post, class: :favorite_btn, id: :favorite_like_btn %>
-              </div>
+              <%= link_to fav_maintitles_path(@maintitle), class: :favorite_btn, remote: :true do%>
+                <div class="like_area">
+                  <div class="like", id="<%=@maintitle.id%>">
+                    お気に入り
+                  </div>
+                </div>
+              <%end%>
             <% else %>
-              <div class="unlike_area">
-                <%= link_to "お気に入り解除", maintitle_unlike_path(@maintitle), method: :delete, class: :favorite_btn, id: :favorite_unlike_btn %>
-              </div>
+              <%= link_to fav_maintitles_path(@maintitle), class: :favorite_btn, remote: :true do%>
+                <div class="unlike_area">
+                  <div class="unlike", id="<%=@maintitle.id%>">
+                    お気に入り解除
+                  </div>
+                </div>
+              <%end%>
             <%end%>
           </div>
         <%end%>
