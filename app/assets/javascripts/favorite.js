@@ -1,5 +1,5 @@
 
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
   function appendUnLikeArea() {
     var favorite_area = $(".favorite_area")
     var unlike_area = `<a class="favorite_btn" data-remote="true" href="/maintitles/fav/${gon.maintitle_id}", remote: :true>
@@ -41,4 +41,4 @@ $(document).on('turbolinks:load', function() {
       }
     });
   });
-});
+// });
