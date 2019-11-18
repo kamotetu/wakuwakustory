@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @maintitle = Maintitle.find(params[:maintitle_id])
     @user_id = @maintitle.user_id
     @user = User.find(@user_id)
+    gon.maintitle_id = @maintitle.id
     # @maintitles = Maintitle.where(user_id: current_user.id).page(params[:page]).per(5)
   end
 
