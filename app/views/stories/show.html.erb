@@ -23,6 +23,14 @@
             <%=@maintitle.genre%>
           </div>
         </div>
+        <div class="show_review_all_count_area">
+          評価　　：
+          <i class="fa fa-thumbs-o-up ">
+          </i> 
+          <i class="all_count">
+            111
+          </i>
+        </div>
 
         <div class="story_show_tag_list_area">
           <p class="story_show_tag_list_title">
@@ -81,6 +89,37 @@
             </div>
           </div>
         <%end%>
+        <%if @story.user_id != current_user.id%>
+          <div class="like_review_area">
+            <%if @review == nil%>
+              <%=link_to like_review_maintitle_path(@maintitle), method: :post, remote: :true, class: :like_review_btn do%>
+                <div class="like_review_link">
+                  <div class="like_review", id="<%=@maintitle.id%>">
+                    面白かった数だけここをクリック！
+                  </div>
+                </div>
+              <%end%>
+            <%else%>
+              <%=link_to like_review_more_maintitle_path(@maintitle), method: :post, remote: :true, class: :like_review_btn do%>
+                <div class="like_review_more_link">
+                  <div class="like_review_more", id="<%=@maintitle.id%>">
+                    面白かった数だけここをクリック！
+                  </div>
+                </div>
+              <%end%>
+            <%end%>
+          </div> 
+        <%end%>
+
+        <div class="show_review_my_count_area">
+          あなたの評価：
+          <i class="fa fa-thumbs-o-up ">
+          </i> 
+          <i class="my_count">
+            222
+          </i>
+        </div>
+
 
         <%if @story.user_id != current_user.id%>
           <div class="story_show_comment_input_area">

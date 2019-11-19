@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     get 'post_list' => 'users#post_list'
     post 'like' => 'favorites#create'
     delete 'unlike' => 'favorites#destroy'
+    member do
+      post 'like_review'
+      post 'like_review_more'
+      delete 'unlike_review'
+    end
     resources :stories do
       resources :comments, only: [:create]
     end

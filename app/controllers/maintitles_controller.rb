@@ -1,7 +1,10 @@
 class MaintitlesController < ApplicationController
   before_action :set_maintitle, only: [:edit,
                                        :update,
-                                       :destroy]
+                                       :destroy,
+                                       :like_review,
+                                       :like_review_more,
+                                       :unlike_review]
 
   def new
     @maintitle = Maintitle.new
@@ -52,6 +55,26 @@ class MaintitlesController < ApplicationController
       render json: maintitle.id
     end
   end
+
+  def like_review
+    # set_maintitle
+    Review.create(maintitle_id: @maintitle.id, user_id: current_user.id, review: 1)
+  end
+
+  def like_review_more
+    # set_maintitle
+    @review = Review.find_by(maintitle_id: @maintitle.id, user_id: current_user.id)
+    p = @review.review + 1
+    @review.update(review: p)
+
+  end
+
+  def unlike_review
+    # set_maintitle
+
+  end
+
+
 
   private
 
