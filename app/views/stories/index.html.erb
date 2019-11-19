@@ -17,13 +17,13 @@
       <div class="new_article_list">
         小説一覧
       </div>
-      <%@stories.each do |story|%>
-        <%=link_to maintitle_post_list_path(story.maintitle_id), class: :index_maintitle_image_path do%>
+      <%@maintitles.each do |maintitle|%>
+        <%=link_to maintitle_post_list_path(maintitle), class: :index_maintitle_image_path do%>
           <div class="index_story_titles_area">
             
               <div class="index_maintitle_image_area">
-                <%if story.maintitle.cover.present?%>
-                  <%=image_tag story.maintitle.cover.url, class: :index_maintitle_image%>
+                <%if maintitle.cover.present?%>
+                  <%=image_tag maintitle.cover.url, class: :index_maintitle_image%>
                 <%else%>
                   <%=image_tag "no_image3.png", class: :index_maintitle_image%>
                 <%end%>
@@ -32,20 +32,21 @@
             <div class="index_maintitle_content">
               
               <div class="story_maintitle">
-                  <%=safe_join(story.maintitle.maintitle.split("\n"),tag(:br))%>
+                  <%=safe_join(maintitle.maintitle.split("\n"),tag(:br))%>
               </div>
               <div class="story_genre">
-                <%=story.maintitle.genre%>
+                <%=maintitle.genre%>
               </div>
               <div class="story_user_name">
-                  <%=story.user.nickname%>
+                <%user = User.find(maintitle.user_id)%>
+                  <%=user.nickname%>
               </div>
             </div>
           </div>
         <%end%>
       <%end%>
       <div class="index_paginate">
-        <%=paginate(@stories)%>
+        <%=paginate(@maintitles)%>
       </div>
     </div>
     <%if user_signed_in?%>
