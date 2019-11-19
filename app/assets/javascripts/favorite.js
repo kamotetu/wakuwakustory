@@ -33,11 +33,11 @@
         $('.like_area').remove();
         appendUnLikeArea();
         
-        $('#' + e.detail[0]).removeClass('like').addClass('unlike');
+        // $('#' + e.detail[0]).removeClass('like').addClass('unlike');
       } else {
         $('.unlike_area').remove();
         appendFavoriteArea();
-    $('#' + e.detail[0]).removeClass('unlike').addClass('like');
+    // $('#' + e.detail[0]).removeClass('unlike').addClass('like');
       }
     });
   });
