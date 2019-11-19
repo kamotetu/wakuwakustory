@@ -13,6 +13,10 @@ class Maintitle < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
+  def reviewed_by?(user)
+    reviews.where(user_id: user.id).exists?
+  end
+
   validates :maintitle, presence: true
   validates :genre, presence: true
 

@@ -16,12 +16,7 @@
     float: left;
     @include clearfix;
     .story_show_title_area {
-      // overflow: visible !important;
-      // background: -webkit-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-      // background: -moz-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-      // background: -ms-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-      // background: -o-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-      // background: linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+      
       .story_show_title {
         min-height: 60px;
         padding: 5px;
@@ -160,6 +155,35 @@
         }
       }
     } 
+    .like_review_area {
+      // display: inline-block;
+      width: 128px;
+      border: 1px solid $border_color;
+      background-color: $btn_background_color;
+      padding: 5px;
+      border-radius: 5px;
+      margin: auto;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all  0.3s ease;
+      .like_review_btn {
+        color: $btn_text_color;
+        .like_review_link {
+          .like_review {
+          }
+        }
+        .like_review_more_link {
+          .like_review_more {
+
+          }
+        }
+      }
+    }
+    .like_review_area:hover {
+      background-color: $btn_hover_background_color;
+      color: $btn_hover_background_color;
+    }
     .story_show_comment_title {
       text-align: center;
       overflow: visible !important;
@@ -223,11 +247,18 @@
       transition: all ease-out .3s;
       cursor: pointer;
       text-align: center;
-      background-color: rgb(121, 169, 240);
-      color: rgb(31, 32, 20);
+      background-color: $btn_background_color;
+      color: $btn_text_color;
       border-radius: 10px;
-      
       margin: auto;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all  0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: $btn_hover_background_color;
+      color: $btn_hover_text_color;
     }
   }
   .return_top_page {

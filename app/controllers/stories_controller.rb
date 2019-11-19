@@ -41,6 +41,10 @@ class StoriesController < ApplicationController
     @comment = Comment.new
     @comments = @story.comments.includes(:user).order("created_at DESC").page(params[:page]).per(5)
     @user = User.find(@story.user_id)
+    if user_signed_in?
+      @review = Review.find_by(maintitle_id: @maintitle.id, user_id: current_user.id)
+    end
+    gon.maintitle_id = @maintitle.id
   end
 
   def destroy
