@@ -71,6 +71,19 @@
           margin-left: 5px;
         }
       }
+      .show_review_all_count_area {
+        // display: flex;
+        .fa-thumbs-o-up {
+
+        }
+        .review_all_count_area {
+          // display: flex;
+          .all_count {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            // display: inline;
+          }
+        }
+      }
       .story_show_tag_list_area {
         border: 2px solid $border_color;
         margin-top: 15px;
@@ -173,16 +186,20 @@
           .like_review {
           }
         }
-        .like_review_more_link {
-          .like_review_more {
-
-          }
-        }
       }
     }
     .like_review_area:hover {
       background-color: $btn_hover_background_color;
       color: $btn_hover_background_color;
+    }
+
+    .show_review_my_count_area {
+      .fa-thumbs-o-up {
+      }
+      .my_count {
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-weight: 900;
+      }
     }
     .story_show_comment_title {
       text-align: center;

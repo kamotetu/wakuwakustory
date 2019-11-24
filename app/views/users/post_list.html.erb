@@ -60,7 +60,11 @@
         </div>
         <div class="posli_review_icon">
           <i class="fa fa-thumbs-o-up "></i> 
-          ：
+            <%if @maintitle_all_review.present?%>
+              ：<%=@maintitle_all_review%>
+            <%else%>
+              ：0
+            <%end%>
         </div>
       </div>
         小説の概要
