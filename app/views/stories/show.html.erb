@@ -25,10 +25,16 @@
         </div>
         <div class="show_review_all_count_area">
           評価　　：
-          <i class="fa fa-thumbs-o-up ">
+          <i class="fa fa-thumbs-o-up">
           </i> 
-          <i class="all_count">
-            111
+          <i class="review_all_count_area">
+            <%if @review_all_count.present?%>
+              <%=render 'shared/maintitle_all_review_count'%>
+            <%else%>
+              <i>
+                0
+              </i>
+            <%end%>
           </i>
         </div>
 
@@ -91,34 +97,39 @@
         <%end%>
         <%if @story.user_id != current_user.id%>
           <div class="like_review_area">
-            <%if @review == nil%>
-              <%=link_to like_review_maintitle_path(@maintitle), method: :post, remote: :true, class: :like_review_btn do%>
-                <div class="like_review_link">
-                  <div class="like_review", id="<%=@maintitle.id%>">
-                    面白かった数だけここをクリック！
-                  </div>
+            
+            <%=link_to maintitle_story_like_review_path(@maintitle, @story), method: :post, remote: :true, class: :like_review_btn do%>
+              <div class="like_review_link">
+                <div class="like_review", id="<%=@maintitle.id%>">
+                  面白かった数だけここをクリック！
                 </div>
-              <%end%>
-            <%else%>
-              <%=link_to like_review_more_maintitle_path(@maintitle), method: :post, remote: :true, class: :like_review_btn do%>
-                <div class="like_review_more_link">
-                  <div class="like_review_more", id="<%=@maintitle.id%>">
-                    面白かった数だけここをクリック！
-                  </div>
-                </div>
-              <%end%>
+              </div>
             <%end%>
-          </div> 
+              
+          </div>
         <%end%>
-
-        <div class="show_review_my_count_area">
-          あなたの評価：
-          <i class="fa fa-thumbs-o-up ">
-          </i> 
-          <i class="my_count">
-            222
-          </i>
-        </div>
+        <%if user_signed_in?%>
+          <%if @story.user_id != current_user.id%>
+            <div class="show_review_my_count_area">
+              あなたの評価：
+              <i class="fa fa-thumbs-o-up ">
+              </i> 
+              
+              <i class="review_my_count_area">
+                <%if @review.present?%>
+                  <i class="my_count">
+                    <%=@review.review%>
+                  </i>
+                <%else%>
+                  <i class="my_count">
+                    0
+                  </i>
+                <%end%>
+              </i>
+            
+            </div>
+          <%end%>
+        <%end%>
 
 
         <%if @story.user_id != current_user.id%>

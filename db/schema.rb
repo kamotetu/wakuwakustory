@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_071803) do
+ActiveRecord::Schema.define(version: 2019_11_21_131430) do
 
   create_table "average_caches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "rater_id"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_071803) do
     t.integer "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "story_id"
   end
 
   create_table "stories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

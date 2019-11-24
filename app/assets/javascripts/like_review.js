@@ -1,20 +1,28 @@
-function appendLikeReviewBtnMore() {
-  var like_review_area = $(".like_review_area");
-  var like_review_btn_more = `<a class="like_review_btn" data-remote="true" rel="nofollow" data-method="post" href="/maintitles/${gon.maintitle_id}/like_review_more">
-                                <div class="like_review_more_link">
-                                  <div class="like_review_more" id="${gon.maintitle_id}">
-                                    面白かった数だけクリック！
-                                  </div>
-                                </div>
-                              </a>`
-  like_review_area.append(like_review_btn_more);
+
+function appendFaThoumbsOUpMore(my_review_count) {
+  var fa_thumbs_o_up_more = $(".review_my_count_area");
+  var my_count_more = `<i class="my_count">
+                        ${my_review_count}
+                        </i>`
+  fa_thumbs_o_up_more.append(my_count_more);
+};
+
+function appendFaThoumbsOUpAll(all_review_count) {
+  var fa_thumbs_o_up_all = $(".review_all_count_area");
+  var all_count = `<i class="all_count">
+                        ${all_review_count}
+                        </i>`
+  fa_thumbs_o_up_all.append(all_count);
 };
 
 $(function() {
   $(document).on("ajax:success", ".like_review_btn", function(e) {
     e.preventDefault();
-    
-      $('.like_review_btn').remove();
-      appendLikeReviewBtnMore();
+    $(".my_count").remove();
+    $(".all_count").remove();
+    var my_review_count = gon.my_review_count++ ;
+    var all_review_count = gon.review_all_count++ ;
+    appendFaThoumbsOUpMore(my_review_count);
+    appendFaThoumbsOUpAll(all_review_count);
   });
 });

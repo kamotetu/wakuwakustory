@@ -4,7 +4,10 @@ class StoriesController < ApplicationController
                                        :create,
                                        :show,
                                        :edit,
-                                       :update]
+                                       :update,
+                                       :like_review,
+                                       :like_review_more,
+                                       :unlike_review]
   before_action :set_story, only: [:show,
                                    :destroy,
                                    :edit,
@@ -42,9 +45,25 @@ class StoriesController < ApplicationController
     @comments = @story.comments.includes(:user).order("created_at DESC").page(params[:page]).per(5)
     @user = User.find(@story.user_id)
     if user_signed_in?
-      @review = Review.find_by(maintitle_id: @maintitle.id, user_id: current_user.id)
+      @review = Review.find_by(story_id: @story.id, user_id: current_user.id)
+      if @review != nil
+        gon.my_review_count = @review.review + 1
+      else
+        @review = Review.create(user_id: current_user.id, story_id: @story.id, maintitle_id: @maintitle.id, review: 0)
+        gon.my_review_count = @review.review + 1
+      end
     end
+    @reviews = Review.where(story_id: @story.id)
+    @a = []
+    @reviews.each do |review|
+      p = review.review
+      @a.push(p)
+    end
+    @review_all_count = @a.sum
     gon.maintitle_id = @maintitle.id
+    gon.review_all_count = @a.sum + 1
+    gon.story_id = @story.id
+    
   end
 
   def destroy
@@ -67,6 +86,34 @@ class StoriesController < ApplicationController
     else
       render 'stories/edit'
     end
+  end
+
+  def like_review
+    # set_maintitle
+    @story = Story.find(params[:story_id])
+    # Review.create(maintitle_id: @maintitle.id, user_id: current_user.id, review: 1, story_id: @story.id)
+    # render json: 1
+    @review = Review.find_by(story_id: @story.id, user_id: current_user.id)
+    p = @review.review + 1
+    @review.update(review: p)
+    
+  end
+
+  # def like_review_more
+  #   # set_maintitle
+  #   @story = Story.find(params[:story_id])
+  #   @review = Review.find_by(story_id: @story.id, user_id: current_user.id)
+  #   p = @review.review + 1
+  #   @review.update(review: p)
+  #   # render json: @review.review
+  #   # gon.my_review_count = @review.review
+
+  # end
+
+  def unlike_review
+    # set_maintitle
+    # set_story
+
   end
 
 
