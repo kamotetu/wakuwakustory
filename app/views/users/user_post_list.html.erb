@@ -55,6 +55,23 @@
                   <%=story.created_at.strftime('%Y/%m/%d %H:%M')%>
                 </div>
               </div>
+              <div class="profile_story_review_explanation">
+                <i class="fa fa-thumbs-o-up">
+                </i>
+                　　　:
+                <%if story.reviews.present?%>
+                  <%@a = []%>
+                  <%story.reviews.each do |story|%>
+                    <%p = story.review%>
+                    <%@a.push(p)%>
+                  <%end%>
+                  <%story_review_count = @a.sum%>
+                  <%=story_review_count%>
+                <%else%>
+                  0
+                <%end%>
+                
+              </div>
             </div>
           </div>
         <%end%>

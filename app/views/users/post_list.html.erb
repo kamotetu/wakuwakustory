@@ -60,10 +60,16 @@
         </div>
         <div class="posli_review_icon">
           <i class="fa fa-thumbs-o-up "></i> 
+            　　　:
             <%if @maintitle_all_review.present?%>
-              ：<%=@maintitle_all_review%>
+              <%# <div class="posli_maintitle_all_review_area"> %>
+
+                <%=@maintitle_all_review%>
+              <%# </div> %>
             <%else%>
-              ：0
+              <%# <div class="posli_maintitle_all_review_area"> %>
+                0
+              <%# </div> %>
             <%end%>
         </div>
       </div>
@@ -137,6 +143,25 @@
                 <div class="mystory_upload_time">
                   <%=story.created_at.strftime('%Y/%m/%d %H:%M')%>
                 </div>
+              </div>
+              <div class="mystory_all_review">
+                <i class="fa fa-thumbs-o-up">
+                </i>　　　：
+                <%if story.reviews.present?%>
+                  <%@a = []%>
+                  <%story.reviews.each do |story_review|%>
+                    <%p = story_review.review%>
+                    <%@a.push(p)%>
+                  <%end%>
+                  <%story_all_review = @a.sum%>
+                  <%# <div class="story_review_area"> %>
+                    <%=story_all_review%>
+                  <%# </div> %>
+                <%else%>
+                  <%# <div class="story_review_area"> %>
+                    0
+                  <%# </div> %>
+                <%end%>
               </div>
             </div>
           </div>

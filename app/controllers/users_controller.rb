@@ -25,15 +25,34 @@ class UsersController < ApplicationController
 
   def user_post_list #未ログイン投稿一覧画
     #set_user
+    
     @stories = Story.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(10)
     @maintitles = Maintitle.where(user_id: params[:id])
+    @reviews = Review.where(story_id: @stories.ids)
+    if @reviews.present?
+      @a = []
+      @reviews.each do |review|
+        p = review.review
+        @a.push(p)
+      end
+      @user_all_review = @a.sum
+    end
   end
   
   def mypagemain #マイページ
-    #set_user
+    # set_user
+
     @maintitles = Maintitle.where(user_id: current_user.id).order("created_at DESC").page(params[:page]).per(5)
     @stories = Story.where(user_id: current_user.id).order("created_at DESC").page(params[:page]).per(5)
-    
+    @reviews = Review.where(story_id: @stories.ids)
+    if @reviews.present?
+      @a = []
+      @reviews.each do |review|
+        p = review.review
+        @a.push(p)
+      end
+      @user_all_review = @a.sum
+    end
   end
 
   def establishment #開設一覧
@@ -46,6 +65,15 @@ class UsersController < ApplicationController
     #set_user
     @maintitles = Maintitle.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(5)
     @stories = Story.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(5)
+    @reviews = Review.where(story_id: @stories.ids)
+    if @reviews.present?
+      @a = []
+      @reviews.each do |review|
+        p = review.review
+        @a.push(p)
+      end
+      @user_all_review = @a.sum
+    end
   end
 
   def favorite_list
@@ -56,6 +84,7 @@ class UsersController < ApplicationController
       @a.push(p)
     end
     @maintitles = Maintitle.where(id: @a).order("created_at DESC").page(params[:page]).per(10)
+    
   end
   
 

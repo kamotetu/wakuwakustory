@@ -39,7 +39,7 @@
       display: flex;
       font-size: 14px;
       color: rgb(60, 60, 60);
-      font-weight: bold;
+      // font-weight: bold;
       .mystory_novels_cover_area {
         height: 110px;
         width: 120px;
@@ -65,7 +65,7 @@
         .mystory_maintitle_explanation {
           display: flex;
           .mystory_maintitle {
-            font-weight: bold;
+            // font-weight: bold;
             // color: gray;
             .mystory_titles {
               .mystory_title {
@@ -133,6 +133,13 @@
           .mystory_upload_time {
           } 
         }
+        .mystory_maintitle_review_explanation {
+          margin-left: 3px;
+          .fa-thumbs-o-up {
+
+          }
+        }
+        
       }
     }
     .mystory_novels_area:hover {
