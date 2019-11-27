@@ -41,6 +41,23 @@
                 <%user = User.find(maintitle.user_id)%>
                   <%=user.nickname%>
               </div>
+              <div class="maintitle_all_review">
+                <%if maintitle.reviews.present?%>
+                  <%@a = []%>
+                  <%maintitle.reviews.each do |maintitle_review|%>
+                    <%p = maintitle_review.review%>
+                    <%@a.push(p)%>
+                  <%end%>
+                  <%maintitle_all_review = @a.sum%>
+                  <i class="fa fa-thumbs-o-up">
+                  </i>
+                  <%=maintitle_all_review%>
+                <%else%>
+                  <i class="fa fa-thumbs-o-up">
+                  </i>
+                  0
+                <%end%>
+              </div>
             </div>
           </div>
         <%end%>

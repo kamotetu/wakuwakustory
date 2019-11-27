@@ -13,7 +13,19 @@
           <%end%>
         </div>
         <div class="mypagemain_user_nickname">
-          <%=@user.nickname%>
+          <%=safe_join(@user.nickname.split("\n"),tag(:br))%>
+          
+          <div class="mypagemain_user_all_review_area">
+            <div class="fa fa-thumbs-o-up">
+            </div>
+            ：
+            <%if @user_all_review.present?%>
+              <%=@user_all_review%>
+            <%else%>
+              0
+            <%end%>
+          </div>
+          
         </div>
         <div class="mypagemain_user_profile">
           <%=safe_join(@user.profile_text.split("\n"),tag(:br))%>
@@ -61,6 +73,23 @@
                 <div class="mystory_upload_time">
                   <%=maintitle.created_at.strftime('%Y/%m/%d')%>
                 </div>
+              </div>
+              <div class="mystory_maintitle_review_explanation">
+                <i class="fa fa-thumbs-o-up">
+                </i>
+                　　　:
+                <%if maintitle.reviews.present?%>
+                  <%@a = []%>
+                  <%maintitle.reviews.each do |maintitle_review|%>
+                    <%p = maintitle_review.review%>
+                    <%@a.push(p)%>
+                  <%end%>
+                  <%maintitle_review = @a.sum%>
+                  <%=maintitle_review%>
+                <%else%>
+                  0
+                <%end%>
+                
               </div>
             </div>
           </div>
@@ -120,6 +149,23 @@
                 <div class="mystory_upload_time">
                   <%=story.created_at.strftime('%Y/%m/%d %H:%M')%>
                 </div>
+              </div>
+              <div class="profile_story_review_explanation">
+                <i class="fa fa-thumbs-o-up">
+                </i>
+                　　　:
+                <%if story.reviews.present?%>
+                  <%@a = []%>
+                  <%story.reviews.each do |story|%>
+                    <%p = story.review%>
+                    <%@a.push(p)%>
+                  <%end%>
+                  <%story_review_count = @a.sum%>
+                  <%=story_review_count%>
+                <%else%>
+                  0
+                <%end%>
+                
               </div>
             </div>
           </div>

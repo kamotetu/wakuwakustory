@@ -15,8 +15,6 @@ class StoriesController < ApplicationController
 
   def index
     @maintitles = Maintitle.all.order("created_at DESC").page(params[:page]).per(16)
-    # @stories = Story.includes([:user, :maintitle, tags: :taggings]).order("created_at DESC").page(params[:page]).per(16)
-    # @stories = Story.all.order("created_at DESC").page(params[:page]).per(5)
     
   end
 

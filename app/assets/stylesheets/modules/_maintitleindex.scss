@@ -77,7 +77,7 @@
       display: flex;
       font-size: 14px;
       color: rgb(60, 60, 60);
-      font-weight: bold;
+      // font-weight: bold;
       .mystory_novels_cover_area {
         height: 110px;
         width: 120px;
@@ -103,7 +103,7 @@
         .mystory_maintitle_explanation {
           display: flex;
           .mystory_maintitle {
-            font-weight: bold;
+            // font-weight: bold;
             color: gray;
             .mystory_titles {
               .mystory_title {
@@ -171,6 +171,13 @@
           .mystory_upload_time {
           } 
         }
+        .mystory_maintitle_review_explanation {
+          margin-left: 3px;
+          .fa-thumbs-o-up {
+
+          }
+        }
+        
       }
     }
     .mystory_novels_area:hover {
@@ -186,6 +193,9 @@
       .mystory_maintitle_more_btn {
         float: right;
         color: gray;
+      }
+      .mystory_maintitle_more_btn:hover {
+        color: $hover_text_color;
       }
       
     }
@@ -269,6 +279,12 @@
             
           }
         }
+        .profile_story_review_explanation {
+          margin-left: 3px;
+          .fa-thumbs-o-up {
+
+          }
+        }
       }
       }
       .mystory_titles_area:hover {
@@ -285,7 +301,9 @@
       .mypagemain_story_more {
         float: right;
         color: gray;
-        
+      }
+      .mypagemain_story_more:hover {
+        color: $hover_text_color;
       }
     }
   }

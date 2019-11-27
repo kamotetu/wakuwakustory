@@ -46,6 +46,23 @@
                   <%=maintitle.created_at.strftime('%Y/%m/%d')%>
                 </div>
               </div>
+              <div class="mystory_maintitle_review_explanation">
+                <i class="fa fa-thumbs-o-up">
+                </i>
+                　　　:
+                <%if maintitle.reviews.present?%>
+                  <%@a = []%>
+                  <%maintitle.reviews.each do |maintitle_review|%>
+                    <%p = maintitle_review.review%>
+                    <%@a.push(p)%>
+                  <%end%>
+                  <%maintitle_review = @a.sum%>
+                  <%=maintitle_review%>
+                <%else%>
+                  0
+                <%end%>
+                
+              </div>
             </div>
           </div>
         <%end%>

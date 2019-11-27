@@ -130,6 +130,10 @@
       }
       .posli_review_icon {
         margin-bottom: 10px;
+        // display: flex;
+        .fa-thumbs-o-up {
+          margin-left: 4px;
+        }
       }
     }
 
@@ -256,6 +260,18 @@
           display: flex;
           .mystory_upload_time {
             
+          }
+        }
+        .profile_story_review_explanation {
+          margin-left: 3px;
+          .fa-thumbs-o-up {
+
+          }
+        }
+        .mystory_all_review {
+          // display: flex;
+          .fa-thumbs-o-up {
+            margin-left: 2px;
           }
         }
       }

@@ -3,10 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :stories
-  
+  has_many :stories, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :maintitles, dependent: :destroy
   has_many :maintitles, through: :favorites
+  has_many :reviews, dependent: :destroy
   # has_many :favorite_maintitles, through: :favorites, source: :maintitle
   
   mount_uploader :my_image, MyImageUploader

@@ -2,6 +2,7 @@ class Maintitle < ApplicationRecord
   has_many :stories, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
+  has_many :reviews, dependent: :destroy
 
 
 
