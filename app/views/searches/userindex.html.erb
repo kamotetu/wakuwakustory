@@ -28,7 +28,26 @@
                       <%=safe_join(user.nickname.split("\n"),tag(:br))%>
                     </div>
                   </div>
+                  <%@user_story = Story.where(user_id: user.id)%>
+                  <%@reviews = Review.where(story_id: @user_story.ids)%>
+                  <%@a = []%>
+                  <%@reviews.each do |reviews|%>
+                    <%p = reviews.review%>
+                    <%@a.push(p)%>
+                  <%end%>
+                  <%@review_user_count = @a.sum%>
                   
+                  <div class="mystory_maintitle_review_explanation">
+                    <i class="fa fa-thumbs-o-up">
+                    </i>
+                    　　　:
+                    <%if @review_user_count.present?%>
+                      <%=@review_user_count%>
+                    <%else%>
+                      0
+                    <%end%>
+                    
+                  </div>
                 </div>
               </div>
             <%end%>

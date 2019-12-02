@@ -2,46 +2,62 @@
   <li id="genre_area">
     <%=fa_icon 'search'%>ジャンル
     <ul>
+      <%=link_to genreindex_path(search: "青春"), class: :dropdwn_genre_list do%>
       <li>
-        <%=link_to genreindex_path(search: "青春"), class: :dropdwn_genre_list do%>
+        
           青春
-        <%end%>
+        
       </li>
+      <%end%>
+      <%=link_to genreindex_path(search: "恋愛"), class: :dropdwn_genre_list do%>
       <li>
-        <%=link_to genreindex_path(search: "恋愛"), class: :dropdwn_genre_list do%>
+        
           恋愛
-        <%end%>
+        
       </li>
+      <%end%>
+      <%=link_to genreindex_path(search: "時代,歴史"), class: :dropdwn_genre_list  do%>
       <li>
-        <%=link_to genreindex_path(search: "時代,歴史"), class: :dropdwn_genre_list  do%>
+        
           時代,歴史
-        <%end%>
+        
       </li>
+      <%end%>
+      <%=link_to genreindex_path(search: "ホラー"), class: :dropdwn_genre_list  do%>
       <li>
-        <%=link_to genreindex_path(search: "ホラー"), class: :dropdwn_genre_list  do%>
+        
           ホラー
-        <%end%>
+        
       </li>
+      <%end%>
+      <%=link_to genreindex_path(search: "ファンタジー"), class: :dropdwn_genre_list  do%>
       <li>
-        <%=link_to genreindex_path(search: "ファンタジー"), class: :dropdwn_genre_list  do%>
+        
           ファンタジー
-        <%end%>
+        
       </li>
+      <%end%>
+      <%=link_to genreindex_path(search: "推理"), class: :dropdwn_genre_list  do%>
       <li>
-        <%=link_to genreindex_path(search: "推理"), class: :dropdwn_genre_list  do%>
+        
           推理
-        <%end%>
+        
       </li>
+      <%end%>
+      <%=link_to genreindex_path(search: "ライトノベル"), class: :dropdwn_genre_list  do%>
       <li>
-        <%=link_to genreindex_path(search: "ライトノベル"), class: :dropdwn_genre_list  do%>
+        
           ライトノベル
-        <%end%>
+        
       </li>
+      <%end%>
+      <%=link_to genreindex_path(search: "その他"), class: :dropdwn_genre_list  do%>
       <li>
-        <%=link_to genreindex_path(search: "その他"), class: :dropdwn_genre_list  do%>
+        
           その他
-        <%end%>
+        
       </li>
+      <%end%>
     </ul>
   </li>
   <%# <li id="tag_area"> #開発中

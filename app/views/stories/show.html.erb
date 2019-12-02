@@ -114,7 +114,6 @@
               あなたの評価：
               <i class="fa fa-thumbs-o-up ">
               </i> 
-              
               <i class="review_my_count_area">
                 <%if @review.present?%>
                   <i class="my_count">
@@ -126,9 +125,12 @@
                   </i>
                 <%end%>
               </i>
-            
             </div>
           <%end%>
+        <%end%>
+        
+        <%=link_to maintitle_story_path(@maintitle, @story) do %>
+          前へ
         <%end%>
 
 

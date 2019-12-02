@@ -58,10 +58,12 @@ class StoriesController < ApplicationController
       @a.push(p)
     end
     @review_all_count = @a.sum
-    gon.maintitle_id = @maintitle.id
     gon.review_all_count = @a.sum + 1
-    gon.story_id = @story.id
+
     
+    # @story_next_id = @maintitle.stories.ids
+    # @story_next = @story_next_id.order("id DESC").first
+    # @story_next = @story_next_id.where(id < @story.id).order("id DESC").first
   end
 
   def destroy

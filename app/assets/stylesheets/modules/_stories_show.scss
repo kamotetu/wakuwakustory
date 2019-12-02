@@ -188,9 +188,22 @@
         }
       }
     }
+    
     .like_review_area:hover {
       background-color: $btn_hover_background_color;
       color: $btn_hover_background_color;
+    }
+    .like_review_area:active {
+      background-color: #b9d5ff;
+      -webkit-box-shadow:
+      0 0 0 15px rgb(170, 204, 255),
+      0 0 0 18px $btn_background_color;
+      -moz-box-shadow:
+      0 0 0 15px rgb(170, 204, 255),
+      0 0 0 18px $btn_background_color;
+      box-shadow:
+      0 0 0 15px rgb(170, 204, 255),
+      0 0 0 18px $btn_background_color;
     }
 
     .show_review_my_count_area {
