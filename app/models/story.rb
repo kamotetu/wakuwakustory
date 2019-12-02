@@ -12,4 +12,7 @@ class Story < ApplicationRecord
   validates :title, presence: true
   validates :story, presence: true
 
+  # def previous
+  #   Story.where("id < ?", id).order("id DESC").first
+  # end
 end

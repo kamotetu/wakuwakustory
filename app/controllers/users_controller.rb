@@ -4,6 +4,8 @@ class UsersController < ApplicationController
                                   :establishment,
                                   :profile,
                                   :favorite_list]
+  before_action :set_user_all_review, only: [:mypagemain,
+                                             :profile]
 
   def post_list #投稿一覧
     @stories = Story.where(maintitle_id: params[:maintitle_id]).order("created_at DESC").page(params[:page]).per(5)
@@ -41,18 +43,18 @@ class UsersController < ApplicationController
   
   def mypagemain #マイページ
     # set_user
-
+    # set_user_all_review
     @maintitles = Maintitle.where(user_id: current_user.id).order("created_at DESC").page(params[:page]).per(5)
     @stories = Story.where(user_id: current_user.id).order("created_at DESC").page(params[:page]).per(5)
-    @reviews = Review.where(story_id: @stories.ids)
-    if @reviews.present?
-      @a = []
-      @reviews.each do |review|
-        p = review.review
-        @a.push(p)
-      end
-      @user_all_review = @a.sum
-    end
+    # @reviews = Review.where(story_id: @stories.ids)
+    # if @reviews.present?
+    #   @a = []
+    #   @reviews.each do |review|
+    #     p = review.review
+    #     @a.push(p)
+    #   end
+    #   @user_all_review = @a.sum
+    # end
   end
 
   def establishment #開設一覧
@@ -65,15 +67,16 @@ class UsersController < ApplicationController
     #set_user
     @maintitles = Maintitle.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(5)
     @stories = Story.where(user_id: params[:id]).order("created_at DESC").page(params[:page]).per(5)
-    @reviews = Review.where(story_id: @stories.ids)
-    if @reviews.present?
-      @a = []
-      @reviews.each do |review|
-        p = review.review
-        @a.push(p)
-      end
-      @user_all_review = @a.sum
-    end
+    # @stories_review = Story.where(user_id: params[:id])
+    # @stories_review = Review.where(story_id: @stories_review.ids)
+    # if @stories_review.present?
+    #   @a = []
+    #   @stories_review.each do |review|
+    #     p = review.review
+    #     @a.push(p)
+    #   end
+    #   @user_all_review = @a.sum
+    # end
   end
 
   def favorite_list
@@ -95,4 +98,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def set_user_all_review
+    @stories_review = Story.where(user_id: params[:id])
+    @stories_review = Review.where(story_id: @stories_review.ids)
+    if @stories_review.present?
+      @a = []
+      @stories_review.each do |review|
+        p = review.review
+        @a.push(p)
+      end
+      @user_all_review = @a.sum
+    end
+  end
 end

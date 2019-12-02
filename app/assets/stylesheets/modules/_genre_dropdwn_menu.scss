@@ -27,18 +27,20 @@
       text-align: center;
       // position: relative;
       margin-top: 5px;
-      li {
-        position: relative;
-        border-top: solid 1px rgb(211, 211, 211);
-        .dropdwn_genre_list {
-          color: rgb(84, 84, 84);
-          z-index: 1;
+      .dropdwn_genre_list {
+        color: rgb(84, 84, 84);
+        z-index: 1;
+        li {
+          position: relative;
+          border-top: solid 1px rgb(211, 211, 211);
+          
+        }
+        li:hover {
+          color: #fff;
+          background: rgb(191, 191, 191);
         }
       }
-      li:hover {
-        color: #fff;
-        background: rgb(191, 191, 191);
-      }
+      
     }
   }
 }
