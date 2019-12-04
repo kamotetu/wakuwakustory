@@ -2,16 +2,19 @@
 $(document).on('turbolinks:load', function() {
 
   function buildHTML(comment){
-    var html = `<div class="story_show_comment_area">
+    var html = `<div class="story_show_comment_area" , id="story_show_comment_area_${comment.comment_id}">
                   <div class="show_user_image">
                     <img class="story_comment_user_icon" src=${comment.user_image} >
                   </div>
                   <div class="story_comment_area">
                     ${comment.user_name}:
-                  <div class="story_comment_time">
-                    ${comment.time}
+                    <div class="story_comment_time">
+                      ${comment.time}
+                    </div>
                   </div>
-                  </div><br />
+                  <a class="story_comment_delete_link" id="${comment.comment_id}" data-remote="true" rel="nofollow" data-method="delete" href="/maintitles/${gon.maintitle_id}/stories/${gon.story_id}/comments/${comment.comment_id}">
+                    削除
+                  </a>
                   <div class="story_user_comment">
                     ${comment.comment}
                   </div>
@@ -19,16 +22,19 @@ $(document).on('turbolinks:load', function() {
     return html;
   }
   function buildHTML_no(comment){
-    var html_no = `<div class="story_show_comment_area">
+    var html_no = `<div class="story_show_comment_area" , id="story_show_comment_area_${comment.comment_id}">
                   <div class="show_user_image">
                     <img class="story_comment_user_icon" src="/assets/no_avatar-773f182a0fc1786e5b53345bc3dd134bb85e6891ebe27050526e4529b14ee225.png" >
                   </div>
                   <div class="story_comment_area">
                     ${comment.user_name}:
-                  <div class="story_comment_time">
-                    ${comment.time}
+                    <div class="story_comment_time">
+                      ${comment.time}
+                    </div>
                   </div>
-                  </div><br />
+                  <a class="story_comment_delete_link" id="${comment.comment_id}" data-remote="true" rel="nofollow" data-method="delete" href="/maintitles/${gon.maintitle_id}/stories/${gon.story_id}/comments/${comment.comment_id}">
+                    削除
+                  </a>
                   <div class="story_user_comment">
                     ${comment.comment}
                   </div>
@@ -65,5 +71,18 @@ $(document).on('turbolinks:load', function() {
       alert('コメントを入力してください');
       $('.btn-primary').prop('disabled', false);
     })
+  })
+  
+  $('.story_comment_delete_link').click(function(e) {
+    e.preventDefault();
+    var id = this.id
+    var class_name = 'story_show_comment_area_' + id
+    $('#' + class_name).remove();
+  })
+  $('#story_show_comment_content').on('click', '.story_comment_delete_link', function(e) {
+    e.preventDefault();
+    var id = this.id
+    var class_name = 'story_show_comment_area_' + id
+    $('#' + class_name).remove();
   })
 });

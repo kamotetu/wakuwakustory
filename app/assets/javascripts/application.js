@@ -14,6 +14,7 @@
 //= require jquery
 //= require activestorage
 //= require turbolinks
+
 //= require bootstrap-tagsinput.min
 //= repuire jquery.autosize.min
 //= require_tree .

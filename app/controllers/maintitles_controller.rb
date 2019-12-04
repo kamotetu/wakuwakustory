@@ -35,7 +35,6 @@ class MaintitlesController < ApplicationController
     #set_maintitle
     if @maintitle.user_id == current_user.id  
       @maintitle.destroy
-    
     else
       render 'maintitles/edit'
     end
