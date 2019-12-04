@@ -40,7 +40,9 @@ class StoriesController < ApplicationController
     #set_maintitle
     #set_story
     @comment = Comment.new
-    @comments = @story.comments.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    @comments = @story.comments.includes(:user).order("created_at DESC")
+    gon.maintitle_id = @maintitle.id
+    gon.story_id = @story.id
     @user = User.find(@story.user_id)
     if user_signed_in?
       @review = Review.find_by(story_id: @story.id, user_id: current_user.id)
@@ -59,11 +61,11 @@ class StoriesController < ApplicationController
     end
     @review_all_count = @a.sum
     gon.review_all_count = @a.sum + 1
-
     
-    # @story_next_id = @maintitle.stories.ids
+    @stories = @maintitle.stories.order('created_at desc, id desc')
+
     # @story_next = @story_next_id.order("id DESC").first
-    # @story_next = @story_next_id.where(id < @story.id).order("id DESC").first
+    # @story_next = @story_next_id.where("id < ?", id).order("id DESC").first
   end
 
   def destroy

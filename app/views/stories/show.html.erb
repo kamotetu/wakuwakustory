@@ -96,16 +96,16 @@
           </div>
         <%end%>
         <%if @story.user_id != current_user.id%>
+
           <div class="like_review_area">
-            
-            <%=link_to maintitle_story_like_review_path(@maintitle, @story), method: :post, remote: :true, class: :like_review_btn do%>
-              <div class="like_review_link">
-                <div class="like_review", id="<%=@maintitle.id%>">
-                  面白かった数だけここをクリック！
+              <%=link_to maintitle_story_like_review_path(@maintitle, @story), method: :post, remote: :true, class: :like_review_btn do%>
+                <div class="like_review_link">
+                  <div class="like_review", id="<%=@maintitle.id%>">
+                    面白かった数だけここをクリック！
+                  </div>
                 </div>
-              </div>
-            <%end%>
-              
+              <%end%>
+            
           </div>
         <%end%>
         <%if user_signed_in?%>
@@ -128,11 +128,27 @@
             </div>
           <%end%>
         <%end%>
-        
-        <%=link_to maintitle_story_path(@maintitle, @story) do %>
-          前へ
-        <%end%>
+        <div class="previous_next_link_area">
+          <div class="previous_link">
+            <%if @story.previous%>
+              <%=link_to maintitle_story_url(@maintitle, @story.previous), {class:"previous_btn"} do%>
+              <i class="fa fa-chevron-left "></i> 
+                前の話へ
+              <%end%>
+            <%end%>
+          </div>
 
+          <div class="next_link">
+            <%if @story.next%>
+              <%=link_to maintitle_story_url(@maintitle, @story.next), {class: "next_btn"} do%>
+                次の話へ
+                <i class="fa fa-chevron-right"></i> 
+              <%end%>
+            <%end%>
+          </div>
+        </div>
+          
+        
 
         <%if @story.user_id != current_user.id%>
           <div class="story_show_comment_input_area">
@@ -163,9 +179,11 @@
       <div id="story_show_comment_content">
       <%# 非同期用の要素%>
       </div>
+      
       <%if @comments%>
         <%@comments.each do |comment|%>
-          <div class="story_show_comment_area">
+          <div class="story_show_comment_area", id="story_show_comment_area_<%=comment.id%>">
+          
             <%if comment.user.my_image.present?%>
               <div class="show_user_image">
                 <%=image_tag "#{comment.user.my_image}", class: :story_comment_user_icon%>
@@ -179,16 +197,24 @@
             <%end%>
             <div class="story_comment_area">
               <%=comment.user.nickname%>:
-            <div class="story_comment_time">
-              <%=comment.created_at.strftime('%Y/%m/%d %H:%M')%>
+              <div class="story_comment_time">
+                <%=comment.created_at.strftime('%Y/%m/%d %H:%M')%>
+              </div>
             </div>
-            </div><br />
+            <%if user_signed_in?%>
+              <%if comment.user == current_user%>
+                <%@comment_id = comment.id%>
+                <%=link_to maintitle_story_comment_path(@maintitle, @story, comment), method: :delete, remote: :true, class: "story_comment_delete_link", id: "#{@comment_id}" do%>
+                  削除
+                <%end%>
+              <%end%>
+            <%end%>
             <div class="story_user_comment">
               <%=safe_join(comment.comment.split("\n"),tag(:br))%>
             </div>
           </div>
         <%end%>
-        <%=paginate(@comments)%>
+        
       <%end%>
       <div class="return_top_page">
         <%=link_to root_path, class: :return_top_page_btn do%>
@@ -207,3 +233,4 @@
     <%end%>
   </div>
 </div>
+

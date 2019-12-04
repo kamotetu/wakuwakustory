@@ -21,7 +21,8 @@ Rails.application.routes.draw do
       post 'like_review'
       post 'like_review_more'
       delete 'unlike_review'
-      resources :comments, only: [:create]
+      resources :comments, only: [:create,
+                                  :destroy]
     end
   end
   resources :users do
