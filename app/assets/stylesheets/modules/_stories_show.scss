@@ -294,6 +294,9 @@
       color: rgb(75, 75, 75);
       border-bottom: 1px solid rgb(187, 187, 187);
     }
+    .story_show_signup_btn:hover {
+      color: $hover_text_color;
+    }
     .story_show_explanation {
       font-family: 'M PLUS Rounded 1c', sans-serif;
     }

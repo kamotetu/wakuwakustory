@@ -207,7 +207,11 @@
                 <%=link_to maintitle_story_comment_path(@maintitle, @story, comment), method: :delete, remote: :true, class: "story_comment_delete_link", id: "#{@comment_id}" do%>
                   削除
                 <%end%>
+              <%else%>
+                <br />
               <%end%>
+            <%else%>
+              <br />
             <%end%>
             <div class="story_user_comment">
               <%=safe_join(comment.comment.split("\n"),tag(:br))%>
