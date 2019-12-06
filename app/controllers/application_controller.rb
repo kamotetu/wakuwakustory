@@ -11,11 +11,15 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:my_image])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:remove_my_image])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:profile_text])
+    # devise_parameter_sanitizer.permit(:sign_up, keys: [:confirmed_at])
+
 
     devise_parameter_sanitizer.permit(:account_update, keys: [:nickname])
     devise_parameter_sanitizer.permit(:account_update, keys: [:my_image])
     devise_parameter_sanitizer.permit(:account_update, keys: [:remove_my_image])
     devise_parameter_sanitizer.permit(:account_update, keys: [:profile_text])
+    # devise_parameter_sanitizer.permit(:account_update, keys: [:confirmed_at])
+
 
   end
 
