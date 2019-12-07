@@ -1,6 +1,9 @@
 <h2 class="signup_title">ログイン</h2>
 
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
   <div class="wrapper">
     <div class="signup_container">
       <main class="signup_contents">
