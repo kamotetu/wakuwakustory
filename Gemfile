@@ -84,3 +84,5 @@ gem 'kaminari', '~> 0.17.0'
 gem "ransack"
 gem 'nokogiri', '~> 1.10.5'
 gem 'gon'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
