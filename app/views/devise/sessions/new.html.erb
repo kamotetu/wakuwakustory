@@ -19,6 +19,16 @@
               <br />
               <%= f.password_field :password, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form" %>
             </div>
+
+            <div class="field">
+              <div class="forget_password_area">
+                <p class="forget_password_link_area">
+                  <%=link_to new_user_password_path, class: :forget_password_link do%>
+                    パスワードを忘れた方はこちらをクリック
+                  <%end%>
+                </p>
+              </div>
+            </div>
           </div>
 
           <div class="signup_action_box">
