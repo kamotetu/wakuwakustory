@@ -126,8 +126,14 @@
                 <%end%>
               </i>
             </div>
+            <%if @review.present?%>
+              <%=link_to maintitle_story_unlike_review_path(@maintitle, @story), method: :delete, remote: :true, class: :unlike_review_btn do%>
+                評価をリセットする
+              <%end%>
+            <%end%>
           <%end%>
         <%end%>
+        
         <div class="previous_next_link_area">
           <div class="previous_link">
             <%if @story.previous%>

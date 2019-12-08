@@ -180,7 +180,7 @@
       -moz-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       transition: all  0.3s ease;
-      .like_review_btn {
+      .like_review_btn, .like_review_btn_new{
         color: $btn_text_color;
         .like_review_link {
           .like_review {
@@ -205,6 +205,14 @@
         font-family: 'M PLUS Rounded 1c', sans-serif;
         // font-weight: 900;
       }
+    }
+    .unlike_review_btn {
+      color: gray;
+      border-bottom: 1px solid $border_color;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
+    .unlike_review_btn:hover {
+      color: $hover_text_color;
     }
     .previous_next_link_area {
       margin-top: 10px;

@@ -115,8 +115,11 @@ class StoriesController < ApplicationController
 
   def unlike_review
     # set_maintitle
-    # set_story
-
+    @story = Story.find(params[:story_id])
+    @review = Review.find_by(user_id: current_user.id, story_id: @story.id)
+    @review.update(review: 0)
+    render json: @story.id
+    
   end
 
 
