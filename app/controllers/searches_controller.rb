@@ -30,8 +30,10 @@ class SearchesController < ApplicationController
       @genre = 6
     elsif @search == "ライトノベル"
       @genre = 7
-    elsif @search == "その他"
+    elsif @search == "自伝"
       @genre = 8
+    elsif @search == "その他"
+      @genre = 9
     end
     @maintitles = Maintitle.where(genre: @genre).order("created_at DESC").page(params[:page]).per(10)
   end

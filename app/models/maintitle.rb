@@ -21,7 +21,7 @@ class Maintitle < ApplicationRecord
   validates :maintitle, presence: true
   validates :genre, presence: true
 
-  enum genre:{"青春": 1,"恋愛": 2, "時代,歴史": 3, "ホラー": 4, "ファンタジー": 5, "推理": 6, "ライトノベル": 7, "その他": 8}
+  enum genre:{"青春": 1,"恋愛": 2, "時代,歴史": 3, "ホラー": 4, "ファンタジー": 5, "推理": 6, "ライトノベル": 7, "自伝": 8, "その他": 9}
 
   
 
