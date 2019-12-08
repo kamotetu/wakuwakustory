@@ -257,34 +257,44 @@
     .story_show_comment_title {
       text-align: center;
       overflow: visible !important;
-      background: -webkit-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-      background: -moz-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-      background: -ms-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-      background: -o-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
-      background: linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+      background: -webkit-linear-gradient(45deg, gray 10%, #fff 90%);
+      background: -moz-linear-gradient(45deg, gray 10%, #fff 90%);
+      background: -ms-linear-gradient(45deg, gray 10%, #fff 90%);
+      background: -o-linear-gradient(45deg, gray 10%, #fff 90%);
+      background: linear-gradient(45deg, gray 10%, #fff 90%);
     }
     .story_show_comment_area {
       @include clearfix;
       margin-top: 10px;
       border: 1px solid rgb(196, 196, 196);
       background-color: #fff;
-    }
-    .show_user_image {
-      float: left;
-      .story_comment_user_icon {
-        border-radius: 50%;
-        width: 35px;
-        height: 35px;
-        display: inline-block;
+      .show_user_image {
+        float: left;
+        .story_comment_user_icon {
+          border-radius: 50%;
+          width: 35px;
+          height: 35px;
+          display: inline-block;
+        }
+      }
+      .story_comment_time {
+        float: right;
+        color: rgb(138, 138, 138);
+      }
+      .story_user_comment {
+        margin-left: 35px;
+      }
+      .story_comment_delete_link {
+        float: right;
+        color: gray;
+        border-bottom: 1px solid $border_color;
+        margin-right: 2px;
+      }
+      .story_comment_delete_link:hover {
+        color: $hover_text_color;
       }
     }
-    .story_comment_time {
-      float: right;
-      color: rgb(138, 138, 138);
-    }
-    .story_user_comment {
-      margin-left: 35px;
-    }
+    
   }
   .story_show_comment_input_area {
     @include clearfix;

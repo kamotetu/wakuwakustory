@@ -89,7 +89,7 @@
               <%=link_to edit_maintitle_story_path, class: "mystory_edit_delete_btn" do%>
                 編集する
               <%end%>
-              <%=link_to maintitle_story_path, method: :delete, data: {confirm: "削除しますか？"}, class: "mystory_edit_delete_btn" do%>
+              <%=link_to maintitle_story_path, method: :delete, data: {confirm: "「#{@story.title}」を削除しますか？"}, class: "mystory_edit_delete_btn" do%>
                 削除する
               <%end%>
             </div>
@@ -213,6 +213,7 @@
             <%else%>
               <br />
             <%end%>
+            <br />
             <div class="story_user_comment">
               <%=safe_join(comment.comment.split("\n"),tag(:br))%>
             </div>
