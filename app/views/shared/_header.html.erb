@@ -5,11 +5,12 @@
         <%=image_tag "waku.png", class: "sitetitle_logo" %>
       <% end %>
     </div>
-    <%# <div class="search_area"> %>
-      <%# 探す %>
-      <%# <%=render 'shared/genre_dropdwn_menu'%>
-      
-    <%# </div> %>
+    <div class="q_and_a_link">
+      <%=link_to q_and_a_path, class: :q_and_a_link_btn do%>
+        このサービスについて（Q&A）
+      <%end%>
+    </div>
+    
   </header>
 </div>
 

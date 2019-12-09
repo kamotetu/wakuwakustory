@@ -8,15 +8,11 @@ Rails.application.routes.draw do
   get 'maintitleindex' => 'searches#maintitleindex'
   get 'genreindex' => 'searches#genreindex'
   get 'maintitles/fav/:id' => 'maintitles#fav', as: "fav_maintitles"
+  get 'q_and_a' => 'informations#q_and_a'
   resources :maintitles do
     get 'post_list' => 'users#post_list'
     post 'like' => 'favorites#create'
     delete 'unlike' => 'favorites#destroy'
-    member do
-      # post 'like_review'
-      # post 'like_review_more'
-      # delete 'unlike_review'
-    end
     resources :stories do
       post 'like_review'
       post 'like_review_more'
