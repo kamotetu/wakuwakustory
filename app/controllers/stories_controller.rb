@@ -102,17 +102,6 @@ class StoriesController < ApplicationController
     render json: @story.id
   end
 
-  # def like_review_more
-  #   # set_maintitle
-  #   @story = Story.find(params[:story_id])
-  #   @review = Review.find_by(story_id: @story.id, user_id: current_user.id)
-  #   p = @review.review + 1
-  #   @review.update(review: p)
-  #   # render json: @review.review
-  #   # gon.my_review_count = @review.review
-
-  # end
-
   def unlike_review
     # set_maintitle
     @story = Story.find(params[:story_id])
@@ -121,6 +110,8 @@ class StoriesController < ApplicationController
     render json: @story.id
     
   end
+
+  
 
 
   private
