@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'userindex' => 'searches#userindex'
   get 'maintitleindex' => 'searches#maintitleindex'
   get 'genreindex' => 'searches#genreindex'
+  get 'order_popularity' => 'searches#order_popularity' 
   get 'maintitles/fav/:id' => 'maintitles#fav', as: "fav_maintitles"
   get 'q_and_a' => 'informations#q_and_a'
   resources :maintitles do

@@ -128,6 +128,18 @@
           display: inline-block;
         }
       }
+      .posli_tag_explanation {
+        margin-bottom: 10px;
+        display: flex;
+        .posli_tag {
+          .label-primary {
+            border-radius: 5px;
+            padding: 0 5px 0 2px;
+            background-color: rgb(202, 202, 202);
+            color: rgb(70, 70, 70);
+          }
+        }
+      }
       .posli_review_icon {
         margin-bottom: 10px;
         // display: flex;

@@ -82,6 +82,26 @@
         </div>
       <%end%>
 
+      <div class="previous_next_link_area">
+          <div class="previous_link">
+            <%if @story.previous%>
+              <%=link_to maintitle_story_url(@maintitle, @story.previous), {class:"previous_btn"} do%>
+              <i class="fa fa-chevron-left "></i> 
+                前の話へ
+              <%end%>
+            <%end%>
+          </div>
+
+          <div class="next_link">
+            <%if @story.next%>
+              <%=link_to maintitle_story_url(@maintitle, @story.next), {class: "next_btn"} do%>
+                次の話へ
+                <i class="fa fa-chevron-right"></i> 
+              <%end%>
+            <%end%>
+          </div>
+        </div>
+
       <%if user_signed_in?%>
         <%if @story.user_id == current_user.id%>
           <div class="mystory_edit_delete_area">
@@ -108,6 +128,7 @@
             
           </div>
         <%end%>
+        
         <%if user_signed_in?%>
           <%if @story.user_id != current_user.id%>
             <div class="show_review_my_count_area">
@@ -132,25 +153,7 @@
           <%end%>
         <%end%>
         
-        <div class="previous_next_link_area">
-          <div class="previous_link">
-            <%if @story.previous%>
-              <%=link_to maintitle_story_url(@maintitle, @story.previous), {class:"previous_btn"} do%>
-              <i class="fa fa-chevron-left "></i> 
-                前の話へ
-              <%end%>
-            <%end%>
-          </div>
-
-          <div class="next_link">
-            <%if @story.next%>
-              <%=link_to maintitle_story_url(@maintitle, @story.next), {class: "next_btn"} do%>
-                次の話へ
-                <i class="fa fa-chevron-right"></i> 
-              <%end%>
-            <%end%>
-          </div>
-        </div>
+        
           
         
 

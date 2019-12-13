@@ -8,7 +8,6 @@ class SearchesController < ApplicationController
 
   def userindex
     @users = User.where(['nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ?', "%#{@search}%", "%#{@search_kana}%", "%#{@search_hira}%", "%#{@search_zenhan}%", "%#{@search_hanzen}%"]).order("created_at DESC").page(params[:page]).per(10)
-    
   end
 
   def maintitleindex
@@ -36,6 +35,33 @@ class SearchesController < ApplicationController
       @genre = 9
     end
     @maintitles = Maintitle.where(genre: @genre).order("created_at DESC").page(params[:page]).per(10)
+  end
+
+  def order_popularity
+    
+    # @reviews = Review.all
+    # @a = []
+    # @reviews.each do |review|
+    #   @maintitle_ids = review.maintitle.id
+    #   @a.push(@maintitle_ids)
+    # end
+    # @a = @a.uniq
+    
+    # @b = []
+    # @a.each do |maintitle|
+    #   @maintitle = Maintitle.find(maintitle)
+    #   @reviews = @maintitle.reviews
+      
+    # end
+    # binding.pry
+
+    # @maintitles = Maintitle.all
+    # @a = []
+    # @maintitles.each do |maintitle|
+    #   @reviews = maintitle.reviews
+    #   @sum = @reviews.sum(:review)
+
+    # end
   end
 
   private

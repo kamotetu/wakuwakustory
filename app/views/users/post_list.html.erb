@@ -2,7 +2,6 @@
   <div class="mypagemain_title_area">
     <h1 class="mypagemain_title"><%=safe_join(@maintitle.maintitle.split("\n"),tag(:br))%></h1>
   </div>
-  
   <div class="story_container">
     <div class="story_main_contents">
       <%if user_signed_in?%>
@@ -58,18 +57,19 @@
             <%=@maintitle.genre%>
           </div>
         </div>
+        <div class="posli_tag_explanation">
+          タグ　　：
+          <div class="posli_tag">
+            <%=render 'shared/posli_tag_list', tag_list: @maintitle.tag_list%>
+          </div>
+        </div>
         <div class="posli_review_icon">
           <i class="fa fa-thumbs-o-up "></i> 
             　　　:
             <%if @maintitle_all_review.present?%>
-              <%# <div class="posli_maintitle_all_review_area"> %>
-
-                <%=@maintitle_all_review%>
-              <%# </div> %>
+              <%=@maintitle_all_review%>
             <%else%>
-              <%# <div class="posli_maintitle_all_review_area"> %>
-                0
-              <%# </div> %>
+              0
             <%end%>
         </div>
       </div>
@@ -81,13 +81,12 @@
           未登録
         <%end%>
       </div>
-
       <%if user_signed_in?%>
         <%if @user == current_user%>
           <div class="posli_story_new_edit_area">
             <div class="posli_story_new_btn_area">
               <%=link_to new_maintitle_story_path(@maintitle), class: :posli_story_new_btn do%>
-                小説を書く
+                続きの話を書く
               <%end%>
             </div>
             <div class="posli_story_edit_btn_area">
@@ -98,16 +97,11 @@
           </div>
         <%end%>
       <%end%>
-
-
-
       <div class="posli_story_list_explanation_area">
         <h1 class="posli_story_list_explanation">
           投稿一覧
         </h1>
       </div>
-
-
       <%@stories.each do |story|%>
         <%@maintitle = story.maintitle%>
         <%=link_to maintitle_story_path(@maintitle, story), class: :mystory_title do%>
@@ -122,11 +116,8 @@
             <div class="mystory_story_title_area">
               <div class="mystory_titles_area_explanation">
                 タイトル：
-                
                 <div class="mystory_titles">
-                  
-                    <%=safe_join(story.title.split("\n"),tag(:br))%>
-                  
+                  <%=safe_join(story.title.split("\n"),tag(:br))%>
                 </div>
               </div>
               <div class="mystory_title_tags_explanation">
@@ -154,13 +145,9 @@
                     <%@a.push(p)%>
                   <%end%>
                   <%story_all_review = @a.sum%>
-                  <%# <div class="story_review_area"> %>
                     <%=story_all_review%>
-                  <%# </div> %>
                 <%else%>
-                  <%# <div class="story_review_area"> %>
                     0
-                  <%# </div> %>
                 <%end%>
               </div>
             </div>
