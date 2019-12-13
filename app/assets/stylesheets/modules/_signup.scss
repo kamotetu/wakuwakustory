@@ -194,6 +194,43 @@
         
       }
     }
+
+    .login_action_box {
+      // text-align: center;
+      margin: 32px auto;
+      display: inline-block;
+      width: 100%;
+
+      .signup_action {
+        margin: 0 auto;
+        display: inline-block;
+        // text-align: center;
+        
+        .signup_actions_btn {
+          display: block;
+          width: 312px;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+          background-color: rgb(121, 169, 240);
+          color: rgb(31, 32, 20);
+          border-radius: 10px;
+          -webkit-transition: all 0.3s ease;
+          -moz-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          transition: all  0.3s ease;
+        }
+        .signup_actions_btn:hover {
+          background-color: rgb(0, 140, 255);
+          color: rgb(32, 32, 32);
+        }
+        
+      }
+    }
+
     .sns_login_area {
       .facebook_login_action_box {
         text-align: center;
