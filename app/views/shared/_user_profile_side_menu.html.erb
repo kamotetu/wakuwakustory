@@ -1,31 +1,29 @@
 <div class="profile_side_contents">
-  
-  <div class="side_content_top">
-    <%=link_to establishment_user_path(@user), class: :side_menu_list do%>
-      このユーザーの小説一覧
-    <%end%>
-  </div>
-  <div class="side_content">
-    <%=link_to user_post_list_user_path(@user), class: :side_menu_list do%>
-      このユーザーの投稿一覧
-    <%end%>
-  </div>
-  <div class="side_content_signup_area">
+  <%=link_to establishment_user_path(@user), class: :side_menu_list do%>
     <div class="side_content_top">
-      <%=link_to new_user_registration_path, class: :side_menu_list do%>
+      このユーザーの小説一覧
+    </div>
+  <%end%>
+  <%=link_to user_post_list_user_path(@user), class: :side_menu_list do%>
+    <div class="side_content">
+      このユーザーの投稿一覧
+    </div>
+  <%end%>
+  <div class="side_content_signup_area">
+    <%=link_to new_user_registration_path, class: :side_menu_list do%>
+      <div class="side_content_top">
         新規登録
-      <%end%>
-    </div>
-    <div class="side_content">
-      <%=link_to new_user_session_path, class: :side_menu_list do%>
+      </div>
+    <%end%>
+    <%=link_to new_user_session_path, class: :side_menu_list do%>
+      <div class="side_content">
         ログイン
-      <%end%>
-    </div>
-    <div class="side_content">
-      <%=link_to root_path, class: :side_menu_list do%>
+      </div>
+    <%end%>
+    <%=link_to root_path, class: :side_menu_list do%>
+      <div class="side_content">
         トップページ
-      <%end%>
-    </div>
+      </div>
+    <%end%>
   </div>
-  
 </div>

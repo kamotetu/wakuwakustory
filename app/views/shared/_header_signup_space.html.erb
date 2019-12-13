@@ -19,6 +19,9 @@
       <div class="dropdwn_search_area">
         <%=render 'shared/genre_dropdwn_menu'%>
       </div>
+      <%=link_to order_popularity_path do%>
+        人気順
+      <%end%>
 
       <div class="title_search_area">
         <%=form_tag userindex_path, method: :get, class: :title_search_form_area do %>
