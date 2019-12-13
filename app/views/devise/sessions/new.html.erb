@@ -33,12 +33,31 @@
               </div>
             </div>
           </div>
+          <div class="signup_right_content">
+            <div class="sns_login_area">
+              <div class="facebook_login_action_box">
+                <div class="signup_action">
+                  <%=link_to user_facebook_omniauth_authorize_path, class: :facebook_actions_btn do%>
+                    <i class="fa fa-facebook-square "></i>facebook情報でログイン
+                  <%end%>
+                </div>
+              </div>
+              <div class="google_login_action_box">
+                <div class="signup_action">
+                  <%=link_to user_google_oauth2_omniauth_authorize_path, class: :facebook_actions_btn do%>
+                    <i class="fa fa-google "></i>google情報でログイン
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div class="signup_action_box">
             <div class="signup_action">
               <%= f.submit "ログイン", class: "signup_actions_btn" %>
             </div>
           </div>
+          
         </section>
       </main>
     </div>
