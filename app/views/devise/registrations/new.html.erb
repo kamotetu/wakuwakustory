@@ -19,23 +19,41 @@
               <%= f.label :Eメールアドレス, class: "signup_explanation" %><br />
               <%= f.email_field :email, placeholder: "wakusto@com", autocomplete: "email", class: "input_signup_form" %>
             </div>
+                <%= f.password_field :password, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form", type: "hidden" %>
+                <%= f.password_field :password_confirmation, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form", type: "hidden" %>
 
-            <div class="field">
-              <p class="hissu">必須</p>
-              <%= f.label :パスワード, class: "signup_explanation" %>
-              <br />
-              <%= f.password_field :password, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form" %>
-            </div>
+            <%if @omniauth.nil?%>
+              <div class="field">
+                <p class="hissu">必須</p>
+                <%= f.label :パスワード, class: "signup_explanation" %>
+                <br />
+                <%= f.password_field :password, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form" %>
+              </div>
 
-            <div class="field">
-              <p class="hissu">必須</p>
-              <%= f.label :パスワード（再確認）, class: "signup_explanation" %><br />
-              <%= f.password_field :password_confirmation, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form" %>
-            </div>
+              <div class="field">
+                <p class="hissu">必須</p>
+                <%= f.label :パスワード（再確認）, class: "signup_explanation" %><br />
+                <%= f.password_field :password_confirmation, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form" %>
+              </div>
+            <%end %>
           </div>
 
 
           <div class="signup_right_content">
+            <%if @omniauth.nil?%>
+              <div class="sns_quote_area">
+                <div class="sns_quote_btn_area">
+                  <%=link_to user_facebook_omniauth_authorize_path, class: :sns_quote_btn do%>
+                    <i class="fa fa-facebook-square", style="margin-right: 3px;"></i>facebook情報を引用する
+                  <%end%>
+                </div>
+                <div class="sns_quote_btn_area">
+                  <%=link_to user_google_oauth2_omniauth_authorize_path, class: :sns_quote_btn do%>
+                    <i class="fa fa-google", style="margin-right: 3px;"></i>google情報を引用する
+                  <%end%>
+                </div>
+              </div>
+            <%end %>
             <div class="field">
               <p class="ninni">任意</p>
               <div class="signup_my_image_btn">

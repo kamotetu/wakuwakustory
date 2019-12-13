@@ -1,6 +1,6 @@
 <p>Welcome <%= @email %>!</p>
 
 <p>以下のリンクより、登録したメールアドレス、パスワードを入力し新規登録を完了してください</p>
+<p>※SNS情報より仮登録を行った方は、メールアドレス、パスワードの入力はせず、該当のSNS用のログインボタンをクリックし、新規登録を完了してください</p>
 
-
-<p><%= link_to '新規登録確認画面へ', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'ログイン画面へ', confirmation_url(@resource, confirmation_token: @token) %></p>
