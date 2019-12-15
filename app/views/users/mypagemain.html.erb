@@ -77,18 +77,12 @@
               <div class="mystory_maintitle_review_explanation">
                 <i class="fa fa-thumbs-o-up">
                 </i>
-                　　　:
-                <%if maintitle.reviews.present?%>
-                  <%@a = []%>
-                  <%maintitle.reviews.each do |maintitle_review|%>
-                    <%p = maintitle_review.review%>
-                    <%@a.push(p)%>
-                  <%end%>
-                  <%maintitle_review = @a.sum%>
-                  <%=maintitle_review%>
-                <%else%>
-                  0
-                <%end%>
+                
+                <%=maintitle.all_review%>
+                　
+                <i class="fa fa-heart-o">
+                </i>
+                <%=maintitle.all_favorite%>
                 
               </div>
             </div>
@@ -153,7 +147,7 @@
               <div class="profile_story_review_explanation">
                 <i class="fa fa-thumbs-o-up">
                 </i>
-                　　　:
+              
                 <%if story.reviews.present?%>
                   <%@a = []%>
                   <%story.reviews.each do |story|%>

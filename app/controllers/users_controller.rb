@@ -13,14 +13,14 @@ class UsersController < ApplicationController
     @user_id = @maintitle.user_id
     @user = User.find(@user_id)
     gon.maintitle_id = @maintitle.id
-
-    @maintitle_reviews = Review.where(maintitle_id: params[:maintitle_id])
-    @a = []
-    @maintitle_reviews.each do |maintitle_review|
-      p = maintitle_review.review
-      @a.push(p)
-    end
-    @maintitle_all_review = @a.sum
+    gon.all_favorite = @maintitle.all_favorite
+    # @maintitle_reviews = Review.where(maintitle_id: params[:maintitle_id])
+    # @a = []
+    # @maintitle_reviews.each do |maintitle_review|
+    #   p = maintitle_review.review
+    #   @a.push(p)
+    # end
+    # @maintitle_all_review = @a.sum
 
     # @maintitles = Maintitle.where(user_id: current_user.id).page(params[:page]).per(5)
   end

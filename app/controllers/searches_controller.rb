@@ -4,7 +4,11 @@ class SearchesController < ApplicationController
                     set_search_action
   }, only: [:userindex, 
             :maintitleindex]
-  before_action :set_search, only: [:genreindex]
+  before_action :set_search, only: [:genreindex,
+                                    :order_popularity,
+                                    :order_unpopular,
+                                    :order_favorite,
+                                    :order_unfavorite]
 
   def userindex
     @users = User.where(['nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ?', "%#{@search}%", "%#{@search_kana}%", "%#{@search_hira}%", "%#{@search_zenhan}%", "%#{@search_hanzen}%"]).order("created_at DESC").page(params[:page]).per(10)
@@ -39,29 +43,23 @@ class SearchesController < ApplicationController
 
   def order_popularity
     
-    # @reviews = Review.all
-    # @a = []
-    # @reviews.each do |review|
-    #   @maintitle_ids = review.maintitle.id
-    #   @a.push(@maintitle_ids)
-    # end
-    # @a = @a.uniq
+    @maintitles = Maintitle.order(all_review: :DESC).page(params[:page]).per(10)
     
-    # @b = []
-    # @a.each do |maintitle|
-    #   @maintitle = Maintitle.find(maintitle)
-    #   @reviews = @maintitle.reviews
-      
-    # end
-    # binding.pry
+  end
 
-    # @maintitles = Maintitle.all
-    # @a = []
-    # @maintitles.each do |maintitle|
-    #   @reviews = maintitle.reviews
-    #   @sum = @reviews.sum(:review)
+  def order_unpopular
+    @maintitles = Maintitle.order(all_review: :ASC).page(params[:page]).per(10)
+    render 'searches/order_popularity'
+  end
 
-    # end
+  def order_favorite 
+    @maintitles = Maintitle.order(all_favorite: :DESC).page(params[:page]).per(10)
+    render 'searches/order_popularity'
+  end
+
+  def order_unfavorite
+    @maintitles = Maintitle.order(all_favorite: :ASC).page(params[:page]).per(10)
+    render 'searches/order_popularity'
   end
 
   private

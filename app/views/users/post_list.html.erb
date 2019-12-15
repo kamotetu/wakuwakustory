@@ -64,13 +64,15 @@
           </div>
         </div>
         <div class="posli_review_icon">
-          <i class="fa fa-thumbs-o-up "></i> 
-            　　　:
-            <%if @maintitle_all_review.present?%>
-              <%=@maintitle_all_review%>
-            <%else%>
-              0
-            <%end%>
+          <i class="fa fa-thumbs-o-up ">
+          </i> 
+          <%=@maintitle.all_review%>
+          　
+          <i class="fa fa-heart-o ">
+          </i> 
+          <div class="posli_all_favorite">
+            <%=@maintitle.all_favorite%>
+          </div>
         </div>
       </div>
         小説の概要
@@ -137,7 +139,7 @@
               </div>
               <div class="mystory_all_review">
                 <i class="fa fa-thumbs-o-up">
-                </i>　　　：
+                </i>
                 <%if story.reviews.present?%>
                   <%@a = []%>
                   <%story.reviews.each do |story_review|%>
@@ -148,6 +150,13 @@
                     <%=story_all_review%>
                 <%else%>
                     0
+                <%end%>
+                　
+                <i class="fa fa-commenting-o "></i>
+                <%if story.comments.present?%>
+                  <%=story.comments.count%>
+                <%else%>
+                  0
                 <%end%>
               </div>
             </div>

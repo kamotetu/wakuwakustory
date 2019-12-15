@@ -1,1 +1,80 @@
-hello
+<div class="wrapper">
+  <div class="esta_title_area">
+    <h1 class="esta_title"><%=@search%>順</h1>
+  </div>
+  
+  <div class="esta_container">
+    <div class="esta_main_contents">
+      <div class="new_esta_list">
+        小説一覧
+      </div>
+      <%if @maintitles.present?%>
+        <%@maintitles.each do |maintitle|%>
+        <%=link_to maintitle_post_list_path(maintitle), class: :mystory_titles do%>
+          <div class="mystory_novels_area">
+            <div class="mystory_novels_cover_area">
+              <%if maintitle.cover.present?%>
+                <%=image_tag maintitle.cover.to_s, class: :mystory_novel_cover%>
+              <%else%>
+                <%=image_tag "no_image3.png", class: :mystory_novel_cover%>
+              <%end%>
+            </div>
+            <div class="mystory_maintitle_explanation_area">
+              <div class="mystory_maintitle_explanation">
+              小説名　：
+                <div class="mystory_maintitle">
+                  <div class="mystory_title">
+                    <%=safe_join(maintitle.maintitle.split("\n"),tag(:br))%>
+                  </div>
+                </div>
+              </div>
+              <div class="mystory_title_genres_explanation">
+                ジャンル：
+                <div class="mystory_title_genres">
+                  <%=maintitle.genre%>
+                </div>
+              </div>
+              <div class="mypage_maintitle_tags_explanation">
+                タグ　　：
+                <div class="mypage_maintitle_tags">
+                  <%=render 'shared/mypage_tag_list', tag_list: maintitle.tag_list%>
+                </div>
+              </div>
+              
+              <div class="mystory_upload_time_explanation">
+                作成日　：
+                <div class="mystory_upload_time">
+                  <%=maintitle.created_at.strftime('%Y/%m/%d')%>
+                </div>
+              </div>
+              <div class="mystory_maintitle_review_explanation">
+                <i class="fa fa-thumbs-o-up">
+                </i>
+                
+                <%=maintitle.all_review%>
+                　
+                <i class="fa fa-heart-o ">
+                </i>
+                <%=maintitle.all_favorite%>
+                
+              </div>
+            </div>
+          </div>
+        <%end%>
+      <%end%>
+      <%else%>
+        見つかりませんでした
+      <%end%>
+      <%if @maintitles.present?%>
+        <div class="mypage_paginate">
+          <%=paginate(@maintitles)%>
+        </div>
+      <%end%>
+    </div>
+    <%if user_signed_in?%>
+      <%=render 'shared/side_menu'%>
+    <%else%>
+      <%=render 'shared/profile_side_menu'%>
+    <%end%>
+  </div>
+</div>

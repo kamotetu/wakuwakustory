@@ -15,6 +15,7 @@ $(document).on('turbolinks:load', function() {
                   <a class="story_comment_delete_link" id="${comment.comment_id}" data-remote="true" rel="nofollow" data-method="delete" href="/maintitles/${gon.maintitle_id}/stories/${gon.story_id}/comments/${comment.comment_id}">
                     削除
                   </a>
+                  <br />
                   <div class="story_user_comment">
                     ${comment.comment}
                   </div>
