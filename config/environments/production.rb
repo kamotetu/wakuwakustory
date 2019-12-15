@@ -11,7 +11,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # mail setting
-  config.action_mailer.default_url_options = { host: 'http://54.65.254.36/' }
+  config.action_mailer.default_url_options = { host: 'http://wakuwakustory.com/' }
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
