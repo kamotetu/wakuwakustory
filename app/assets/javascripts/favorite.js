@@ -34,11 +34,11 @@
     return heart.append(favorite);
   };
 
-  favorite = gon.all_favorite
+  
   $(function() {
     $(document).on("ajax:success", ".favorite_btn", function(e) {
       e.preventDefault();
-      
+      favorite = gon.all_favorite
       
       
       if ($('#' + e.detail[0]).hasClass('like')) {
