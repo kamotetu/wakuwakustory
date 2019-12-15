@@ -1,0 +1,64 @@
+<ul class="order_dropdwn_menu">
+  <li id="order_area">
+    <i class="fa fa-sort-amount-asc "></i> 並び替え
+    <ul>
+      <%=link_to order_popularity_path(search: "評価が高い"), class: :dropdwn_order_list do%>
+      <li>
+        
+          評価の高い
+        
+      </li>
+      <%end%>
+      <%=link_to order_unpopular_path(search: "評価が低い"), class: :dropdwn_order_list do%>
+      <li>
+        
+          評価の低い
+        
+      </li>
+      <%end%>
+      <%=link_to order_favorite_path(search: "登録が多い"), class: :dropdwn_order_list  do%>
+      <li>
+        
+          登録が多い
+        
+      </li>
+      <%end%>
+      <%=link_to order_unfavorite_path(search: "登録が少ない"), class: :dropdwn_order_list  do%>
+      <li>
+        
+          登録が少ない
+        
+      </li>
+      <%end%>
+      <%=link_to genreindex_path(search: "投稿が多い"), class: :dropdwn_order_list  do%>
+      <li>
+        
+          投稿が多い
+        
+      </li>
+      <%end%>
+      <%=link_to genreindex_path(search: "投稿が少ない"), class: :dropdwn_order_list  do%>
+      <li>
+        
+          投稿が少ない
+        
+      </li>
+      <%end%>
+      <%=link_to genreindex_path(search: "コメントが多い"), class: :dropdwn_order_list  do%>
+      <li>
+        
+          コメントが多い
+        
+      </li>
+      <%end%>
+      <%=link_to genreindex_path(search: "コメントが少ない"), class: :dropdwn_order_list  do%>
+      <li>
+        
+          コメントが少ない
+        
+      </li>
+      <%end%>
+    </ul>
+  </li>
+</ul>
+

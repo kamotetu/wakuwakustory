@@ -90,7 +90,6 @@ $(function() {
     my_review_count_js++;
     all_review_count_js++;
     
-    console.log(my_review_count_js); 
     // appendLikeReviewBtn();
     appendFaThoumbsOUpMoreAfterRemove(my_review_count_js);
     appendFaThoumbsOUpAllAfterRemove(all_review_count_js);

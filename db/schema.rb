@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_12_172214) do
+ActiveRecord::Schema.define(version: 2019_12_14_095554) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "comment"
@@ -38,6 +38,10 @@ ActiveRecord::Schema.define(version: 2019_12_12_172214) do
     t.text "explanation"
     t.bigint "user_id"
     t.string "cover"
+    t.integer "all_review"
+    t.integer "all_favorite"
+    t.integer "all_comment"
+    t.datetime "new_story"
     t.index ["user_id"], name: "index_maintitles_on_user_id"
   end
 

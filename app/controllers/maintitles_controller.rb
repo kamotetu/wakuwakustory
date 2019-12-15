@@ -45,10 +45,16 @@ class MaintitlesController < ApplicationController
     if maintitle.favorited_by?(current_user)
       fav = current_user.favorites.find_by(maintitle_id: maintitle.id)
       fav.destroy
+      @all_favorite = maintitle.all_favorite
+      @sum = @all_favorite - 1
+      maintitle.update(all_favorite: @sum)
       render json: maintitle.id
     else
       fav = current_user.favorites.new(maintitle_id: maintitle.id)
       fav.save
+      @all_favorite = maintitle.all_favorite
+      @sum = @all_favorite + 1
+      maintitle.update(all_favorite: @sum)
       render json: maintitle.id
     end
   end
@@ -64,7 +70,7 @@ class MaintitlesController < ApplicationController
       :explanation,
       :tag_list,
       :cover,
-      :remove_cover).merge(user_id: current_user.id)
+      :remove_cover).merge(user_id: current_user.id, all_review: 0, all_favorite: 0, all_comment: 0)
   end
 
   def set_maintitle

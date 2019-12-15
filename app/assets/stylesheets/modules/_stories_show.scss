@@ -153,18 +153,20 @@
       margin-bottom: 40px;
       margin-top: 40px;
     }
-    .mystory_edit_delete_area {
+    .mystory_new_edit_delete_area {
       // display: inline;
       @include clearfix;
       margin-bottom: 5px;
-      .mystory_edit_delete {
+      .mystory_new_edit_delete {
         float: right;
-        .mystory_edit_delete_btn {
-          border-left: 1px solid $border_color;
+        
+        .mystory_new_edit_delete_btn {
+          // border-left: 1px solid $border_color;
           border-bottom: 1px solid $border_color;
           color: gray;
+          margin-left: 5px;
         }
-        .mystory_edit_delete_btn:hover {
+        .mystory_new_edit_delete_btn:hover {
           color: $hover_text_color;
         }
       }
@@ -292,6 +294,7 @@
       }
       .story_user_comment {
         margin-left: 35px;
+        word-break: break-all;
       }
       .story_comment_delete_link {
         float: right;

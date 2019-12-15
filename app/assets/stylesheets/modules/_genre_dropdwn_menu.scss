@@ -1,4 +1,4 @@
-.genre_dropdwn_menu {
+.genre_dropdwn_menu, .order_dropdwn_menu {
   // width: 100%;
   @include clearfix;
   margin-top: 5px;
@@ -6,7 +6,7 @@
   padding: 0;
   display: flex;
   z-index: 1;
-  #genre_area {
+  #genre_area, #order_area {
     width: 100px;
     text-align: center;
     padding-bottom: 5px;
@@ -27,7 +27,7 @@
       text-align: center;
       // position: relative;
       margin-top: 5px;
-      .dropdwn_genre_list {
+      .dropdwn_genre_list, .dropdwn_order_list {
         color: rgb(84, 84, 84);
         z-index: 1;
         li {

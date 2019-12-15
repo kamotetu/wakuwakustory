@@ -21,12 +21,14 @@ class StoriesController < ApplicationController
   def new
     #set_maintitle
     @story = Story.new
+    
   end
 
   def create
     #set_maintitle
     @story = @maintitle.stories.new(story_params)
     if @story.save
+      @maintitle.update(new_story: @story.created_at)
       redirect_to maintitle_story_path(@maintitle, @story)
 
       # flash[:success] = "記事を作成しました"
@@ -96,6 +98,10 @@ class StoriesController < ApplicationController
     @review = Review.find_by(story_id: @story.id, user_id: current_user.id)
     p = @review.review + 1
     @review.update(review: p)
+    @maintitle_review = @maintitle.reviews
+    @sum = @maintitle_review.sum(:review)
+
+    @maintitle.update(all_review: @sum)
     render json: @story.id
 
 
@@ -105,7 +111,13 @@ class StoriesController < ApplicationController
     # set_maintitle
     @story = Story.find(params[:story_id])
     @review = Review.find_by(user_id: current_user.id, story_id: @story.id)
+    @story_review = @review.review
+    @maintitle_review = @maintitle.reviews
+    @sum = @maintitle_review.sum(:review)
+    @sum = @sum - @story_review
+    @maintitle.update(all_review: @sum)
     @review.update(review: 0)
+    
     render json: @story.id
     
 
