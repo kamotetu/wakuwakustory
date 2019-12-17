@@ -1,4 +1,9 @@
 $(document).on('turbolinks:load', function() {
+    if(document.URL.match("/maintilte|/stories")) {
+      //指定する文字列がURLに含まれる場合に実行する内容
+      story_comment = gon.story_comment_count;
+    }
+    
   
   function buildHTML(comment){
     var html = `<div class="story_show_comment_area" , id="story_show_comment_area_${comment.comment_id}">
@@ -51,7 +56,7 @@ $(document).on('turbolinks:load', function() {
     commentUpArea.append(commentUp);
   }
 
-  var story_comment = gon.story_comment_count;
+  // var story_comment = gon.story_comment_count;
   $('#new_comment').on('submit', function(e) {
     e.preventDefault();
     $(".comment_count").remove();

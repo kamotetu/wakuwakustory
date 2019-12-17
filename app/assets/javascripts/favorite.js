@@ -1,8 +1,16 @@
-
+// var url = location.href
+// console.log(url);
+  
 
 
 $(document).on('turbolinks:load', function() {
-  favorite = gon.all_favorite
+  if(document.URL.match("/post_list")) {
+    //指定する文字列がURLに含まれる場合に実行する内容
+    favorite = gon.all_favorite;
+  }
+  
+});
+  // favorite = gon.all_favorite
   function appendUnLikeArea() {
     var favorite_area = $(".favorite_area");
     var unlike_area = `<a class="favorite_btn" data-remote="true" href="/maintitles/fav/${gon.maintitle_id}", remote: :true>
@@ -42,17 +50,20 @@ $(document).on('turbolinks:load', function() {
       
       
       if ($('#' + e.detail[0]).hasClass('like')) {
+        // favorite = gon.all_favorite;
         $('.like_area').remove();
         appendUnLikeArea();
         $('.posli_all_favorite').remove();
         favorite ++;
         appendFavorite(favorite);
+        
         $('.posli_all_favorite').css({'font-family':"'M PLUS Rounded 1c', sans-serif"});
         // $('#' + e.detail[0]).removeClass('like').addClass('unlike');
       } else {
         $('.unlike_area').remove();
         appendFavoriteArea();
         $('.posli_all_favorite').remove();
+        // favorite = gon.all_favorite;
         if (favorite == 0){
           favorite = 0
         }else {
@@ -66,4 +77,4 @@ $(document).on('turbolinks:load', function() {
       }
     });
   });
-});
+// });
