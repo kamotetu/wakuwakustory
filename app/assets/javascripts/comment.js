@@ -1,3 +1,5 @@
+
+
 $(document).on('turbolinks:load', function() {
   
   function buildHTML(comment){
