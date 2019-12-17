@@ -8,10 +8,13 @@ class SearchesController < ApplicationController
                                     :order_popularity,
                                     :order_unpopular,
                                     :order_favorite,
-                                    :order_unfavorite]
+                                    :order_unfavorite,
+                                    :order_post,
+                                    :order_unpost]
 
   def userindex
     @users = User.where(['nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ?', "%#{@search}%", "%#{@search_kana}%", "%#{@search_hira}%", "%#{@search_zenhan}%", "%#{@search_hanzen}%"]).order("created_at DESC").page(params[:page]).per(10)
+
   end
 
   def maintitleindex
@@ -59,6 +62,16 @@ class SearchesController < ApplicationController
 
   def order_unfavorite
     @maintitles = Maintitle.order(all_favorite: :ASC).page(params[:page]).per(10)
+    render 'searches/order_popularity'
+  end
+
+  def order_post
+    @maintitles = Maintitle.order(all_story: :DESC).page(params[:page]).per(10)
+    render 'searches/order_popularity'
+  end
+
+  def order_unpost
+    @maintitles = Maintitle.order(all_story: :ASC).page(params[:page]).per(10)
     render 'searches/order_popularity'
   end
 

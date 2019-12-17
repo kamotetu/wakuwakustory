@@ -13,7 +13,9 @@
           <div class="story_show_maintitle_explanation">
             小説名　：
             <div class="story_show_maintitle">
-              <%=safe_join(@maintitle.maintitle.split("\n"),tag(:br))%>
+              <%=link_to maintitle_post_list_path(@maintitle), class: :story_show_maintitle_link do%>
+                <%=safe_join(@maintitle.maintitle.split("\n"),tag(:br))%>
+              <%end%>
             </div>
           </div>
         </div>
@@ -24,16 +26,29 @@
           </div>
         </div>
         <div class="show_review_all_count_area">
-          評価　　：
+          
           <i class="fa fa-thumbs-o-up">
           </i> 
           <i class="review_all_count_area">
-            <%if @review_all_count.present?%>
+            <%if @story_review_count.present?%>
               <%=render 'shared/maintitle_all_review_count'%>
             <%else%>
               <i>
                 0
               </i>
+            <%end%>
+            
+          </i>
+          　
+          <i class="fa fa-commenting-o ">
+          </i>
+          <i class="comment_count_area">
+            <%if @story.comments.present?%>
+              <i class="comment_count">
+                <%=@story.comments.count%>
+              </i>
+            <%else%>
+              0
             <%end%>
           </i>
         </div>

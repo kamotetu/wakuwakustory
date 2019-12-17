@@ -1,6 +1,5 @@
-
 $(document).on('turbolinks:load', function() {
-
+  
   function buildHTML(comment){
     var html = `<div class="story_show_comment_area" , id="story_show_comment_area_${comment.comment_id}">
                   <div class="show_user_image">
@@ -36,6 +35,7 @@ $(document).on('turbolinks:load', function() {
                   <a class="story_comment_delete_link" id="${comment.comment_id}" data-remote="true" rel="nofollow" data-method="delete" href="/maintitles/${gon.maintitle_id}/stories/${gon.story_id}/comments/${comment.comment_id}">
                     削除
                   </a>
+                  <br />
                   <div class="story_user_comment">
                     ${comment.comment}
                   </div>
@@ -43,8 +43,20 @@ $(document).on('turbolinks:load', function() {
     return html_no;
   }
 
+  function buildCommentUp(story_comment) {
+    var commentUpArea = $(".comment_count_area")
+    var commentUp = `<i class="comment_count">
+                      ${story_comment}
+                    </i>`
+    commentUpArea.append(commentUp);
+  }
+
+  var story_comment = gon.story_comment_count;
   $('#new_comment').on('submit', function(e) {
     e.preventDefault();
+    $(".comment_count").remove();
+    story_comment++;
+    buildCommentUp(story_comment);
     var formData = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
@@ -79,11 +91,19 @@ $(document).on('turbolinks:load', function() {
     var id = this.id
     var class_name = 'story_show_comment_area_' + id
     $('#' + class_name).remove();
+    $(".comment_count").remove();
+    story_comment--;
+    buildCommentUp(story_comment);
   })
   $('#story_show_comment_content').on('click', '.story_comment_delete_link', function(e) {
     e.preventDefault();
     var id = this.id
     var class_name = 'story_show_comment_area_' + id
     $('#' + class_name).remove();
+    $(".comment_count").remove();
+    story_comment--;
+    buildCommentUp(story_comment);
+
+
   })
 });

@@ -5,6 +5,7 @@ class StoriesController < ApplicationController
                                        :show,
                                        :edit,
                                        :update,
+                                       :destroy,
                                        :like_review,
                                        :like_review_more,
                                        :unlike_review]
@@ -28,7 +29,8 @@ class StoriesController < ApplicationController
     #set_maintitle
     @story = @maintitle.stories.new(story_params)
     if @story.save
-      @maintitle.update(new_story: @story.created_at)
+      @story_count = @maintitle.all_story + 1
+      @maintitle.update(new_story: @story.created_at, all_story: @story_count)
       redirect_to maintitle_story_path(@maintitle, @story)
 
       # flash[:success] = "記事を作成しました"
@@ -56,24 +58,25 @@ class StoriesController < ApplicationController
       end
     end
     @reviews = Review.where(story_id: @story.id)
-    @a = []
-    @reviews.each do |review|
-      p = review.review
-      @a.push(p)
-    end
-    @review_all_count = @a.sum
-    gon.review_all_count = @a.sum + 1
+    @story_review_count = @reviews.sum(:review)
+    
+    gon.review_all_count = @story_review_count + 1
     
     @stories = @maintitle.stories.order('created_at desc, id desc')
-
+    gon.story_comment_count = @story.comments.count
     # @story_next = @story_next_id.order("id DESC").first
     # @story_next = @story_next_id.where("id < ?", id).order("id DESC").first
   end
 
   def destroy
     #set_story
+    #set_maintitle
+
     if @story.user_id == current_user.id
+      @story_count = @maintitle.all_story - 1
+      @maintitle.update(all_story: @story_count)
       @story.destroy
+      redirect_to maintitle_post_list_path(@maintitle)
     end
   end
 
@@ -88,7 +91,7 @@ class StoriesController < ApplicationController
       @story.update(story_params)
       redirect_to maintitle_story_path(@maintitle, @story)
     else
-      render 'stories/edit'
+      # redirect_to 
     end
   end
 
