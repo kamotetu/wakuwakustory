@@ -8,7 +8,7 @@
         <%if @user != current_user%>
           <div class="favorite_area">
             <% if !Favorite.exists?(user_id:current_user.id, maintitle_id: @maintitle.id) %>
-              <%= link_to fav_maintitles_path(@maintitle), class: :favorite_btn, remote: :true do%>
+              <%= link_to fav_maintitles_path(@maintitle), class: :favorite_btn, remote: :true, data: "#{@maintitle.all_favorite}" do%>
                 <div class="like_area">
                   <div class="like", id="<%=@maintitle.id%>">
                     お気に入り
