@@ -1,7 +1,8 @@
 
 
 
-// $(document).on('turbolinks:load', function() {
+$(document).on('turbolinks:load', function() {
+  favorite = gon.all_favorite
   function appendUnLikeArea() {
     var favorite_area = $(".favorite_area");
     var unlike_area = `<a class="favorite_btn" data-remote="true" href="/maintitles/fav/${gon.maintitle_id}", remote: :true>
@@ -38,14 +39,13 @@
   $(function() {
     $(document).on("ajax:success", ".favorite_btn", function(e) {
       e.preventDefault();
-      favorite = gon.all_favorite
       
       
       if ($('#' + e.detail[0]).hasClass('like')) {
         $('.like_area').remove();
         appendUnLikeArea();
         $('.posli_all_favorite').remove();
-        favorite = favorite + 1;
+        favorite ++;
         appendFavorite(favorite);
         $('.posli_all_favorite').css({'font-family':"'M PLUS Rounded 1c', sans-serif"});
         // $('#' + e.detail[0]).removeClass('like').addClass('unlike');
@@ -53,11 +53,17 @@
         $('.unlike_area').remove();
         appendFavoriteArea();
         $('.posli_all_favorite').remove();
-        favorite = favorite - 1;
+        if (favorite == 0){
+          favorite = 0
+        }else {
+          favorite --
+        };
+        // favorite = favorite - 1;
+
         appendFavorite(favorite);
         $('.posli_all_favorite').css({'font-family':"'M PLUS Rounded 1c', sans-serif"});
     // $('#' + e.detail[0]).removeClass('unlike').addClass('like');
       }
     });
   });
-// });
+});

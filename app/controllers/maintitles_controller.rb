@@ -70,7 +70,7 @@ class MaintitlesController < ApplicationController
       :explanation,
       :tag_list,
       :cover,
-      :remove_cover).merge(user_id: current_user.id, all_review: 0, all_favorite: 0, all_comment: 0)
+      :remove_cover).merge(user_id: current_user.id, all_review: 0, all_favorite: 0, all_comment: 0, all_story: 0)
   end
 
   def set_maintitle

@@ -60,6 +60,13 @@
           display: flex;
           .story_show_maintitle {
             font-family: 'M PLUS Rounded 1c', sans-serif;
+            .story_show_maintitle_link {
+              color: gray;
+              border-bottom: solid 1px $border_color;
+            }
+            .story_show_maintitle_link:hover {
+              color: $hover_text_color;
+            }
           }
         }
       }
@@ -73,7 +80,7 @@
         }
       }
       .show_review_all_count_area {
-        // display: flex;
+        // display: inline-block;
         .fa-thumbs-o-up {
 
         }
@@ -83,6 +90,15 @@
             font-family: 'M PLUS Rounded 1c', sans-serif;
             // display: inline;
           }
+        }
+        .fa-commenting-o {
+
+        }
+        .comment_count_area {
+          .comment_count {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+          }
+
         }
       }
       .story_show_tag_list_area {

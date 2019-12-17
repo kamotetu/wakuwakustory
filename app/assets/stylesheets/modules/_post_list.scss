@@ -100,6 +100,7 @@
           margin-top: 7px;
           .posli_story_user_nickname_link {
             color: gray;
+            border-bottom: 1px solid $border_color;
           }
           .posli_story_user_nickname_link:hover {
             color: rgb(0, 81, 255);
