@@ -46,6 +46,23 @@
                   <%=maintitle.created_at.strftime('%Y/%m/%d')%>
                 </div>
               </div>
+              <i class="fa fa-thumbs-o-up ">
+              </i> 
+              <%=maintitle.all_review%>
+              　
+              <i class="fa fa-heart-o ">
+              </i> 
+              <i class="posli_all_favorite">
+                <%=maintitle.all_favorite%>
+              </i>
+              　
+              <i class="fa fa-commenting-o ">
+              </i>
+              <%if maintitle.all_comment.present?%>
+                <%=maintitle.all_comment%>
+              <%else%>
+                0
+              <%end%>
             </div>
           </div>
         <%end%>

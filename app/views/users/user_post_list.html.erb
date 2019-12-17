@@ -58,7 +58,7 @@
               <div class="profile_story_review_explanation">
                 <i class="fa fa-thumbs-o-up">
                 </i>
-                　　　:
+                
                 <%if story.reviews.present?%>
                   <%@a = []%>
                   <%story.reviews.each do |story|%>
@@ -67,6 +67,14 @@
                   <%end%>
                   <%story_review_count = @a.sum%>
                   <%=story_review_count%>
+                <%else%>
+                  0
+                <%end%>
+                　
+                <i class="fa fa-commenting-o ">
+                </i>
+                <%if story.comments.present?%>
+                  <%=story.comments.count%>
                 <%else%>
                   0
                 <%end%>

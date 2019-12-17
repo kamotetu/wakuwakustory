@@ -37,9 +37,9 @@ $(document).on('turbolinks:load', function() {
   
   function appendFavorite(favorite) {
     var heart = $(".fa-heart-o");
-    var favorite = `<div class="posli_all_favorite">
+    var favorite = `<i class="posli_all_favorite">
                       ${favorite}
-                    </div>`
+                    </i>`
     return heart.append(favorite);
   };
 
