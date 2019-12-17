@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'order_unfavorite' => 'searches#order_unfavorite'
   get 'order_post' => 'searches#order_post'
   get 'order_unpost' => 'searches#order_unpost'
+  get 'order_comment' => 'searches#order_comment'
+  get 'order_uncomment' => 'searches#order_uncomment'
   get 'maintitles/fav/:id' => 'maintitles#fav', as: "fav_maintitles"
   get 'q_and_a' => 'informations#q_and_a'
   resources :maintitles do

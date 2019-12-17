@@ -70,9 +70,17 @@
           　
           <i class="fa fa-heart-o ">
           </i> 
-          <div class="posli_all_favorite">
+          <i class="posli_all_favorite">
             <%=@maintitle.all_favorite%>
-          </div>
+          </i>
+          　
+          <i class="fa fa-commenting-o ">
+          </i>
+          <%if @maintitle.all_comment.present?%>
+            <%=@maintitle.all_comment%>
+          <%else%>
+            0
+          <%end%>
         </div>
       </div>
         小説の概要
@@ -158,6 +166,7 @@
                 <%else%>
                   0
                 <%end%>
+                
               </div>
             </div>
           </div>

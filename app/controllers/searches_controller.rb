@@ -75,6 +75,16 @@ class SearchesController < ApplicationController
     render 'searches/order_popularity'
   end
 
+  def order_comment
+    @maintitles = Maintitle.order(all_comment: :DESC).page(params[:page]).per(10)
+    render 'searches/order_popularity'
+  end
+
+  def order_uncomment
+    @maintitles = Maintitle.order(all_comment: :ASC).page(params[:page]).per(10)
+    render 'searches/order_popularity'
+  end
+
   private
 
   def set_search_action

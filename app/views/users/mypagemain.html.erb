@@ -18,7 +18,7 @@
           <div class="mypagemain_user_all_review_area">
             <div class="fa fa-thumbs-o-up">
             </div>
-            ：
+            
             <%if @user_all_review.present?%>
               <%=@user_all_review%>
             <%else%>
@@ -156,6 +156,13 @@
                   <%end%>
                   <%story_review_count = @a.sum%>
                   <%=story_review_count%>
+                <%else%>
+                  0
+                <%end%>
+                　
+                <i class="fa fa-commenting-o "></i>
+                <%if story.comments.present?%>
+                  <%=story.comments.count%>
                 <%else%>
                   0
                 <%end%>
