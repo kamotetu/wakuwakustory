@@ -10,7 +10,9 @@ class SearchesController < ApplicationController
                                     :order_favorite,
                                     :order_unfavorite,
                                     :order_post,
-                                    :order_unpost]
+                                    :order_unpost,
+                                    :order_comment,
+                                    :order_uncomment]
 
   def userindex
     @users = User.where(['nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ? OR nickname LIKE ?', "%#{@search}%", "%#{@search_kana}%", "%#{@search_hira}%", "%#{@search_zenhan}%", "%#{@search_hanzen}%"]).order("created_at DESC").page(params[:page]).per(10)
