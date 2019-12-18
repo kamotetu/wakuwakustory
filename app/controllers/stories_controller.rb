@@ -76,7 +76,6 @@ class StoriesController < ApplicationController
       @story_count = @maintitle.all_story.to_i - 1
       @maintitle.update(all_story: @story_count)
       @story.destroy
-      binding.pry
       redirect_to maintitle_post_list_path(@maintitle)
     end
   end
