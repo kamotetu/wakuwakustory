@@ -73,9 +73,10 @@ class StoriesController < ApplicationController
     #set_maintitle
 
     if @story.user_id == current_user.id
-      @story_count = @maintitle.all_story - 1
+      @story_count = @maintitle.all_story.to_i - 1
       @maintitle.update(all_story: @story_count)
       @story.destroy
+      binding.pry
       redirect_to maintitle_post_list_path(@maintitle)
     end
   end
