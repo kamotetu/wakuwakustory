@@ -3,13 +3,13 @@
   
 
 
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
   if(document.URL.match("/post_list")) {
     //指定する文字列がURLに含まれる場合に実行する内容
-    favorite = gon.all_favorite;
+    var favorite = gon.all_favorite;
   }
   
-});
+// });
   // favorite = gon.all_favorite
   function appendUnLikeArea() {
     var favorite_area = $(".favorite_area");
