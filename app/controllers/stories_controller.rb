@@ -74,7 +74,11 @@ class StoriesController < ApplicationController
 
     if @story.user_id == current_user.id
       @story_count = @maintitle.all_story.to_i - 1
-      @maintitle.update(all_story: @story_count)
+      a = @story.reviews.sum(:review)
+      b = @story.comments.count(:comment)
+      @maintitle_comment_count = @maintitle.all_comment - b
+      @maintitle_review_count = @maintitle.all_review - a
+      @maintitle.update(all_story: @story_count, all_review: @maintitle_review_count, all_comment: @maintitle_comment_count)
       @story.destroy
       redirect_to maintitle_post_list_path(@maintitle)
     end
