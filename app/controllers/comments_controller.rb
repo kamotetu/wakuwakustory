@@ -25,6 +25,7 @@ class CommentsController < ApplicationController
       @all_comment = @maintitle.all_comment
       @sum = @all_comment - 1
       @maintitle.update(all_comment: @sum)
+      render json: @comment.id
     else
       render 'stories/show'
     end

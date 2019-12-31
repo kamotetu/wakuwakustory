@@ -73,7 +73,10 @@
           <%end%>
         </div>
         <h1 class="story_user_nickname">
-          著者：<%=@story.user.nickname%>
+          著者：
+          <%=link_to profile_user_path(@story.user), class: :story_user_nickname_link do%>
+            <%=@story.user.nickname%>
+          <%end%>
         </h1>
 
       </div>
