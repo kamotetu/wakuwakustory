@@ -140,9 +140,14 @@
       // float: right;
       .story_user_nickname {
         float: right;
-        // height: 40px;
         margin-top: 7px;
-        // margin: auto;
+        &_link {
+          color: gray;
+          border-bottom: solid 1px $border_color;
+        }
+        &_link:hover {
+          color: $hover_text_color;
+        }
       }
       .story_user_my_image_icon_area {
         float: right;

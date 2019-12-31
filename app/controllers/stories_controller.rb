@@ -80,8 +80,7 @@ class StoriesController < ApplicationController
       @maintitle_review_count = @maintitle.all_review - a
       @maintitle.update(all_story: @story_count, all_review: @maintitle_review_count, all_comment: @maintitle_comment_count)
       @story.destroy
-      render json: @story
-      # redirect_to maintitle_post_list_path(@maintitle)
+      redirect_to maintitle_post_list_path(@maintitle)
     end
   end
 
