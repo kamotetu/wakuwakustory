@@ -19,8 +19,7 @@
               <%= f.label :Eメールアドレス, class: "signup_explanation" %><br />
               <%= f.email_field :email, placeholder: "wakusto@com", autocomplete: "email", class: "input_signup_form" %>
             </div>
-                <%= f.password_field :password, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form", type: "hidden" %>
-                <%= f.password_field :password_confirmation, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form", type: "hidden" %>
+                
 
             <%if @omniauth.nil?%>
               <div class="field">
@@ -53,6 +52,9 @@
                   <%end%>
                 </div>
               </div>
+            <%else%>
+              <%= f.password_field :password, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form", type: "hidden" %>
+              <%= f.password_field :password_confirmation, placeholder: "英数字8文字以上", autocomplete: "new-password", class: "input_signup_form", type: "hidden" %>
             <%end %>
             <div class="field">
               <p class="ninni">任意</p>
