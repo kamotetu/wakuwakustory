@@ -1,9 +1,7 @@
 class SearchesController < ApplicationController
 
-  before_action -> {
-                    set_search_action
-  }, only: [:userindex, 
-            :maintitleindex]
+  before_action -> {set_search_action}, only: [:userindex]
+  before_action -> {set_search_title_action}, only: [:maintitleindex] 
   before_action :set_search, only: [:genreindex,
                                     :order_popularity,
                                     :order_unpopular,
@@ -20,7 +18,7 @@ class SearchesController < ApplicationController
   end
 
   def maintitleindex
-    @maintitles = Maintitle.where(['maintitle LIKE ? OR maintitle LIKE ? OR maintitle LIKE ? OR maintitle LIKE ? OR maintitle LIKE ?', "%#{@search}%", "%#{@search_kana}%", "%#{@search_hira}%", "%#{@search_zenhan}%", "%#{@search_hanzen}%"]).order("created_at DESC").page(params[:page]).per(10)
+    @maintitles = Maintitle.where(['maintitle LIKE ? OR maintitle LIKE ? OR maintitle LIKE ? OR maintitle LIKE ? OR maintitle LIKE ?', "%#{@search_title}%", "%#{@search_title_kana}%", "%#{@search_title_hira}%", "%#{@search_title_zenhan}%", "%#{@search_title_hanzen}%"]).order("created_at DESC").page(params[:page]).per(10)
   end
 
   def genreindex
@@ -95,6 +93,14 @@ class SearchesController < ApplicationController
     @search_hira = (params[:search]).tr('ァ-ン','ぁ-ん')
     @search_zenhan = (params[:search]).tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z')
     @search_hanzen = (params[:search]).tr('0-9a-zA-Z','０-９ａ-ｚＡ-Ｚ')
+  end
+
+  def set_search_title_action
+    @search_title = (params[:search_title])
+    @search_title_kana = (params[:search_title]).tr('ぁ-ん','ァ-ン')
+    @search_title_hira = (params[:search_title]).tr('ァ-ン','ぁ-ん')
+    @search_title_zenhan = (params[:search_title]).tr('０-９ａ-ｚＡ-Ｚ','0-9a-zA-Z')
+    @search_title_hanzen = (params[:search_title]).tr('0-9a-zA-Z','０-９ａ-ｚＡ-Ｚ')
   end
 
   def set_search

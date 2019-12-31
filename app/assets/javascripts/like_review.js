@@ -10,7 +10,7 @@ function appendFaThoumbsOUpAll(all_review_count) {
   var fa_thumbs_o_up_all = $(".review_all_count_area");
   var all_count = `<i class="all_count">
                         ${all_review_count}
-                        </i>`
+                      </i>`
   fa_thumbs_o_up_all.append(all_count);
 };
 

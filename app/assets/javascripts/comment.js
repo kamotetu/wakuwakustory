@@ -1,9 +1,12 @@
 $(document).on('turbolinks:load', function() {
-    if(document.URL.match("/maintilte|/stories")) {
-      //指定する文字列がURLに含まれる場合に実行する内容
-      var story_comment = gon.story_comment_count;
-    }
-    
+  if(document.URL.match("/maintilte|/stories")) {
+    //指定する文字列がURLに含まれる場合に実行する内容
+    story_comment = gon.story_comment_count;
+    console.log(story_comment);
+  }
+});
+
+$(document).on('turbolinks:load', function() {
   
   function buildHTML(comment){
     var html = `<div class="story_show_comment_area" , id="story_show_comment_area_${comment.comment_id}">
@@ -108,7 +111,5 @@ $(document).on('turbolinks:load', function() {
     $(".comment_count").remove();
     story_comment--;
     buildCommentUp(story_comment);
-
-
   })
 });

@@ -3,14 +3,15 @@
   
 
 
-// $(document).on('turbolinks:load', function() {
+$(document).on('turbolinks:load', function() {
   if(document.URL.match("/post_list")) {
     //指定する文字列がURLに含まれる場合に実行する内容
-    var favorite = gon.all_favorite;
+    favorite = gon.all_favorite;
   }
-  
+});
 // });
   // favorite = gon.all_favorite
+  // $(document).on('turbolinks:load', function() {
   function appendUnLikeArea() {
     var favorite_area = $(".favorite_area");
     var unlike_area = `<a class="favorite_btn" data-remote="true" href="/maintitles/fav/${gon.maintitle_id}", remote: :true>
@@ -55,6 +56,7 @@
         appendUnLikeArea();
         $('.posli_all_favorite').remove();
         favorite ++;
+        console.log(typeof favorite);
         appendFavorite(favorite);
         
         $('.posli_all_favorite').css({'font-family':"'M PLUS Rounded 1c', sans-serif"});
