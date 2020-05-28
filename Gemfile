@@ -80,7 +80,7 @@ gem 'mini_magick'
 gem 'jquery-rails'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'fog-aws'
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.2.1'
 gem "ransack"
 gem 'nokogiri', '~> 1.10.5'
 gem 'gon'
