@@ -82,7 +82,7 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'fog-aws'
 gem 'kaminari', '~> 0.17.0'
 gem "ransack"
-gem 'nokogiri', '~> 1.10.5'
+gem 'nokogiri', '~> 1.10.10'
 gem 'gon'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
